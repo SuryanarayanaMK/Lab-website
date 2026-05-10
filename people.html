@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>People | Applied Mathematics</title>
+    <link href="https://fonts.googleapis.com/css2?family=Ysabeau:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <style>
+        .team-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 32px;
+        }
+        .section-title {
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: #1e3a5f;
+            text-align: left;
+            margin-bottom: 40px;
+            position: relative;
+            padding-bottom: 20px;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: #4A90E2;
+            border-radius: 2px;
+        }
+        /* Group Photo */
+        .group-photo {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto 40px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        .group-photo img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        /* Team Intro */
+        .team-intro {
+            font-size: 1.15rem;
+            color: #4a5568;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            text-align: center;
+        }
+        /* Team Sections */
+        .team-section {
+            margin-bottom: 50px;
+        }
+        .section-subtitle {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #4A90E2;
+            margin-bottom: 24px;
+            padding-left: 16px;
+            border-left: 4px solid #4A90E2;
+        }
+        /* PI Section */
+        .pi-grid {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+        .pi-member {
+            width: 200px;
+        }
+        .pi-member img {
+            width: 100%;
+            aspect-ratio: 1;
+            object-fit: cover;
+            border-radius: 50%;
+            box-shadow: 0 8px 30px rgba(74,144,226,0.3);
+        }
+        .pi-member h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #1e3a5f;
+            margin-top: 16px;
+            text-align: center;
+        }
+        /* Team Grid */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+        .postdoc-grid {
+            grid-template-columns: repeat(4, 1fr);
+            max-width: 900px;
+            margin: 0 auto 40px;
+        }
+        .team-member {
+            text-align: center;
+            position: relative;
+        }
+        .team-member .img-wrapper {
+            position: relative;
+            overflow: hidden;
+            border-radius: 50%;
+        }
+        .team-member img {
+            width: 100%;
+            aspect-ratio: 1;
+            object-fit: cover;
+            display: block;
+            border-radius: 50%;
+        }
+        /* Image Overlay Slide with Fade */
+        .img-overlay {
+            position: absolute;
+            bottom: 8%;
+            left: 50%;
+            transform: translateX(-50%) translateY(10px);
+            background: rgba(26,58,95,0.9);
+            padding: 6px 12px;
+            border-radius: 20px;
+            opacity: 0;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+        .team-member:hover .img-overlay {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+        .img-overlay .role {
+            color: white;
+            font-size: 0.6rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .team-member h4 {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #1e3a5f;
+            margin-top: 12px;
+        }
+        /* Visitors Section */
+        .visitors-section {
+            margin-bottom: 40px;
+        }
+        .visitors-section h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #1e3a5f;
+            margin-bottom: 16px;
+        }
+        .visitors-list {
+            color: #64748b;
+            line-height: 1.8;
+        }
+        .visitors-list p {
+            margin: 4px 0;
+        }
+        /* Alumni Section */
+        .alumni-section {
+            margin-bottom: 40px;
+        }
+        .alumni-section h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #1e3a5f;
+            margin-bottom: 16px;
+        }
+        .alumni-list {
+            color: #64748b;
+            line-height: 1.8;
+        }
+        .alumni-list p {
+            margin: 4px 0;
+        }
+        @media (max-width: 768px) {
+            .team-container {
+                padding: 30px 20px;
+            }
+            .section-title {
+                font-size: 2rem;
+                margin-bottom: 30px;
+            }
+            .section-title::after {
+                width: 80px;
+                height: 3px;
+            }
+            .team-intro {
+                font-size: 0.95rem;
+                margin-bottom: 30px;
+            }
+            .group-photo {
+                margin-bottom: 30px;
+            }
+            .group-photo img {
+                max-width: 100%;
+                border-radius: 12px;
+            }
+            .team-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 16px;
+            }
+            .team-member h3 {
+                font-size: 0.8rem;
+            }
+            .team-member h4 {
+                font-size: 0.75rem;
+            }
+            .postdoc-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .pi-member {
+                width: 160px;
+            }
+            .section-subtitle {
+                font-size: 1.2rem;
+            }
+        }
+        @media (max-width: 480px) {
+            .team-container {
+                padding: 20px 16px;
+            }
+            .section-title {
+                font-size: 1.6rem;
+            }
+            .team-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+            .img-overlay {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Container -->
+    <div id="header-container"></div>
+
+    <div class="team-container">
+        <h2 class="section-title">Our Team</h2>
+        
+        <p class="team-intro">Our lab brings together researchers from diverse backgrounds in physics, mathematics, computer science, and biology. We foster a collaborative environment where interdisciplinary ideas flourish and innovation thrives.</p>
+        
+        <!-- Group Photo -->
+        <div class="group-photo">
+            <img src="images/people/people.png" alt="Applied Mathematics Team">
+        </div>
+
+        <!-- Team Grid -->
+        <div class="team-grid">
+            <div class="team-member">
+                <div class="img-wrapper">
+                    <img src="images/people/surya.jpg" alt="Dr. Maddu">
+                    <div class="img-overlay">
+                        <div class="role">Principal Investigator</div>
+                    </div>
+                </div>
+                <h4>Dr. Maddu</h4>
+            </div>
+            <div class="team-member">
+                <div class="img-wrapper">
+                    <img src="images/pfi.jpg" alt="Dr. Sarah Chen">
+                    <div class="img-overlay">
+                        <div class="role">Postdoc</div>
+                    </div>
+                </div>
+                <h4>Dr. Sarah Chen</h4>
+            </div>
+            <div class="team-member">
+                <div class="img-wrapper">
+                    <img src="images/Research.png" alt="Dr. James Wilson">
+                    <div class="img-overlay">
+                        <div class="role">Postdoc</div>
+                    </div>
+                </div>
+                <h4>Dr. James Wilson</h4>
+            </div>
+            <div class="team-member">
+                <div class="img-wrapper">
+                    <img src="images/F3_paint.png" alt="Dr. Maria Rodriguez">
+                    <div class="img-overlay">
+                        <div class="role">Postdoc</div>
+                    </div>
+                </div>
+                <h4>Dr. Maria Rodriguez</h4>
+            </div>
+            <div class="team-member">
+                <div class="img-wrapper">
+                    <img src="images/pinns.jpg" alt="Dr. Alex Kumar">
+                    <div class="img-overlay">
+                        <div class="role">Postdoc</div>
+                    </div>
+                </div>
+                <h4>Dr. Alex Kumar</h4>
+            </div>
+            <div class="team-member">
+                <div class="img-wrapper">
+                    <img src="images/pfi.jpg" alt="Emily Zhang">
+                    <div class="img-overlay">
+                        <div class="role">PhD Student</div>
+                    </div>
+                </div>
+                <h4>Emily Zhang</h4>
+            </div>
+            <div class="team-member">
+                <div class="img-wrapper">
+                    <img src="images/Research.png" alt="Michael Brown">
+                    <div class="img-overlay">
+                        <div class="role">PhD Student</div>
+                    </div>
+                </div>
+                <h4>Michael Brown</h4>
+            </div>
+            <div class="team-member">
+                <div class="img-wrapper">
+                    <img src="images/F3_paint.png" alt="Priya Patel">
+                    <div class="img-overlay">
+                        <div class="role">PhD Student</div>
+                    </div>
+                </div>
+                <h4>Priya Patel</h4>
+            </div>
+            <div class="team-member">
+                <div class="img-wrapper">
+                    <img src="images/pinns.jpg" alt="David Lee">
+                    <div class="img-overlay">
+                        <div class="role">PhD Student</div>
+                    </div>
+                </div>
+                <h4>David Lee</h4>
+            </div>
+            <div class="team-member">
+                <div class="img-wrapper">
+                    <img src="images/pfi.jpg" alt="Anna Kim">
+                    <div class="img-overlay">
+                        <div class="role">PhD Student</div>
+                    </div>
+                </div>
+                <h4>Anna Kim</h4>
+            </div>
+            <div class="team-member">
+                <div class="img-wrapper">
+                    <img src="images/Research.png" alt="Chris Taylor">
+                    <div class="img-overlay">
+                        <div class="role">PhD Student</div>
+                    </div>
+                </div>
+                <h4>Chris Taylor</h4>
+            </div>
+            <div class="team-member">
+                <div class="img-wrapper">
+                    <img src="images/F3_paint.png" alt="Sophie Martin">
+                    <div class="img-overlay">
+                        <div class="role">PhD Student</div>
+                    </div>
+                </div>
+                <h4>Sophie Martin</h4>
+            </div>
+            <div class="team-member">
+                <div class="img-wrapper">
+                    <img src="images/pinns.jpg" alt="Raj Gupta">
+                    <div class="img-overlay">
+                        <div class="role">PhD Student</div>
+                    </div>
+                </div>
+                <h4>Raj Gupta</h4>
+            </div>
+            <div class="team-member">
+                <div class="img-wrapper">
+                    <img src="images/pfi.jpg" alt="Jessica Liu">
+                    <div class="img-overlay">
+                        <div class="role">PhD Student</div>
+                    </div>
+                </div>
+                <h4>Jessica Liu</h4>
+            </div>
+            <div class="team-member">
+                <div class="img-wrapper">
+                    <img src="images/Research.png" alt="Tom Anderson">
+                    <div class="img-overlay">
+                        <div class="role">PhD Student</div>
+                    </div>
+                </div>
+                <h4>Tom Anderson</h4>
+            </div>
+            <div class="team-member">
+                <div class="img-wrapper">
+                    <img src="images/F3_paint.png" alt="Rachel Green">
+                    <div class="img-overlay">
+                        <div class="role">PhD Student</div>
+                    </div>
+                </div>
+                <h4>Rachel Green</h4>
+            </div>
+        </div>
+
+        <!-- Visitors -->
+        <div class="visitors-section">
+            <h3>Visitors</h3>
+            <div class="visitors-list">
+                <p>Dr. Elena Volkova (ETH Zurich) - Fall 2024</p>
+                <p>Prof. David Thompson (Cambridge) - Summer 2023</p>
+            </div>
+        </div>
+
+        <!-- Alumni -->
+        <div class="alumni-section">
+            <h3>Alumni</h3>
+            <div class="alumni-list">
+                <p><strong>Dr. Lisa Wang</strong> - Former Postdoc → Assistant Professor at UCSD</p>
+                <p><strong>Dr. Kevin Park</strong> - Former PhD → Senior Scientist at Genentech</p>
+                <p><strong>Dr. Amanda Foster</strong> - Former PhD → Postdoc at Broad Institute</p>
+                <p><strong>Dr. Robert Chen</strong> - Former Postdoc → Principal Scientist at Novartis</p>
+                <p><strong>Dr. Jennifer Adams</strong> - Former PhD → Data Scientist at Google Health</p>
+                <p><strong>Mark Stevens</strong> - Former Undergrad → PhD Student at MIT</p>
+                <p><strong>Emily Zhao</strong> - Former Undergrad → PhD Student at Stanford</p>
+                <p><strong>James Miller</strong> - Former Undergrad → Software Engineer at Microsoft</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Container -->
+    <div id="footer-container"></div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

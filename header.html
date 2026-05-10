@@ -1,0 +1,234 @@
+<!-- Common Header Component - Professional Design -->
+<header style="background: white; padding: 16px 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+    <div class="header-inner" style="max-width: 1400px; margin: 0 auto; padding: 0 48px; display: flex; justify-content: space-between; align-items: center;">
+        
+        <!-- Logo Section -->
+        <a href="index.html" style="text-decoration: none; display: flex; align-items: center; gap: 16px; flex-shrink: 0;">
+            <!-- Hexagon Logo -->
+            <div style="width: 44px; height: 44px; position: relative; flex-shrink: 0;">
+                <svg viewBox="0 0 44 44" style="width: 100%; height: 100%;">
+                    <path d="M22 2 L40 12 L40 32 L22 42 L4 32 L4 12 Z" fill="url(#hexGradient)" stroke="#4A90E2" stroke-width="1.5"/>
+                    <defs>
+                        <linearGradient id="hexGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#4A90E2"/>
+                            <stop offset="100%" style="stop-color:#5B7AE6"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; font-weight: 700; font-size: 1.1rem;">M</span>
+            </div>
+            <!-- Logo Text -->
+            <div style="display: flex; flex-direction: column;">
+                <span style="font-weight: 700; font-size: 1.2rem; color: #1e3a5f; font-family: 'Ysabeau', sans-serif; line-height: 1.2;">Applied</span>
+                <span style="font-weight: 400; font-size: 1.2rem; color: #4A90E2; font-family: 'Ysabeau', sans-serif; line-height: 1.2;">Mathematics</span>
+            </div>
+        </a>
+        
+        <!-- Desktop Navigation -->
+        <nav class="desktop-nav" style="display: flex; gap: 36px; align-items: center;">
+            <a href="index.html" class="nav-link" style="text-decoration: none; color: black; font-weight: 600; font-size: 1.05rem; transition: all 0.2s; position: relative; padding: 8px 0;">Home</a>
+            <a href="research.html" class="nav-link" style="text-decoration: none; color: black; font-weight: 600; font-size: 1.05rem; transition: all 0.2s; position: relative; padding: 8px 0;">Research</a>
+            <a href="publications.html" class="nav-link" style="text-decoration: none; color: black; font-weight: 600; font-size: 1.05rem; transition: all 0.2s; position: relative; padding: 8px 0;">Publications</a>
+            <a href="software.html" class="nav-link" style="text-decoration: none; color: black; font-weight: 600; font-size: 1.05rem; transition: all 0.2s; position: relative; padding: 8px 0;">Software</a>
+            <a href="people.html" class="nav-link" style="text-decoration: none; color: black; font-weight: 600; font-size: 1.05rem; transition: all 0.2s; position: relative; padding: 8px 0;">People</a>
+            <a href="teaching.html" class="nav-link" style="text-decoration: none; color: black; font-weight: 600; font-size: 1.05rem; transition: all 0.2s; position: relative; padding: 8px 0;">Teaching</a>
+        </nav>
+        
+        <!-- Desktop Social Icons -->
+        <div class="desktop-social" style="display: flex; gap: 12px; align-items: center; flex-shrink: 0;">
+            <a href="https://linkedin.com" target="_blank" style="width: 38px; height: 38px; background: #0077B5; border-radius: 8px; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: all 0.3s; box-shadow: 0 2px 8px rgba(0,119,181,0.3);" onmouseover="this.style.transform='scale(1.1)';this.style.boxShadow='0 4px 12px rgba(0,119,181,0.5)';" onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 2px 8px rgba(0,119,181,0.3)';">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.14-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+            <a href="https://x.com" target="_blank" style="width: 38px; height: 38px; background: #1DA1F2; border-radius: 8px; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: all 0.3s; box-shadow: 0 2px 8px rgba(29,161,242,0.3);" onmouseover="this.style.transform='scale(1.1)';this.style.boxShadow='0 4px 12px rgba(29,161,242,0.5)';" onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 2px 8px rgba(29,161,242,0.3)';">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
+            </a>
+        </div>
+        
+        <!-- Mobile Menu Button -->
+        <button class="mobile-menu-btn" onclick="toggleMobileMenu()" style="background: none; border: none; cursor: pointer; padding: 8px;">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1e3a5f" stroke-width="2">
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+        </button>
+    </div>
+    
+    <!-- Mobile Navigation Menu -->
+    <div class="mobile-nav" id="mobileNav" style="display: none; position: fixed; top: 70px; left: 0; right: 0; bottom: 0; background: white; padding: 20px; z-index: 9999; text-align: center; border-top: 3px solid #4A90E2; overflow-y: auto;">
+        <a href="index.html" class="mobile-nav-link" style="display: block !important; text-decoration: none; color: black; font-weight: 700; font-size: 0.9rem; padding: 12px; margin: 5px auto; text-transform: uppercase; letter-spacing: 1px; width: 90%; max-width: 320px; border: 2px solid #4A90E2; border-radius: 8px; background: rgba(74,144,226,0.1);">Home</a>
+        <a href="research.html" class="mobile-nav-link" style="display: block !important; text-decoration: none; color: black; font-weight: 700; font-size: 0.9rem; padding: 12px; margin: 5px auto; text-transform: uppercase; letter-spacing: 1px; width: 90%; max-width: 320px; border: 2px solid #4A90E2; border-radius: 8px; background: rgba(74,144,226,0.1);">Research</a>
+        <a href="publications.html" class="mobile-nav-link" style="display: block !important; text-decoration: none; color: black; font-weight: 700; font-size: 0.9rem; padding: 12px; margin: 5px auto; text-transform: uppercase; letter-spacing: 1px; width: 90%; max-width: 320px; border: 2px solid #4A90E2; border-radius: 8px; background: rgba(74,144,226,0.1);">Publications</a>
+        <a href="software.html" class="mobile-nav-link" style="display: block !important; text-decoration: none; color: black; font-weight: 700; font-size: 0.9rem; padding: 12px; margin: 5px auto; text-transform: uppercase; letter-spacing: 1px; width: 90%; max-width: 320px; border: 2px solid #4A90E2; border-radius: 8px; background: rgba(74,144,226,0.1);">Software</a>
+        <a href="people.html" class="mobile-nav-link" style="display: block !important; text-decoration: none; color: black; font-weight: 700; font-size: 0.9rem; padding: 12px; margin: 5px auto; text-transform: uppercase; letter-spacing: 1px; width: 90%; max-width: 320px; border: 2px solid #4A90E2; border-radius: 8px; background: rgba(74,144,226,0.1);">People</a>
+        <a href="teaching.html" id="teaching-link" class="mobile-nav-link" style="display: block !important; text-decoration: none; color: black; font-weight: 700; font-size: 0.9rem; padding: 12px; margin: 5px auto; text-transform: uppercase; letter-spacing: 1px; width: 90%; max-width: 320px; border: 2px solid #4A90E2; border-radius: 8px; background: rgba(74,144,226,0.1);">Teaching</a>
+    </div>
+</header>
+
+<style>
+    .nav-link::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: #4A90E2;
+        transition: width 0.3s ease;
+    }
+    
+    .nav-link:hover::after {
+        width: 100%;
+    }
+    .nav-link:hover {
+        color: black !important;
+    }
+    .nav-link.active {
+        color: black !important;
+        font-weight: 600;
+    }
+    .nav-link.active::after {
+        width: 100%;
+    }
+    
+    /* Force all mobile menu items to be visible */
+    .mobile-nav-link {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        position: relative !important;
+        z-index: 10000 !important;
+        height: auto !important;
+        min-height: auto !important;
+        max-height: none !important;
+        overflow: visible !important;
+    }
+    
+    .mobile-nav-link:nth-child(n+3),
+    .mobile-nav-link:nth-child(n+4),
+    .mobile-nav-link:nth-child(n+5),
+    .mobile-nav-link:nth-child(n+6) {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        position: relative !important;
+        z-index: 10001 !important;
+        height: auto !important;
+        min-height: auto !important;
+        max-height: none !important;
+        overflow: visible !important;
+    }
+    
+    /* Specific targeting for People and Teaching */
+    .mobile-nav-link[href="people.html"],
+    .mobile-nav-link[href="teaching.html"] {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        position: relative !important;
+        z-index: 10002 !important;
+        height: auto !important;
+        min-height: 50px !important;
+        max-height: none !important;
+        overflow: visible !important;
+    }
+    
+    /* Target Teaching link by ID */
+    #teaching-link {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        position: relative !important;
+        z-index: 10004 !important;
+        height: auto !important;
+        min-height: 60px !important;
+        max-height: none !important;
+        overflow: visible !important;
+        margin-bottom: 20px !important;
+    }
+    
+    #mobileNav {
+        height: auto !important;
+        min-height: 500px !important;
+        max-height: none !important;
+        overflow-y: auto !important;
+    }
+    
+    /* Mobile Responsive Styles */
+    .mobile-menu-btn {
+        display: none !important;
+    }
+    @media (max-width: 1024px) {
+        .header-inner {
+            padding: 0 24px !important;
+        }
+        .desktop-nav {
+            gap: 20px !important;
+        }
+        .nav-link {
+            font-size: 0.85rem !important;
+        }
+        .mobile-menu-btn {
+            display: none !important;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .desktop-nav {
+            display: none !important;
+        }
+        .desktop-social {
+            display: none !important;
+        }
+        .mobile-menu-btn {
+            display: flex !important;
+            cursor: pointer;
+            align-items: center;
+            justify-content: center;
+        }
+        header {
+            position: relative;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .header-inner {
+            padding: 0 12px !important;
+        }
+        .desktop-nav {
+            display: none !important;
+        }
+        .mobile-menu-btn {
+            display: flex !important;
+            cursor: pointer;
+            align-items: center;
+            justify-content: center;
+        }
+        .nav-link {
+            font-size: 0.65rem !important;
+        }
+        header > div > a > div:last-child span:first-child,
+        header > div > a > div:last-child span:last-child {
+            font-size: 1rem !important;
+        }
+    }
+</style>
+
+<script>
+    // Mobile menu toggle
+    function toggleMobileMenu() {
+        const mobileNav = document.getElementById('mobileNav');
+        if (mobileNav) {
+            mobileNav.style.display = mobileNav.style.display === 'block' ? 'none' : 'block';
+        }
+    }
+    
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function(event) {
+        const mobileNav = document.getElementById('mobileNav');
+        const menuBtn = document.querySelector('.mobile-menu-btn');
+        if (mobileNav && menuBtn && !mobileNav.contains(event.target) && !menuBtn.contains(event.target)) {
+            mobileNav.style.display = 'none';
+        }
+    });
+</script>

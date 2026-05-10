@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software | Applied Mathematics</title>
+    <link href="https://fonts.googleapis.com/css2?family=Ysabeau:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <style>
+        .page-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 32px;
+        }
+        .section-title {
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: #1e3a5f;
+            text-align: left;
+            margin-bottom: 40px;
+            position: relative;
+            padding-bottom: 20px;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: #4A90E2;
+            border-radius: 2px;
+        }
+        .software-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        .software-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .software-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+        }
+        .software-image {
+            width: 100%;
+            height: 180px;
+            overflow: hidden;
+        }
+        .software-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .software-info {
+            padding: 20px;
+        }
+        .software-info h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #1e3a5f;
+            margin-bottom: 8px;
+        }
+        .software-info p {
+            color: #64748b;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-bottom: 16px;
+        }
+        .software-link {
+            color: #4A90E2;
+            font-weight: 600;
+            text-decoration: none;
+        }
+        .software-link:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 768px) {
+            .page-container {
+                padding: 30px 20px;
+            }
+            .section-title {
+                font-size: 2rem;
+                margin-bottom: 30px;
+            }
+            .section-title::after {
+                width: 80px;
+                height: 3px;
+            }
+            .software-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            .software-image {
+                height: 160px;
+            }
+            .software-info h3 {
+                font-size: 1.1rem;
+            }
+            .software-info p {
+                font-size: 0.9rem;
+            }
+        }
+        @media (max-width: 480px) {
+            .page-container {
+                padding: 20px 16px;
+            }
+            .section-title {
+                font-size: 1.6rem;
+                padding-bottom: 15px;
+            }
+            .software-image {
+                height: 140px;
+            }
+            .software-info {
+                padding: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Container -->
+    <div id="header-container"></div>
+
+    <div class="page-container">
+        <h2 class="section-title">Software</h2>
+        <div class="software-grid">
+            <div class="software-card">
+                <div class="software-image">
+                    <img src="images/pinns.jpg" alt="aLENS">
+                </div>
+                <div class="software-info">
+                    <h3>aLENS</h3>
+                    <p>Active Learning Network Simulator for efficient soft matter simulations with physics-informed neural networks.</p>
+                    <a href="#" class="software-link">GitHub →</a>
+                </div>
+            </div>
+            <div class="software-card">
+                <div class="software-image">
+                    <img src="images/Research.png" alt="SkellySim">
+                </div>
+                <div class="software-info">
+                    <h3>SkellySim</h3>
+                    <p>Skeleton-based simulation framework for modeling flagellar and ciliary locomotion in complex fluids.</p>
+                    <a href="#" class="software-link">GitHub →</a>
+                </div>
+            </div>
+            <div class="software-card">
+                <div class="software-image">
+                    <img src="images/pfi.jpg" alt="PFI">
+                </div>
+                <div class="software-info">
+                    <h3>PFI</h3>
+                    <p>Probability Flow Integrator for computing transition paths in complex energy landscapes.</p>
+                    <a href="#" class="software-link">GitHub →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Container -->
+    <div id="footer-container"></div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

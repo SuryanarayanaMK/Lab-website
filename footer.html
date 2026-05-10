@@ -1,0 +1,165 @@
+<!-- Common Footer Component -->
+<style>
+    /* Force social icons to always be visible */
+    .footer-col .social-links,
+    .footer-col .social-links a {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    
+    /* Hide footer social on desktop (now in header) */
+    .footer-social {
+        display: none !important;
+    }
+    
+    /* Show footer social on mobile */
+    @media (max-width: 768px) {
+        .footer-social {
+            display: block !important;
+        }
+    }
+    
+    /* Desktop: Ensure footer-container is visible */
+    @media (min-width: 769px) {
+        .footer-container {
+            display: flex !important;
+        }
+        .mobile-footer-layout {
+            display: none !important;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .footer {
+            padding: 30px 0 !important;
+        }
+        .footer-container {
+            flex-direction: column !important;
+            align-items: center !important;
+            gap: 25px !important;
+        }
+        .footer-col {
+            text-align: center !important;
+            padding: 0 !important;
+            width: 100% !important;
+        }
+        .footer-logo {
+            flex-direction: column !important;
+            order: 1 !important;
+        }
+        .footer-logo img {
+            height: 80px !important;
+        }
+        .footer-logo div[style*="width: 1px"] {
+            display: none !important;
+        }
+        .footer-contact {
+            display: none !important;
+        }
+        .mobile-footer-layout {
+            display: block !important;
+        }
+        .footer-container {
+            display: none !important;
+        }
+    }
+</style>
+<footer class="footer" style="background: #0f172a; padding: 50px 0 40px; margin-top: 60px;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 32px;">
+        
+        <!-- Mobile Footer Layout -->
+        <div class="mobile-footer-layout" style="display: none; padding: 25px 20px; text-align: center;">
+            <!-- Johns Hopkins Logo -->
+            <div style="margin: 0 auto 60px;">
+                <img src="images/Johnslogo.png" alt="Johns Hopkins University" style="height: 180px; filter: brightness(0) invert(1);">
+            </div>
+            <!-- Logo & Brand -->
+            <table style="margin: 0 auto 20px; border-collapse: collapse;">
+                <tr>
+                    <td style="padding: 0 10px 0 0; vertical-align: middle;">
+                        <!-- Hexagon Logo -->
+                        <div style="width: 36px; height: 36px; position: relative;">
+                            <svg viewBox="0 0 44 44" style="width: 100%; height: 100%;">
+                                <path d="M22 2 L40 12 L40 32 L22 42 L4 32 L4 12 Z" fill="url(#hexGradientFooter)" stroke="#4A90E2" stroke-width="1.5"/>
+                                <defs>
+                                    <linearGradient id="hexGradientFooter" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#4A90E2"/>
+                                        <stop offset="100%" style="stop-color:#5B7AE6"/>
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                            <span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #1e3a5f; font-weight: 700; font-size: 0.9rem;">M</span>
+                        </div>
+                    </td>
+                    <td style="width: 1px; background: rgba(255,255,255,0.2); padding: 0;"></td>
+                    <td style="padding: 0 0 0 10px; vertical-align: middle;">
+                        <span style="color: white; font-size: 1.2rem; font-weight: 700; display: block;">Applied<span style="font-weight: 300; opacity: 0.8;">Mathematics</span></span>
+                    </td>
+                </tr>
+            </table>
+            
+            <!-- Contact -->
+            <p style="color: white; margin: 0 0 8px 0; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">Contact</p>
+            <p style="color: white; margin: 4px 0; font-size: 0.9rem;">+1 (410) 516-8000</p>
+            <p style="color: white; margin: 4px 0; font-size: 0.9rem;">maddu.lab@jhu.edu</p>
+            <p style="color: white; margin: 4px 0 20px 0; font-size: 0.9rem;">Baltimore, MD 21218</p>
+            
+            <!-- Follow Us -->
+            <p style="color: white; margin: 0 0 12px 0; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">Follow Us</p>
+            <!-- Social Links -->
+            <table style="margin: 0 auto;">
+                <tr>
+                    <td style="padding: 0 6px;">
+                        <a href="#" style="display: block; width: 36px; height: 36px; background: rgba(255,255,255,0.15); border-radius: 50%; line-height: 36px; color: white; text-decoration: none; font-size: 0.9rem; font-weight: 700; text-align: center;">in</a>
+                    </td>
+                    <td style="padding: 0 6px;">
+                        <a href="#" style="display: block; width: 36px; height: 36px; background: rgba(255,255,255,0.15); border-radius: 50%; line-height: 36px; color: white; text-decoration: none; font-size: 0.9rem; font-weight: 700; text-align: center;">𝕏</a>
+                    </td>
+                </tr>
+            </table>
+            
+        </div>
+        
+        <!-- 3-Column Layout -->
+        <div class="footer-container" style="display: flex; justify-content: space-between; align-items: flex-start; gap: 60px;">
+            
+            <!-- Left: Logo -->
+            <div class="footer-col footer-logo" style="flex: 1; display: flex; align-items: center; gap: 18px; margin-top: 10px;">
+                <img src="images/Johnslogo.png" alt="Johns Hopkins University" style="height: 150px; filter: brightness(0) invert(1);">
+                <div style="width: 1px; height: 60px; background: rgba(255,255,255,0.2);"></div>
+                <div style="color: white; font-size: 2rem; font-weight: 700;">Applied<span style="font-weight: 300; opacity: 0.8;">Mathematics</span></div>
+            </div>
+            
+            <!-- Center: Contact -->
+            <div class="footer-col footer-contact" style="flex: 1; text-align: center;">
+                <div style="color: white; font-size: 0.9rem; font-weight: 600; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px;">Contact</div>
+                <div style="color: rgba(255,255,255,0.8); font-size: 0.9rem; margin-bottom: 10px;">+1 (410) 516-8000</div>
+                <div style="color: rgba(255,255,255,0.8); font-size: 0.9rem; margin-bottom: 10px;">maddu.lab@jhu.edu</div>
+                <a href="https://www.google.com/maps/search/?api=1&query=Johns+Hopkins+University+Baltimore+MD+21218" target="_blank" style="color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 6px;">
+                    <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                    Baltimore, MD 21218
+                </a>
+            </div>
+            
+            <!-- Right: Social Icons (Hidden on Desktop - Now in Header) -->
+            <div class="footer-col footer-social" style="flex: 1; text-align: right; padding-right: 40px; min-width: 200px;">
+                <div style="color: white; font-size: 0.9rem; font-weight: 600; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px;">Follow Us</div>
+                <div style="display: flex; gap: 15px; justify-content: flex-end;">
+                    <a href="#" style="width: 50px; height: 50px; background: rgba(255,255,255,0.15); border-radius: 50%; color: white; text-decoration: none; font-size: 1.2rem; font-weight: 700; display: flex; align-items: center; justify-content: center;">in</a>
+                    <a href="#" style="width: 50px; height: 50px; background: rgba(255,255,255,0.15); border-radius: 50%; color: white; text-decoration: none; font-size: 1.2rem; font-weight: 700; display: flex; align-items: center; justify-content: center;">X</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Divider -->
+        <div style="width: 100%; height: 1px; background: rgba(255,255,255,0.1); margin: 30px 0 20px;"></div>
+        
+        <!-- Bottom -->
+        <div style="text-align: center;">
+            <p style="color: rgba(255,255,255,0.5); font-size: 0.8rem; margin: 0;">
+                Department of Biomedical Engineering | Johns Hopkins University
+            </p>
+        </div>
+    </div>
+</footer>
