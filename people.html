@@ -7,430 +7,312 @@
     <link href="https://fonts.googleapis.com/css2?family=Ysabeau:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <style>
-        .team-container {
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: #fff; font-family: 'Ysabeau', sans-serif; color: #1a1a2e; }
+
+        /* Campus Banner */
+        .campus-banner {
+            width: 100%;
+            height: 340px;
+            overflow: hidden;
+            position: relative;
+        }
+        .campus-banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 60%;
+            display: block;
+        }
+        .campus-banner-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(15,23,42,0.25) 0%, rgba(15,23,42,0.55) 100%);
+            display: flex;
+            align-items: flex-end;
+            padding: 40px 48px;
+        }
+        .campus-banner-text .label {
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 10px;
+        }
+        .campus-banner-text h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #fff;
+            line-height: 1.1;
+        }
+
+        /* Page body */
+        .people-page {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 40px 32px;
+            padding: 72px 48px 100px;
         }
-        .section-title {
-            font-size: 1.75rem;
-            font-weight: 800;
-            color: #1e3a5f;
-            text-align: left;
-            margin-bottom: 40px;
-            position: relative;
-            padding-bottom: 20px;
+
+        /* PI Section */
+        .pi-section {
+            margin-bottom: 80px;
         }
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 80px;
-            height: 4px;
-            background: #4A90E2;
-            border-radius: 2px;
+        .pi-section .section-label {
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #4A90E2;
+            margin-bottom: 32px;
         }
-        /* Group Photo */
-        .group-photo {
-            width: 100%;
-            max-width: 900px;
-            margin: 0 auto 40px;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        .pi-card {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 48px;
+            align-items: start;
+            padding: 40px;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            background: #fafbfc;
         }
-        .group-photo img {
-            width: 100%;
-            height: auto;
+        .pi-photo {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #fff;
+            box-shadow: 0 8px 32px rgba(74,144,226,0.2);
             display: block;
         }
-        /* Team Intro */
-        .team-intro {
-            font-size: 1.15rem;
-            color: #4a5568;
-            line-height: 1.8;
-            max-width: 800px;
-            margin: 0 auto 40px;
-            text-align: center;
-        }
-        /* Team Sections */
-        .team-section {
-            margin-bottom: 50px;
-        }
-        .section-subtitle {
-            font-size: 1.4rem;
-            font-weight: 600;
-            color: #4A90E2;
-            margin-bottom: 24px;
-            padding-left: 16px;
-            border-left: 4px solid #4A90E2;
-        }
-        /* PI Section */
-        .pi-grid {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 40px;
-        }
-        .pi-member {
-            width: 200px;
-        }
-        .pi-member img {
-            width: 100%;
-            aspect-ratio: 1;
-            object-fit: cover;
-            border-radius: 50%;
-            box-shadow: 0 8px 30px rgba(74,144,226,0.3);
-        }
-        .pi-member h4 {
-            font-size: 1.1rem;
+        .pi-info h2 {
+            font-size: 1.7rem;
             font-weight: 700;
             color: #1e3a5f;
-            margin-top: 16px;
-            text-align: center;
+            margin-bottom: 4px;
         }
-        /* Team Grid */
-        .team-grid {
+        .pi-info .pi-title {
+            font-size: 1rem;
+            color: #4A90E2;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+        .pi-info p {
+            font-size: 0.97rem;
+            color: #475569;
+            line-height: 1.8;
+            margin-bottom: 24px;
+        }
+        .pi-links {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .pi-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #4A90E2;
+            text-decoration: none;
+            padding: 8px 16px;
+            border: 1.5px solid #bfdbfe;
+            border-radius: 8px;
+            transition: all 0.2s;
+        }
+        .pi-link:hover {
+            background: #4A90E2;
+            color: #fff;
+            border-color: #4A90E2;
+        }
+
+        /* Divider */
+        .people-divider {
+            border: none;
+            border-top: 1px solid #e2e8f0;
+            margin: 0 0 80px;
+        }
+
+        /* Join Section */
+        .join-section {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 24px;
-            margin-bottom: 40px;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: center;
         }
-        .postdoc-grid {
-            grid-template-columns: repeat(4, 1fr);
-            max-width: 900px;
-            margin: 0 auto 40px;
-        }
-        .team-member {
-            text-align: center;
-            position: relative;
-        }
-        .team-member .img-wrapper {
-            position: relative;
-            overflow: hidden;
-            border-radius: 50%;
-        }
-        .team-member img {
-            width: 100%;
-            aspect-ratio: 1;
-            object-fit: cover;
-            display: block;
-            border-radius: 50%;
-        }
-        /* Image Overlay Slide with Fade */
-        .img-overlay {
-            position: absolute;
-            bottom: 8%;
-            left: 50%;
-            transform: translateX(-50%) translateY(10px);
-            background: rgba(26,58,95,0.9);
-            padding: 6px 12px;
-            border-radius: 20px;
-            opacity: 0;
-            transition: all 0.3s ease;
-            white-space: nowrap;
-        }
-        .team-member:hover .img-overlay {
-            opacity: 1;
-            transform: translateX(-50%) translateY(0);
-        }
-        .img-overlay .role {
-            color: white;
-            font-size: 0.6rem;
-            font-weight: 600;
+        .join-text .section-label {
+            font-size: 0.72rem;
+            font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 3px;
+            color: #4A90E2;
+            margin-bottom: 14px;
         }
-        .team-member h4 {
-            font-size: 0.9rem;
-            font-weight: 500;
+        .join-text h2 {
+            font-size: 2rem;
+            font-weight: 700;
             color: #1e3a5f;
-            margin-top: 12px;
+            line-height: 1.2;
+            margin-bottom: 20px;
         }
-        /* Visitors Section */
-        .visitors-section {
-            margin-bottom: 40px;
-        }
-        .visitors-section h3 {
-            font-size: 1.3rem;
-            font-weight: 600;
-            color: #1e3a5f;
+        .join-text p {
+            font-size: 0.97rem;
+            color: #475569;
+            line-height: 1.8;
             margin-bottom: 16px;
         }
-        .visitors-list {
-            color: #64748b;
-            line-height: 1.8;
-        }
-        .visitors-list p {
-            margin: 4px 0;
-        }
-        /* Alumni Section */
-        .alumni-section {
-            margin-bottom: 40px;
-        }
-        .alumni-section h3 {
-            font-size: 1.3rem;
+        .join-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 8px;
+            padding: 13px 26px;
+            background: #4A90E2;
+            color: #fff;
             font-weight: 600;
+            font-size: 0.95rem;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+        .join-cta:hover {
+            background: #357abd;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(74,144,226,0.4);
+        }
+
+        /* Open Roles */
+        .open-roles {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .role-card {
+            padding: 20px 24px;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            background: #fff;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        .role-card:hover {
+            border-color: #bfdbfe;
+            box-shadow: 0 4px 16px rgba(74,144,226,0.1);
+        }
+        .role-card h4 {
+            font-size: 0.95rem;
+            font-weight: 700;
             color: #1e3a5f;
-            margin-bottom: 16px;
+            margin-bottom: 6px;
         }
-        .alumni-list {
+        .role-card p {
+            font-size: 0.85rem;
             color: #64748b;
-            line-height: 1.8;
+            line-height: 1.6;
         }
-        .alumni-list p {
-            margin: 4px 0;
+        .role-badge {
+            display: inline-block;
+            font-size: 0.68rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: #16a34a;
+            background: #dcfce7;
+            padding: 3px 8px;
+            border-radius: 20px;
+            margin-bottom: 10px;
         }
-        @media (max-width: 768px) {
-            .team-container {
-                padding: 30px 20px;
-            }
-            .section-title {
-                font-size: 2rem;
-                margin-bottom: 30px;
-            }
-            .section-title::after {
-                width: 80px;
-                height: 3px;
-            }
-            .team-intro {
-                font-size: 0.95rem;
-                margin-bottom: 30px;
-            }
-            .group-photo {
-                margin-bottom: 30px;
-            }
-            .group-photo img {
-                max-width: 100%;
-                border-radius: 12px;
-            }
-            .team-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 16px;
-            }
-            .team-member h3 {
-                font-size: 0.8rem;
-            }
-            .team-member h4 {
-                font-size: 0.75rem;
-            }
-            .postdoc-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .pi-member {
-                width: 160px;
-            }
-            .section-subtitle {
-                font-size: 1.2rem;
-            }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .people-page { padding: 48px 32px 80px; }
+            .pi-card { grid-template-columns: 1fr; gap: 28px; text-align: center; }
+            .pi-photo { margin: 0 auto; }
+            .pi-links { justify-content: center; }
+            .join-section { grid-template-columns: 1fr; gap: 48px; }
+            .campus-banner { height: 260px; }
+            .campus-banner-overlay { padding: 28px 32px; }
+            .campus-banner-text h1 { font-size: 2.2rem; }
         }
-        @media (max-width: 480px) {
-            .team-container {
-                padding: 20px 16px;
-            }
-            .section-title {
-                font-size: 1.6rem;
-            }
-            .team-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 12px;
-            }
-            .img-overlay {
-                display: none;
-            }
+        @media (max-width: 600px) {
+            .people-page { padding: 32px 20px 60px; }
+            .campus-banner { height: 200px; }
+            .campus-banner-text h1 { font-size: 1.8rem; }
+            .pi-card { padding: 24px; }
+            .pi-photo { width: 140px; height: 140px; }
         }
     </style>
 </head>
 <body>
-    <!-- Header Container -->
     <div id="header-container"></div>
 
-    <div class="team-container">
-        <h2 class="section-title">Our Team</h2>
-        
-        <p class="team-intro">Our lab brings together researchers from diverse backgrounds in physics, mathematics, computer science, and biology. We foster a collaborative environment where interdisciplinary ideas flourish and innovation thrives.</p>
-        
-        <!-- Group Photo -->
-        <div class="group-photo">
-            <img src="images/people/people.png" alt="Applied Mathematics Team">
-        </div>
-
-        <!-- Team Grid -->
-        <div class="team-grid">
-            <div class="team-member">
-                <div class="img-wrapper">
-                    <img src="images/people/surya.jpg" alt="Dr. Maddu">
-                    <div class="img-overlay">
-                        <div class="role">Principal Investigator</div>
-                    </div>
-                </div>
-                <h4>Dr. Maddu</h4>
-            </div>
-            <div class="team-member">
-                <div class="img-wrapper">
-                    <img src="images/pfi.jpg" alt="Dr. Sarah Chen">
-                    <div class="img-overlay">
-                        <div class="role">Postdoc</div>
-                    </div>
-                </div>
-                <h4>Dr. Sarah Chen</h4>
-            </div>
-            <div class="team-member">
-                <div class="img-wrapper">
-                    <img src="images/Research.png" alt="Dr. James Wilson">
-                    <div class="img-overlay">
-                        <div class="role">Postdoc</div>
-                    </div>
-                </div>
-                <h4>Dr. James Wilson</h4>
-            </div>
-            <div class="team-member">
-                <div class="img-wrapper">
-                    <img src="images/F3_paint.png" alt="Dr. Maria Rodriguez">
-                    <div class="img-overlay">
-                        <div class="role">Postdoc</div>
-                    </div>
-                </div>
-                <h4>Dr. Maria Rodriguez</h4>
-            </div>
-            <div class="team-member">
-                <div class="img-wrapper">
-                    <img src="images/pinns.jpg" alt="Dr. Alex Kumar">
-                    <div class="img-overlay">
-                        <div class="role">Postdoc</div>
-                    </div>
-                </div>
-                <h4>Dr. Alex Kumar</h4>
-            </div>
-            <div class="team-member">
-                <div class="img-wrapper">
-                    <img src="images/pfi.jpg" alt="Emily Zhang">
-                    <div class="img-overlay">
-                        <div class="role">PhD Student</div>
-                    </div>
-                </div>
-                <h4>Emily Zhang</h4>
-            </div>
-            <div class="team-member">
-                <div class="img-wrapper">
-                    <img src="images/Research.png" alt="Michael Brown">
-                    <div class="img-overlay">
-                        <div class="role">PhD Student</div>
-                    </div>
-                </div>
-                <h4>Michael Brown</h4>
-            </div>
-            <div class="team-member">
-                <div class="img-wrapper">
-                    <img src="images/F3_paint.png" alt="Priya Patel">
-                    <div class="img-overlay">
-                        <div class="role">PhD Student</div>
-                    </div>
-                </div>
-                <h4>Priya Patel</h4>
-            </div>
-            <div class="team-member">
-                <div class="img-wrapper">
-                    <img src="images/pinns.jpg" alt="David Lee">
-                    <div class="img-overlay">
-                        <div class="role">PhD Student</div>
-                    </div>
-                </div>
-                <h4>David Lee</h4>
-            </div>
-            <div class="team-member">
-                <div class="img-wrapper">
-                    <img src="images/pfi.jpg" alt="Anna Kim">
-                    <div class="img-overlay">
-                        <div class="role">PhD Student</div>
-                    </div>
-                </div>
-                <h4>Anna Kim</h4>
-            </div>
-            <div class="team-member">
-                <div class="img-wrapper">
-                    <img src="images/Research.png" alt="Chris Taylor">
-                    <div class="img-overlay">
-                        <div class="role">PhD Student</div>
-                    </div>
-                </div>
-                <h4>Chris Taylor</h4>
-            </div>
-            <div class="team-member">
-                <div class="img-wrapper">
-                    <img src="images/F3_paint.png" alt="Sophie Martin">
-                    <div class="img-overlay">
-                        <div class="role">PhD Student</div>
-                    </div>
-                </div>
-                <h4>Sophie Martin</h4>
-            </div>
-            <div class="team-member">
-                <div class="img-wrapper">
-                    <img src="images/pinns.jpg" alt="Raj Gupta">
-                    <div class="img-overlay">
-                        <div class="role">PhD Student</div>
-                    </div>
-                </div>
-                <h4>Raj Gupta</h4>
-            </div>
-            <div class="team-member">
-                <div class="img-wrapper">
-                    <img src="images/pfi.jpg" alt="Jessica Liu">
-                    <div class="img-overlay">
-                        <div class="role">PhD Student</div>
-                    </div>
-                </div>
-                <h4>Jessica Liu</h4>
-            </div>
-            <div class="team-member">
-                <div class="img-wrapper">
-                    <img src="images/Research.png" alt="Tom Anderson">
-                    <div class="img-overlay">
-                        <div class="role">PhD Student</div>
-                    </div>
-                </div>
-                <h4>Tom Anderson</h4>
-            </div>
-            <div class="team-member">
-                <div class="img-wrapper">
-                    <img src="images/F3_paint.png" alt="Rachel Green">
-                    <div class="img-overlay">
-                        <div class="role">PhD Student</div>
-                    </div>
-                </div>
-                <h4>Rachel Green</h4>
-            </div>
-        </div>
-
-        <!-- Visitors -->
-        <div class="visitors-section">
-            <h3>Visitors</h3>
-            <div class="visitors-list">
-                <p>Dr. Elena Volkova (ETH Zurich) - Fall 2024</p>
-                <p>Prof. David Thompson (Cambridge) - Summer 2023</p>
-            </div>
-        </div>
-
-        <!-- Alumni -->
-        <div class="alumni-section">
-            <h3>Alumni</h3>
-            <div class="alumni-list">
-                <p><strong>Dr. Lisa Wang</strong> - Former Postdoc → Assistant Professor at UCSD</p>
-                <p><strong>Dr. Kevin Park</strong> - Former PhD → Senior Scientist at Genentech</p>
-                <p><strong>Dr. Amanda Foster</strong> - Former PhD → Postdoc at Broad Institute</p>
-                <p><strong>Dr. Robert Chen</strong> - Former Postdoc → Principal Scientist at Novartis</p>
-                <p><strong>Dr. Jennifer Adams</strong> - Former PhD → Data Scientist at Google Health</p>
-                <p><strong>Mark Stevens</strong> - Former Undergrad → PhD Student at MIT</p>
-                <p><strong>Emily Zhao</strong> - Former Undergrad → PhD Student at Stanford</p>
-                <p><strong>James Miller</strong> - Former Undergrad → Software Engineer at Microsoft</p>
+    <!-- Campus Banner -->
+    <!-- Replace images/people/people.png with a JHU campus photo when available -->
+    <div class="campus-banner">
+        <img src="images/people/campus.jpg" alt="Johns Hopkins University Homewood Campus">
+        <div class="campus-banner-overlay">
+            <div class="campus-banner-text">
+                <div class="label">Johns Hopkins University</div>
+                <h1>People</h1>
             </div>
         </div>
     </div>
 
-    <!-- Footer Container -->
-    <div id="footer-container"></div>
+    <div class="people-page">
 
+        <!-- Principal Investigator -->
+        <div class="pi-section">
+            <div class="section-label">Principal Investigator</div>
+            <div class="pi-card">
+                <img src="images/people/surya.jpg" alt="Dr. Surya Maddu" class="pi-photo">
+                <div class="pi-info">
+                    <h2>Dr. Surya Maddu</h2>
+                    <div class="pi-title">Assistant Professor · Department of Applied Mathematics</div>
+                    <p>I am an Assistant Professor in the Department of Applied Mathematics at Johns Hopkins University. My research sits at the intersection of applied mathematics, machine learning, and computational biology — developing methods to understand complex biological systems from single cells to tissues.</p>
+                    <p>Before joining JHU, I was a postdoctoral fellow at Harvard University. I received my Ph.D. from the Max Planck Institute of Molecular Cell Biology and Genetics in Dresden, Germany.</p>
+                    <div class="pi-links">
+                        <a href="mailto:maddu@jhu.edu" class="pi-link">✉ maddu@jhu.edu</a>
+                        <a href="research.html" class="pi-link">Research →</a>
+                        <a href="publications.html" class="pi-link">Publications →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr class="people-divider">
+
+        <!-- Join the Lab -->
+        <div class="join-section">
+            <div class="join-text">
+                <div class="section-label">We're Recruiting</div>
+                <h2>Join the Lab</h2>
+                <p>The lab is actively looking for curious and motivated researchers at all levels. We welcome applicants with backgrounds in mathematics, physics, computer science, or biology — what matters most is intellectual curiosity and a drive to tackle hard problems.</p>
+                <p>If you are interested in working with us, please send an email with your CV and a brief description of your research interests.</p>
+                <a href="mailto:maddu@jhu.edu" class="join-cta">Get in Touch →</a>
+            </div>
+
+            <div class="open-roles">
+                <div class="role-card">
+                    <div class="role-badge">Open</div>
+                    <h4>PhD Students</h4>
+                    <p>Apply through the JHU Applied Mathematics graduate program. Reach out before applying so we can discuss fit and research directions.</p>
+                </div>
+                <div class="role-card">
+                    <div class="role-badge">Open</div>
+                    <h4>Postdoctoral Fellows</h4>
+                    <p>We are looking for postdocs with strong mathematical or computational backgrounds. Fellowships and external funding are encouraged.</p>
+                </div>
+                <div class="role-card">
+                    <div class="role-badge">Open</div>
+                    <h4>Undergraduate Researchers</h4>
+                    <p>JHU undergraduates interested in research for credit or through summer programs are welcome to reach out.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="footer-container"></div>
     <script src="js/main.js"></script>
 </body>
 </html>

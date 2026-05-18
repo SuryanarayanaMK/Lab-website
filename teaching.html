@@ -7,255 +7,196 @@
     <link href="https://fonts.googleapis.com/css2?family=Ysabeau:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <style>
-        /* Teaching Page Layout */
-        .teaching-container {
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: #fff; font-family: 'Ysabeau', sans-serif; color: #1a1a2e; }
+
+        .teaching-page {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 40px 32px;
+            padding: 72px 48px 100px;
             display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 48px;
+            grid-template-columns: 1fr 340px;
+            gap: 80px;
+            align-items: start;
         }
-        .teaching-content h2 {
-            font-size: 1.75rem;
-            font-weight: 800;
-            color: #1e3a5f;
-            text-align: left;
-            margin-bottom: 40px;
-            position: relative;
-            padding-bottom: 20px;
-        }
-        .teaching-content h2::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 80px;
-            height: 4px;
-            background: #4A90E2;
-            border-radius: 2px;
-        }
-        .teaching-content p {
-            color: #4a5568;
-            line-height: 1.8;
-            margin-bottom: 16px;
-            text-align: justify;
-        }
-        .course-list {
-            margin: 20px 0;
-            padding-left: 20px;
-        }
-        .course-list li {
-            color: #4a5568;
-            line-height: 1.8;
-            margin-bottom: 8px;
-        }
-        .teaching-sidebar {
-            background: #f8fafc;
-            padding: 24px;
-            border-radius: 12px;
-            height: fit-content;
-        }
-        .search-box {
-            margin-bottom: 32px;
-        }
-        .search-box h4 {
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: #1e3a5f;
-            margin-bottom: 12px;
+
+        /* Main content */
+        .teaching-label {
+            font-size: 0.72rem;
+            font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 3px;
+            color: #4A90E2;
+            margin-bottom: 14px;
         }
-        .search-input {
-            width: 100%;
-            padding: 10px 14px;
-            border: 1px solid #e2e8f0;
-            border-radius: 6px;
-            font-size: 0.9rem;
-            background: white;
-        }
-        .institution-info {
-            text-align: center;
+        .teaching-main h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #1e3a5f;
+            line-height: 1.1;
             margin-bottom: 32px;
         }
-        .institution-logo {
-            font-size: 1.5rem;
+        .teaching-main p {
+            font-size: 0.97rem;
+            color: #475569;
+            line-height: 1.85;
+            margin-bottom: 18px;
+        }
+
+        /* Coming soon banner */
+        .coming-soon-banner {
+            margin-top: 48px;
+            padding: 32px 36px;
+            border: 1.5px dashed #bfdbfe;
+            border-radius: 16px;
+            background: #f8fbff;
+            text-align: center;
+        }
+        .coming-soon-banner .icon {
+            font-size: 2rem;
+            margin-bottom: 12px;
+        }
+        .coming-soon-banner h3 {
+            font-size: 1.1rem;
             font-weight: 700;
             color: #1e3a5f;
             margin-bottom: 8px;
         }
-        .contact-card {
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-        }
-        .contact-card img {
-            width: 100%;
-            max-width: 150px;
-            height: auto;
-            border-radius: 8px;
-            margin-bottom: 16px;
-        }
-        .contact-card h4 {
-            font-size: 1rem;
-            font-weight: 600;
-            color: #1e3a5f;
-            margin-bottom: 8px;
-        }
-        .contact-card p {
-            font-size: 0.85rem;
+        .coming-soon-banner p {
+            font-size: 0.9rem;
             color: #64748b;
             line-height: 1.6;
+            margin: 0;
+        }
+
+        /* Sidebar */
+        .teaching-sidebar {
+            position: sticky;
+            top: 96px;
+        }
+        .sidebar-card {
+            background: #fafbfc;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 28px;
+            text-align: center;
+        }
+        .sidebar-photo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #fff;
+            box-shadow: 0 4px 20px rgba(74,144,226,0.2);
+            margin-bottom: 16px;
+        }
+        .sidebar-card h4 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #1e3a5f;
             margin-bottom: 4px;
         }
-        .contact-card a {
+        .sidebar-card .sidebar-title {
+            font-size: 0.88rem;
             color: #4A90E2;
-            text-decoration: none;
-        }
-        .year-heading {
-            font-size: 1.3rem;
             font-weight: 600;
-            color: #4A90E2;
-            margin: 32px 0 16px;
+            margin-bottom: 20px;
         }
-        @media (max-width: 768px) {
-            .teaching-container {
+        .sidebar-info {
+            background: #f1f5f9;
+            border-radius: 10px;
+            padding: 14px 16px;
+            text-align: left;
+            margin-bottom: 16px;
+        }
+        .sidebar-info p {
+            font-size: 0.85rem;
+            color: #475569;
+            line-height: 1.7;
+            margin: 0;
+        }
+        .sidebar-info strong {
+            color: #1e3a5f;
+        }
+        .sidebar-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 10px 16px;
+            background: linear-gradient(135deg, #4A90E2 0%, #357abd 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-size: 0.88rem;
+            font-weight: 500;
+            transition: all 0.2s;
+            margin-bottom: 8px;
+        }
+        .sidebar-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(74,144,226,0.4);
+        }
+
+        @media (max-width: 900px) {
+            .teaching-page {
                 grid-template-columns: 1fr;
-                gap: 30px;
-                padding: 30px 20px;
+                gap: 48px;
+                padding: 48px 32px 80px;
             }
-            .teaching-content h2 {
-                font-size: 1.8rem;
-            }
-            .teaching-content p {
-                font-size: 0.95rem;
-            }
-            .year-heading {
-                font-size: 1.2rem;
-                margin: 24px 0 12px;
-            }
-            .teaching-sidebar {
-                padding: 20px;
-            }
-            .contact-card img {
-                max-width: 120px;
-            }
+            .teaching-sidebar { position: static; }
         }
-        @media (max-width: 480px) {
-            .teaching-container {
-                padding: 20px 16px;
-            }
-            .teaching-content h2 {
-                font-size: 1.6rem;
-            }
-            .teaching-content p {
-                font-size: 0.9rem;
-            }
-            .teaching-sidebar {
-                padding: 16px;
-            }
+        @media (max-width: 600px) {
+            .teaching-page { padding: 32px 20px 60px; }
+            .teaching-main h1 { font-size: 2.2rem; }
         }
     </style>
 </head>
 <body>
-    <!-- Header Container -->
     <div id="header-container"></div>
 
-    <!-- Teaching Content -->
-    <div class="teaching-container">
-        <div class="teaching-content">
-            <h2>Teaching</h2>
-            
-            <p>Over the past decade, I have had the privilege of teaching a variety of courses at Johns Hopkins University, MIT, Stanford, and ETH Zurich – an opportunity to learn new subjects, often just a little before teaching them!</p>
-            
-            <p>Undergraduate and graduate courses that I have taught in engineering, computer science, and biology include Computational Biology, Machine Learning for Biomedical Data, Biophysical Modeling, Numerical Methods for PDEs, Systems Biology, and Physics-Informed Neural Networks.</p>
-            
-            <p>I also introduced a number of courses to the curricula, including a new undergraduate course on Introduction to Computational Biology (2019) at JHU, a graduate course on Deep Learning for Science (2021), and specialized seminars on Soft Matter Physics (2022) and Quantitative Cell Biology (2023).</p>
-            
-            <p>At Johns Hopkins, I have created Freshman Seminars on the Science of Everyday Life (2018), Introduction to Biological Modeling (2020), and Data Science for the Physical Sciences (2022).</p>
-            
-            <p>Away from my academic home, I have been a regular summer and winter school lecturer. At the Marine Biological Laboratory in Woods Hole, I was the Founding Co-director of their newest established Summer School on Computational Biology (2017). And most recently, at the Santa Fe Institute, I was a lead instructor for the Complex Systems Summer School (2019-2023).</p>
-            
-            <p>Additionally, I have taught in the London Mathematical Society Summer School (UK), at the Les Houches summer school on Soft Matter (France), the Boulder school on condensed matter physics (USA), and the KITP program on Active Matter (USA).</p>
+    <div class="teaching-page">
 
-            <h3 class="year-heading">Current Courses (2024-2025)</h3>
-            <ul class="course-list">
-                <li><strong>Computational Biology</strong> (BME 580.642) - Spring semester, graduate level</li>
-                <li><strong>Machine Learning for Biology</strong> (BME 580.743) - Fall semester, graduate level</li>
-                <li><strong>Quantitative Cell Biology</strong> (BME 580.445) - Spring semester, undergraduate level</li>
-                <li><strong>Data Science for Engineers</strong> (EN 500.113) - Fall semester, undergraduate level</li>
-            </ul>
+        <div class="teaching-main">
+            <div class="teaching-label">Education</div>
+            <h1>Teaching</h1>
 
-            <h3 class="year-heading">Previous Courses</h3>
-            <ul class="course-list">
-                <li><strong>Physics-Informed Machine Learning</strong> - MIT (2020, 2021)</li>
-                <li><strong>Soft Matter and Biological Physics</strong> - ETH Zurich (2018)</li>
-                <li><strong>Mathematical Methods for Biology</strong> - Stanford (2016, 2017)</li>
-                <li><strong>Introduction to Scientific Computing</strong> - JHU (2015-2019)</li>
-            </ul>
+            <p>Over the past decade, I have had the privilege of teaching a variety of courses at Johns Hopkins University, MIT, Stanford, and ETH Zurich — an opportunity to learn new subjects, often just a little before teaching them.</p>
 
-            <h3 class="year-heading">Open Educational Resources</h3>
-            <p>All course materials, including lecture notes, problem sets, and code repositories, are freely available through our GitHub organization. We believe in open education and strive to make our teaching resources accessible to students worldwide.</p>
-            
-            <ul class="course-list">
-                <li>Python for Biologists - Online Tutorial Series</li>
-                <li>Deep Learning Fundamentals - Jupyter Notebook Collection</li>
-                <li>Single-Cell RNA-seq Analysis - Step-by-Step Guide</li>
-                <li>Protein Structure Prediction - AlphaFold Tutorial</li>
-            </ul>
+            <p>Undergraduate and graduate courses I have taught span engineering, computer science, and biology, and include topics such as Computational Biology, Machine Learning for Biomedical Data, Biophysical Modeling, Numerical Methods for PDEs, Systems Biology, and Physics-Informed Neural Networks.</p>
+
+            <p>I have also introduced several new courses to the curricula — including undergraduate and graduate courses on Computational Biology, Deep Learning for Science, Soft Matter Physics, and Quantitative Cell Biology. At Johns Hopkins, I have created Freshman Seminars on the Science of Everyday Life, Introduction to Biological Modeling, and Data Science for the Physical Sciences.</p>
+
+            <p>Away from my academic home, I have been a regular summer and winter school lecturer. At the Marine Biological Laboratory in Woods Hole, I was the Founding Co-director of their newest Summer School on Computational Biology. At the Santa Fe Institute, I was a lead instructor for the Complex Systems Summer School. I have also taught at the London Mathematical Society Summer School, the Les Houches school on Soft Matter, the Boulder school on condensed matter physics, and the KITP program on Active Matter.</p>
+
+            <div class="coming-soon-banner">
+                <div class="icon">📋</div>
+                <h3>Full course details coming soon</h3>
+                <p>This page will be updated with current course listings, syllabi, and teaching materials. In the meantime, feel free to reach out directly.</p>
+            </div>
         </div>
 
         <!-- Sidebar -->
         <div class="teaching-sidebar">
-            
-            
-            <div class="institution-info">
-                <div class="institution-logo">Johns Hopkins University</div>
-                <p style="font-size: 0.85rem; color: #64748b;">Whiting School of Engineering<br>Department of Biomedical Engineering</p>
-            </div>
-            
-            <div class="contact-card" style="background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%); border-radius: 16px; padding: 24px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border: 1px solid #e2e8f0; text-align: center;">
-                <div style="position: relative; display: inline-block; margin-bottom: 16px;">
-                    <img src="images/people/surya.jpg" alt="Dr. Maddu" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; border: 4px solid #4A90E2; box-shadow: 0 4px 15px rgba(74,144,226,0.3);">
-                    <div style="position: absolute; bottom: 0; right: 0; width: 28px; height: 28px; background: #4A90E2; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.8rem; border: 3px solid white;">👤</div>
-                </div>
-                <h4 style="font-size: 1.3rem; font-weight: 700; color: #1e3a5f; margin-bottom: 4px;">Dr. Maddu</h4>
-                <p style="font-size: 0.9rem; color: #4A90E2; font-weight: 500; margin-bottom: 16px;">Principal Investigator</p>
-                
-                <div style="background: #f1f5f9; border-radius: 12px; padding: 16px; margin-bottom: 16px; text-align: left;">
-                    <p style="font-size: 0.9rem; color: #475569; line-height: 1.6; margin: 0;">
-                        <strong style="color: #1e3a5f;">Clark Hall 318</strong><br>
+            <div class="sidebar-card">
+                <img src="images/people/surya.jpg" alt="Dr. Maddu" class="sidebar-photo">
+                <h4>Dr. Maddu</h4>
+                <div class="sidebar-title">Principal Investigator</div>
+                <div class="sidebar-info">
+                    <p>
+                        <strong>Clark Hall 318</strong><br>
                         Johns Hopkins University<br>
                         3400 N. Charles Street<br>
                         Baltimore, MD 21218
                     </p>
                 </div>
-                
-                <div style="display: flex; flex-direction: column; gap: 10px;">
-                    <a href="mailto:maddu@jhu.edu" style="display: flex; align-items: center; justify-content: center; gap: 8px; padding: 10px 16px; background: linear-gradient(135deg, #4A90E2 0%, #357abd 100%); color: white; text-decoration: none; border-radius: 25px; font-size: 0.9rem; font-weight: 500; transition: all 0.3s;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 15px rgba(74,144,226,0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
-                        <span>✉</span> maddu@jhu.edu
-                    </a>
-                    <a href="tel:+14105165000" style="display: flex; align-items: center; justify-content: center; gap: 8px; padding: 10px 16px; background: #f1f5f9; color: #475569; text-decoration: none; border-radius: 25px; font-size: 0.9rem; font-weight: 500; transition: all 0.3s;" onmouseover="this.style.background='#e2e8f0'" onmouseout="this.style.background='#f1f5f9'">
-                        <span>📞</span> (410) 516-5000
-                    </a>
-                </div>
-                
-                <div style="margin-top: 16px; padding-top: 16px; border-top: 1px solid #e2e8f0;">
-                    <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 8px;">Follow Us</p>
-                    <div style="display: flex; justify-content: center; gap: 12px;">
-                        <a href="#" style="width: 36px; height: 36px; background: #0A66C2; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; font-size: 0.8rem; transition: all 0.3s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">in</a>
-                        <a href="#" style="width: 36px; height: 36px; background: #000000; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; font-size: 0.8rem; transition: all 0.3s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">𝕏</a>
-                    </div>
-                </div>
+                <a href="mailto:maddu@jhu.edu" class="sidebar-link">✉ maddu@jhu.edu</a>
             </div>
         </div>
+
     </div>
 
-    <!-- Footer Container -->
     <div id="footer-container"></div>
-
     <script src="js/main.js"></script>
 </body>
 </html>
