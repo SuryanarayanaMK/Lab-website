@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Applied Mathematics</title>
+    <title>Applied Mathematics and Computational Biology Lab</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ysabeau:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -12,577 +12,325 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Ysabeau', sans-serif; background: #fff; color: #1a1a2e; }
         
-        /* Hero Section */
+        /* Hero Section — full-bleed video */
         .hero-section {
-            background: linear-gradient(135deg, #ffffff 0%, #f0f7ff 100%);
-            padding: 60px 0 80px;
             position: relative;
+            height: 88vh;
+            min-height: 520px;
+            max-height: 780px;
             overflow: hidden;
-        }
-        .hero-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 48px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
-        .hero-content {
-            padding-left: 0;
-            position: relative;
-            height: 400px;
             display: flex;
             align-items: center;
         }
-        .hero-text-slide {
+        .hero-video-bg {
             position: absolute;
-            width: 100%;
-            top: 50%;
-            left: 0;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.5s ease, visibility 0.5s ease;
+            inset: 0;
+            z-index: 0;
         }
-        .hero-text-slide.active {
-            opacity: 1;
-            visibility: visible;
-            z-index: 2;
-        }
-        .hero-text-slide:not(.active) {
-            opacity: 0;
-            visibility: hidden;
-            z-index: 1;
-            pointer-events: none;
-        }
-        .hero-text-slide {
-            transform: translateY(-50%);
-            text-align: center;
-            padding: 0 20px;
-        }
-        .hero-text-slide .hero-buttons {
-            justify-content: center;
-            margin-left: 20px;
-        }
-        .hero-text-slide h1 {
-            font-size: 3.2rem;
-            font-weight: 700;
-            color: #1e3a5f;
-            margin-bottom: 20px;
-            line-height: 1.2;
-        }
-        .hero-text-slide p {
-            font-size: 1.15rem;
-            color: #64748b;
-            line-height: 1.7;
-            margin-bottom: 32px;
-        }
-        .hero-visual {
-            position: relative;
-            background: #f0f7ff;
-            border-radius: 16px;
-            overflow: hidden;
-        }
-        .hero-visual video,
-        .hero-visual img {
+        .hero-video-bg video {
             width: 100%;
             height: 100%;
             object-fit: cover;
             display: block;
-            border-radius: 16px;
         }
-        .hero-dots {
+        .hero-overlay {
             position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
+            inset: 0;
+            z-index: 1;
+            background: rgba(8, 13, 26, 0.52);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 48px;
             display: flex;
-            gap: 10px;
-            z-index: 10;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            height: 100%;
         }
-        .hero-dot {
-            width: 35px;
-            height: 4px;
-            background: white;
-            border-radius: 2px;
-            opacity: 0.5;
-            transition: all 0.3s;
-            cursor: pointer;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-        }
-        .hero-dot.active {
-            opacity: 1;
-        }
-        .hero-content h1 {
-            font-size: 3.2rem;
+        .hero-text { width: 100%; text-align: center; }
+        .hero-text h1 {
+            font-size: 2.8rem;
             font-weight: 700;
-            color: #1e3a5f;
-            margin-bottom: 20px;
-            line-height: 1.2;
+            color: #ffffff;
+            line-height: 1.1;
+            margin-bottom: 18px;
+            white-space: nowrap;
         }
-        .hero-content p {
-            font-size: 1.1rem;
-            color: #64748b;
+        .hero-arrow {
+            color: rgba(255,255,255,0.38);
+            font-weight: 300;
+            margin: 0 6px;
+        }
+        .hero-text p {
+            font-size: 1.05rem;
+            color: rgba(255,255,255,0.6);
             line-height: 1.7;
             margin-bottom: 32px;
-            max-width: 480px;
         }
         .hero-buttons {
             display: flex;
-            gap: 16px;
+            gap: 12px;
+            align-items: center;
+            justify-content: center;
         }
         .btn-primary {
             text-decoration: none;
-            padding: 14px 28px;
-            background: #4A90E2;
-            color: white;
-            font-weight: 600;
-            font-size: 0.95rem;
+            padding: 13px 26px;
+            background: #fff;
+            color: #0f172a;
+            font-weight: 700;
+            font-size: 0.9rem;
             border-radius: 8px;
             display: flex;
             align-items: center;
             gap: 8px;
-            transition: all 0.3s;
-            border: none;
-            cursor: pointer;
+            transition: all 0.2s;
         }
         .btn-primary:hover {
-            background: #357abd;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(74,144,226,0.3);
+            background: #4A90E2;
+            color: #fff;
+            transform: translateY(-1px);
         }
         .btn-secondary {
             text-decoration: none;
-            padding: 14px 28px;
-            background: white;
-            color: #4A90E2;
-            font-weight: 600;
-            font-size: 0.95rem;
-            border: 2px solid #4A90E2;
+            padding: 13px 26px;
+            background: transparent;
+            color: rgba(255,255,255,0.75);
+            font-weight: 500;
+            font-size: 0.9rem;
+            border: 1.5px solid rgba(255,255,255,0.25);
             border-radius: 8px;
-            transition: all 0.3s;
+            transition: all 0.2s;
         }
         .btn-secondary:hover {
-            background: #4A90E2;
-            color: white;
+            border-color: rgba(255,255,255,0.7);
+            color: #fff;
         }
-        .hero-visual {
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: #f0f7ff;
-            border-radius: 20px;
-            overflow: hidden;
-            height: 400px;
-            min-height: 400px;
-        }
-        .hero-visual,
-        .hero-visual video,
-        .hero-visual img {
-            display: flex !important;
-            visibility: visible !important;
-        }
-        .hero-equation-card {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 32px 40px;
-            border-radius: 16px;
-            box-shadow: 0 20px 60px rgba(74, 144, 226, 0.2);
-            border: 1px solid rgba(74, 144, 226, 0.15);
-        }
-        .hero-equation-card p {
-            font-family: 'Times New Roman', serif;
-            font-size: 1.3rem;
-            color: #1e3a5f;
-            line-height: 2;
-            margin: 8px 0;
+        .hero-caption {
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.35);
+            text-align: right;
+            line-height: 1.5;
+            flex-shrink: 0;
+            align-self: flex-end;
+            padding-bottom: 4px;
         }
         
-        /* Research in Motion Section */
-        .research-motion-section {
-            background: white;
-            padding: 60px 0 30px;
+        /* Research Themes */
+        .themes-section {
+            background: #fff;
+            padding: 80px 0;
         }
-        .research-motion-container {
-            max-width: 1400px;
+        .themes-inner {
+            max-width: 1300px;
             margin: 0 auto;
             padding: 0 48px;
-            display: grid;
-            grid-template-columns: 1.5fr 1fr;
-            gap: 60px;
-            align-items: center;
         }
-        .research-motion-image {
+        .section-label {
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #4A90E2;
+            margin-bottom: 12px;
+        }
+        .section-heading {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1e3a5f;
+            margin-bottom: 48px;
+            line-height: 1.2;
+        }
+        .themes-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2px;
+            background: #e2e8f0;
+            border: 1px solid #e2e8f0;
             border-radius: 16px;
             overflow: hidden;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
         }
-        .research-motion-image img {
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
+        .theme-card {
+            background: #fff;
+            padding: 40px 36px;
+            transition: background 0.2s;
         }
-        .research-motion-content {
-            display: flex;
-            gap: 24px;
-            align-items: flex-start;
-        }
-        .play-button {
-            width: 60px;
-            height: 60px;
-            background: white;
-            border: 2px solid #4A90E2;
-            border-radius: 50%;
+        .theme-card:hover { background: #f8fafc; }
+        .theme-icon {
+            width: 44px;
+            height: 44px;
+            background: #eff6ff;
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
-            cursor: pointer;
-            transition: all 0.3s;
-            flex-shrink: 0;
-        }
-        .play-button:hover {
-            background: #4A90E2;
-            transform: scale(1.1);
-        }
-        .play-button svg {
-            width: 24px;
-            height: 24px;
-            fill: #4A90E2;
-            margin-left: 4px;
-        }
-        .play-button:hover svg {
-            fill: white;
-        }
-        .research-motion-text {
-            padding: 20px;
-        }
-        .research-motion-text h3 {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: #1e3a5f;
-            margin-bottom: 16px;
-        }
-        .research-motion-text p {
-            font-size: 1.1rem;
-            color: #64748b;
-            line-height: 1.7;
             margin-bottom: 20px;
         }
-        .research-motion-text a {
-            color: #4A90E2;
-            font-weight: 600;
-            text-decoration: none;
-            display: flex;
+        .theme-icon svg { color: #4A90E2; }
+        .theme-card h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #1e3a5f;
+            margin-bottom: 10px;
+        }
+        .theme-card p {
+            font-size: 1rem;
+            color: #64748b;
+            line-height: 1.7;
+        }
+        .theme-link {
+            display: inline-flex;
             align-items: center;
-            gap: 8px;
-            font-size: 0.95rem;
+            gap: 6px;
+            margin-top: 16px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #4A90E2;
+            text-decoration: none;
+            transition: gap 0.2s;
         }
-        .research-motion-text a:hover {
-            gap: 12px;
-        }
-        
-        /* Research Areas Section */
-        .research-areas-section {
+        .theme-link:hover { gap: 10px; }
+
+        /* News Timeline */
+        .news-section {
             background: #f8fafc;
             padding: 80px 0;
         }
-        .research-areas-container {
-            max-width: 1400px;
+        .news-inner {
+            max-width: 1300px;
             margin: 0 auto;
             padding: 0 48px;
-        }
-        .section-header {
-            text-align: center;
-            margin-bottom: 48px;
-        }
-        .section-title {
-            font-size: 2rem;
-            font-weight: 700;
-            color: #1e3a5f;
-            margin-bottom: 8px;
-        }
-        .section-underline {
-            width: 60px;
-            height: 4px;
-            background: #4A90E2;
-            margin: 0 auto;
-            border-radius: 2px;
-        }
-        .research-areas-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 24px;
+            grid-template-columns: 1fr 2fr;
+            gap: 80px;
+            align-items: start;
         }
-        .research-area-card {
-            background: white;
-            padding: 40px 24px;
-            border-radius: 16px;
-            text-align: center;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-            transition: all 0.3s;
-            border: 1px solid #e2e8f0;
-        }
-        .research-area-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 40px rgba(74, 144, 226, 0.15);
-        }
-        .research-area-icon {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, #e0f2fe 0%, #dbeafe 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
+        .news-header-col h2 {
             font-size: 2rem;
-        }
-        .research-area-card h4 {
-            font-size: 1.15rem;
             font-weight: 700;
             color: #1e3a5f;
+            line-height: 1.2;
             margin-bottom: 12px;
         }
-        .research-area-card p {
+        .news-header-col p {
             font-size: 0.9rem;
-            color: #64748b;
-            line-height: 1.5;
-        }
-        
-        /* Latest News Section */
-        .news-section {
-            background: white;
-            padding: 30px 0 80px;
-        }
-        .news-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 48px;
-        }
-        .news-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-        }
-        .news-card {
-            background: white;
-            padding: 28px;
-            border-radius: 12px;
-            border: 1px solid #e2e8f0;
-            transition: all 0.3s;
-        }
-        .news-card:hover {
-            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
-            transform: translateY(-4px);
-        }
-        .news-header {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 16px;
-        }
-        .news-icon {
-            width: 40px;
-            height: 40px;
-            background: #e0f2fe;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-        }
-        .news-date {
             color: #94a3b8;
-            font-size: 0.85rem;
-            font-weight: 500;
+            line-height: 1.6;
         }
-        .news-card h4 {
-            font-size: 1.05rem;
-            font-weight: 700;
-            color: #1e3a5f;
-            margin-bottom: 12px;
+        .news-timeline {
+            border-left: 2px solid #e2e8f0;
+            padding-left: 32px;
         }
-        .news-card p {
-            font-size: 0.9rem;
-            color: #64748b;
-            line-height: 1.5;
-            margin-bottom: 16px;
+        .news-entry {
+            position: relative;
+            padding-bottom: 28px;
         }
-        .news-link {
-            color: #4A90E2;
+        .news-entry:last-child { padding-bottom: 0; }
+        .news-entry::before {
+            content: '';
+            position: absolute;
+            left: -37px;
+            top: 5px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #4A90E2;
+            border: 2px solid #f8fafc;
+            box-shadow: 0 0 0 2px #4A90E2;
+        }
+        .news-entry-date {
+            font-size: 0.75rem;
             font-weight: 600;
-            font-size: 0.9rem;
-            text-decoration: none;
-            display: flex;
+            color: #4A90E2;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+        }
+        .news-entry-title {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #1e3a5f;
+            line-height: 1.4;
+        }
+        .news-entry-desc {
+            font-size: 0.85rem;
+            color: #64748b;
+            margin-top: 4px;
+            line-height: 1.5;
+        }
+
+        /* Join the Lab CTA */
+        .join-section {
+            background: #0f172a;
+            padding: 80px 48px;
+            text-align: center;
+        }
+        .join-inner {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .join-section h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 14px;
+            line-height: 1.2;
+        }
+        .join-section p {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.55);
+            line-height: 1.7;
+            margin-bottom: 32px;
+        }
+        .join-btn {
+            display: inline-flex;
             align-items: center;
-            gap: 6px;
+            gap: 8px;
+            padding: 14px 32px;
+            background: #4A90E2;
+            color: #fff;
+            font-weight: 600;
+            font-size: 0.95rem;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.2s;
         }
-        .news-link:hover {
-            gap: 10px;
+        .join-btn:hover {
+            background: #357abd;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(74,144,226,0.4);
         }
-        
+
         /* Responsive */
         @media (max-width: 1024px) {
-            .hero-container {
-                grid-template-columns: 1fr 1fr;
-                gap: 30px;
-            }
-            .research-motion-container {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-            .research-areas-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .news-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .hero-content h1 {
-                font-size: 2rem;
-            }
-            .hero-content p {
-                font-size: 1rem;
-            }
-            .hero-visual {
-                display: block !important;
-                height: 300px !important;
-                min-height: 300px;
-                max-height: 300px !important;
-                width: 100% !important;
-                visibility: visible !important;
-            }
-            #heroVideo, .hero-visual img, .hero-visual video {
-                display: block !important;
-                height: 100% !important;
-                max-height: 300px !important;
-                width: 100% !important;
-                visibility: visible !important;
-            }
+            .hero-text h1 { font-size: 2.2rem; }
+            .themes-grid { grid-template-columns: 1fr 1fr; }
+            .news-inner { grid-template-columns: 1fr; gap: 40px; }
         }
         @media (max-width: 768px) {
-            .hero-container {
-                display: grid !important;
-                grid-template-columns: 1fr !important;
-                grid-template-rows: auto auto !important;
-                gap: 30px !important;
+            .hero-section { height: 100svh; max-height: none; }
+            .hero-content { padding: 0 24px; }
+            .hero-text h1 {
+                font-size: 1.8rem;
+                white-space: normal;
             }
-            .hero-content {
-                grid-column: 1 !important;
-                grid-row: 1 !important;
-                position: relative !important;
-                height: 300px !important;
-                text-align: center;
-            }
-            .hero-text-slide {
-                position: absolute !important;
-                top: 50% !important;
-                left: 0;
-                right: 0;
-                transform: translateY(-50%) !important;
-                width: 100%;
-                text-align: center;
-                opacity: 0;
-                visibility: hidden;
-            }
-            .hero-text-slide.active {
-                opacity: 1;
-                visibility: visible;
-            }
-            .hero-content h1 {
-                font-size: 1.8rem !important;
-                line-height: 1.3;
-                margin-bottom: 16px;
-                text-align: center;
-            }
-            .hero-content p {
-                font-size: 1rem !important;
-                line-height: 1.6;
-                margin-bottom: 20px;
-                text-align: center;
-            }
-            .hero-visual {
-                grid-column: 1 !important;
-                grid-row: 2 !important;
-                display: block !important;
-                height: 250px !important;
-                width: 100% !important;
-                visibility: visible !important;
-            }
-            #heroVideo, .hero-visual img, .hero-visual video {
-                display: block !important;
-                height: 100% !important;
-                width: 100% !important;
-            }
-            .research-areas-grid,
-            .news-grid {
-                grid-template-columns: 1fr;
-            }
+            .hero-arrow { display: block; margin: 2px 0; font-size: 0; }
+            .hero-arrow::after { content: '↓'; font-size: 1.1rem; }
+            .themes-grid { grid-template-columns: 1fr; }
+            .themes-inner, .news-inner { padding: 0 24px; }
+            .join-section { padding: 60px 24px; }
         }
         @media (max-width: 480px) {
-            .hero-container {
-                display: grid !important;
-                grid-template-columns: 1fr !important;
-                grid-template-rows: auto auto !important;
-                gap: 20px !important;
-                padding: 0 16px !important;
-            }
-            .hero-content {
-                grid-column: 1 !important;
-                grid-row: 1 !important;
-                position: relative !important;
-                height: 280px !important;
-                text-align: center;
-            }
-            .hero-text-slide {
-                position: absolute !important;
-                top: 50% !important;
-                left: 0;
-                right: 0;
-                transform: translateY(-50%) !important;
-                width: 100%;
-                text-align: center;
-                opacity: 0;
-                visibility: hidden;
-            }
-            .hero-text-slide.active {
-                opacity: 1;
-                visibility: visible;
-            }
-            .hero-content h1 {
-                font-size: 1.5rem !important;
-                line-height: 1.3;
-                margin-bottom: 12px;
-                text-align: center;
-            }
-            .hero-content p {
-                font-size: 0.9rem !important;
-                line-height: 1.5;
-                margin-bottom: 16px;
-                text-align: center;
-            }
-            .hero-visual {
-                grid-column: 1 !important;
-                grid-row: 2 !important;
-                display: block !important;
-                height: 220px !important;
-                width: 100% !important;
-                visibility: visible !important;
-            }
-            #heroVideo, .hero-visual img, .hero-visual video {
-                display: block !important;
-                height: 100% !important;
-                width: 100% !important;
-            }
-            .hero-buttons {
-                flex-direction: row;
-                gap: 12px;
-                justify-content: center;
-            }
-            .hero-buttons a {
-                padding: 10px 16px;
-                font-size: 0.8rem;
-            }
+            .hero-content { padding: 0 20px; }
+            .hero-text h1 { font-size: 1.6rem; }
+            .hero-buttons { flex-direction: column; width: 100%; }
+            .btn-primary, .btn-secondary { justify-content: center; }
         }
     </style>
 </head>
@@ -591,171 +339,106 @@
 
     <!-- Hero Section -->
     <section class="hero-section">
-        <div class="hero-container">
-            <div class="hero-content" id="heroContent">
-                <!-- Slide 1 -->
-                <div class="hero-text-slide active" data-index="0">
-                    <h1>Decoding Life<br>Through Mathematics</h1>
-                    <p>We extract deep insights from complex datasets, transforming mathematical complexity into clear understanding.</p>
-                    <div class="hero-buttons">
-                        <a href="research.html" class="btn-primary">Explore Research →</a>
-                        <a href="publications.html" class="btn-secondary">View Publications</a>
-                    </div>
-                </div>
-                 
-                <!-- Slide 2 -->
-                <div class="hero-text-slide" data-index="1">
-                    <h1>Cell Dynamics<br>Research</h1>
-                    <p>Studying the intricate mechanisms of cellular processes through advanced computational modeling.</p>
-                    <div class="hero-buttons">
-                        <a href="research.html" class="btn-primary">Explore Research →</a>
-                        <a href="publications.html" class="btn-secondary">View Publications</a>
-                    </div>
-                </div>
-            </div>
-            <div class="hero-visual">
-                <video id="heroVideo" autoplay muted playsinline>
-                    <source src="images/home/par.mp4" type="video/mp4">
-                </video>
-                <!-- Progress Dots -->
-                <div class="hero-dots">
-                    <span class="hero-dot active" data-index="0"></span>
-                    <span class="hero-dot" data-index="1"></span>
+        <div class="hero-video-bg">
+            <video id="heroVideo" autoplay muted playsinline loop>
+                <source src="images/home/spindle_movie.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Observe <span class="hero-arrow">→</span> Model <span class="hero-arrow">→</span> Compute <span class="hero-arrow">→</span> Discover</h1>
+                <p>Use math and computing to understand living systems.</p>
+                <div class="hero-buttons">
+                    <a href="research.html" class="btn-primary">Explore Research →</a>
+                    <a href="publications.html" class="btn-secondary">Publications</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Research in Motion Section -->
-    <section class="research-motion-section">
-        <div class="research-motion-container">
-            <div class="research-motion-image">
-                <img src="images/home/johnhopkinswallpaper.jpg" alt="University Campus">
-            </div>
-            <div class="research-motion-text">
-                <h3>Research in Motion</h3>
-                <p>Visualizing complex biological processes through computational modeling and simulation.</p>
+    <!-- Research Themes -->
+    <section class="themes-section">
+        <div class="themes-inner">
+            <div class="section-label">What We Do</div>
+            <h2 class="section-heading">Research Themes</h2>
+            <div class="themes-grid">
+                <div class="theme-card">
+                    <div class="theme-icon">
+                        <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/></svg>
+                    </div>
+                    <h3>Cell Dynamics &amp; Biophysics</h3>
+                    <p>Modeling the mechanical and biochemical forces that govern cell division, migration, and morphogenesis using physics-based approaches.</p>
+                    <a href="research.html#cell-dynamics" class="theme-link">Learn more →</a>
+                </div>
+                <div class="theme-card">
+                    <div class="theme-icon">
+                        <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2v-4M9 21H5a2 2 0 01-2-2v-4m0 0h18"/></svg>
+                    </div>
+                    <h3>Physics-Informed Machine Learning</h3>
+                    <p>Embedding physical laws into neural networks to learn from sparse biological data while respecting known governing equations.</p>
+                    <a href="research.html#physics-informed-ml" class="theme-link">Learn more →</a>
+                </div>
+                <div class="theme-card">
+                    <div class="theme-icon">
+                        <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                    </div>
+                    <h3>Tissue Mechanics &amp; Morphogenesis</h3>
+                    <p>Understanding how tissues self-organize and change shape during development through computational modeling and data-driven inference.</p>
+                    <a href="research.html#tissue-mechanics" class="theme-link">Learn more →</a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Latest News Section -->
+    <!-- News Timeline -->
     <section class="news-section">
-        <div class="news-container">
-            <div class="section-header">
-                <h2 class="section-title">Latest News</h2>
-                <div class="section-underline"></div>
+        <div class="news-inner">
+            <div class="news-header-col">
+                <div class="section-label">Updates</div>
+                <h2>Latest<br>from the Lab</h2>
+                <p style="margin-top:12px;">Recent publications, awards, and lab news.</p>
             </div>
-            <div class="news-grid">
-                <div class="news-card">
-                    <div class="news-header">
-                        <div class="news-icon">📅</div>
-                        <span class="news-date">March 2024</span>
-                    </div>
-                    <h4>Nature Methods Publication</h4>
-                    <p>Physics-informed neural networks for cell dynamics research accepted.</p>
-                    <a href="#" class="news-link">Read More →</a>
+            <div class="news-timeline">
+                <div class="news-entry">
+                    <div class="news-entry-date">March 2024</div>
+                    <div class="news-entry-title">Nature Methods Publication</div>
+                    <div class="news-entry-desc">Physics-informed neural networks for cell dynamics research accepted.</div>
                 </div>
-                <div class="news-card">
-                    <div class="news-header">
-                        <div class="news-icon">🏆</div>
-                        <span class="news-date">February 2024</span>
-                    </div>
-                    <h4>NIH Grant Award</h4>
-                    <p>New funding for protein modeling research.</p>
-                    <a href="#" class="news-link">Read More →</a>
+                <div class="news-entry">
+                    <div class="news-entry-date">February 2024</div>
+                    <div class="news-entry-title">NIH Grant Award</div>
+                    <div class="news-entry-desc">New R01 funding awarded for protein folding and dynamics modeling research.</div>
                 </div>
-                <div class="news-card">
-                    <div class="news-header">
-                        <div class="news-icon">👥</div>
-                        <span class="news-date">January 2024</span>
-                    </div>
-                    <h4>New Students Joined</h4>
-                    <p>Three PhD students joined the lab this semester.</p>
-                    <a href="#" class="news-link">Read More →</a>
+                <div class="news-entry">
+                    <div class="news-entry-date">January 2024</div>
+                    <div class="news-entry-title">New PhD Students Joined</div>
+                    <div class="news-entry-desc">Three new PhD students joined the lab for the Spring 2024 semester.</div>
                 </div>
+            </div>
+        </div>
+    </section>
 
-                
-            </div>
+    <!-- Join the Lab CTA -->
+    <section class="join-section">
+        <div class="join-inner">
+            <h2>Interested in Joining the Lab?</h2>
+            <p>We are always looking for curious and motivated PhD students, postdocs, and undergraduates with backgrounds in mathematics, physics, computer science, or biology.</p>
+            <a href="people.html" class="join-btn">View Open Positions →</a>
         </div>
     </section>
 
     <div id="footer-container"></div>
     <script src="js/main.js"></script>
     <script>
-        // Mobile menu toggle function
         function toggleMobileMenu() {
             const mobileNav = document.getElementById('mobileNav');
             if (mobileNav) {
-                mobileNav.style.display = mobileNav.style.display === 'block' ? 'none' : 'block';
+                const isOpen = mobileNav.classList.contains('open');
+                mobileNav.classList.toggle('open', !isOpen);
             }
         }
-        
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', function(e) {
-            const mobileNav = document.getElementById('mobileNav');
-            const mobileBtn = document.querySelector('.mobile-menu-btn');
-            if (mobileNav && !mobileNav.contains(e.target) && mobileBtn && !mobileBtn.contains(e.target)) {
-                mobileNav.style.display = 'none';
-            }
-        });
-        
-        // Highlight current page in navigation
-        document.addEventListener('DOMContentLoaded', function() {
-            const heroVideos = [
-                { src: 'images/home/par.mp4', type: 'video' },
-                { src: 'images/home/spindle_movie-ezgif.com-video-to-gif-converter.gif', type: 'gif' }
-            ];
-            
-            let currentIndex = 0;
-            let heroVideoEl = document.getElementById('heroVideo');
-            const heroDots = document.querySelectorAll('.hero-dot');
-            const heroSlides = document.querySelectorAll('.hero-text-slide');
-            
-            if (!heroVideoEl) return;
-            
-            function switchHeroVideo(index) {
-                const video = heroVideos[index];
-                
-                // Update dots
-                heroDots.forEach((dot, i) => {
-                    dot.style.opacity = i === index ? '1' : '0.4';
-                });
-                
-                // Switch text content using CSS class
-                heroSlides.forEach((slide, i) => {
-                    if (i === index) {
-                        slide.classList.add('active');
-                    } else {
-                        slide.classList.remove('active');
-                    }
-                });
-                
-                // Switch video/GIF with responsive height
-                if (video.type === 'gif') {
-                    heroVideoEl.outerHTML = `<img id="heroVideo" src="${video.src}" style="width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 16px;" alt="Research Animation">`;
-                } else {
-                    heroVideoEl.outerHTML = `<video id="heroVideo" autoplay muted playsinline style="width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 16px;"><source src="${video.src}" type="video/mp4"></video>`;
-                }
-                
-                // Re-select element
-                heroVideoEl = document.getElementById('heroVideo');
-            }
-            
-            // Auto-switch every 4 seconds
-            setInterval(() => {
-                currentIndex = (currentIndex + 1) % heroVideos.length;
-                switchHeroVideo(currentIndex);
-            }, 4000);
-            
-            // Click on dots
-            heroDots.forEach((dot, index) => {
-                dot.addEventListener('click', () => {
-                    currentIndex = index;
-                    switchHeroVideo(currentIndex);
-                });
-            });
-        });
+
     </script>
 </body>
 </html>

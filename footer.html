@@ -1,165 +1,225 @@
-<!-- Common Footer Component -->
+<!-- Footer Component -->
 <style>
-    /* Force social icons to always be visible */
-    .footer-col .social-links,
-    .footer-col .social-links a {
-        display: flex !important;
-        visibility: visible !important;
-        opacity: 1 !important;
+    .footer-new {
+        background: #0f172a;
+        margin-top: 60px;
+        font-family: 'Ysabeau', sans-serif;
     }
-    
-    /* Hide footer social on desktop (now in header) */
-    .footer-social {
-        display: none !important;
+    .footer-accent-bar {
+        height: 3px;
+        background: linear-gradient(90deg, #4A90E2, #5B7AE6, #4A90E2);
     }
-    
-    /* Show footer social on mobile */
-    @media (max-width: 768px) {
-        .footer-social {
-            display: block !important;
+    .footer-brand {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 44px 48px 36px;
+        display: flex;
+        align-items: center;
+        gap: 28px;
+        border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+    .footer-brand img {
+        height: 100px;
+        filter: brightness(0) invert(1);
+        opacity: 0.85;
+    }
+    .footer-brand-divider {
+        width: 1px;
+        height: 44px;
+        background: rgba(255,255,255,0.18);
+        flex-shrink: 0;
+    }
+    .footer-brand-name {
+        color: white;
+        font-size: 1.2rem;
+        font-weight: 700;
+        line-height: 1.3;
+        letter-spacing: -0.01em;
+    }
+    .footer-brand-dept {
+        color: #4A90E2;
+        font-size: 0.82rem;
+        font-weight: 400;
+        margin-top: 4px;
+        opacity: 0.9;
+    }
+    .footer-cols {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 40px 48px 44px;
+        display: grid;
+        grid-template-columns: 2fr 1.2fr 1fr;
+        gap: 48px;
+    }
+    .footer-col-title {
+        color: rgba(255,255,255,0.5);
+        font-size: 0.7rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 2.5px;
+        margin-bottom: 18px;
+    }
+    .footer-about-text {
+        color: rgba(255,255,255,0.5);
+        font-size: 0.88rem;
+        line-height: 1.75;
+    }
+    .footer-contact-row {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        margin-bottom: 14px;
+        color: rgba(255,255,255,0.6);
+        font-size: 0.88rem;
+        line-height: 1.4;
+    }
+    .footer-contact-row svg {
+        flex-shrink: 0;
+        margin-top: 1px;
+        color: #4A90E2;
+    }
+    .footer-contact-row a {
+        color: rgba(255,255,255,0.6);
+        text-decoration: none;
+        transition: color 0.2s;
+    }
+    .footer-contact-row a:hover { color: #4A90E2; }
+    .footer-social-row {
+        display: flex;
+        gap: 10px;
+    }
+    .footer-social-btn {
+        width: 38px;
+        height: 38px;
+        background: rgba(255,255,255,0.06);
+        border: 1px solid rgba(255,255,255,0.1);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: rgba(255,255,255,0.6);
+        text-decoration: none;
+        transition: all 0.2s;
+    }
+    .footer-social-btn:hover {
+        background: #4A90E2;
+        border-color: #4A90E2;
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(74,144,226,0.35);
+    }
+    .footer-bottom-bar {
+        border-top: 1px solid rgba(255,255,255,0.07);
+    }
+    .footer-bottom-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 18px 48px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
+    }
+    .footer-bottom-inner p {
+        color: rgba(255,255,255,0.28);
+        font-size: 0.78rem;
+    }
+
+    @media (max-width: 900px) {
+        .footer-cols {
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            padding: 32px 32px 36px;
+        }
+        .footer-brand {
+            padding: 32px 32px 28px;
+        }
+        .footer-about { grid-column: 1 / -1; }
+        .footer-bottom-inner {
+            padding: 16px 32px;
+            flex-direction: column;
+            text-align: center;
+            gap: 4px;
         }
     }
-    
-    /* Desktop: Ensure footer-container is visible */
-    @media (min-width: 769px) {
-        .footer-container {
-            display: flex !important;
+
+    @media (max-width: 560px) {
+        .footer-brand {
+            flex-direction: column;
+            text-align: center;
+            padding: 28px 20px;
+            gap: 16px;
         }
-        .mobile-footer-layout {
-            display: none !important;
+        .footer-brand-divider { display: none; }
+        .footer-cols {
+            grid-template-columns: 1fr;
+            padding: 28px 20px 32px;
+            gap: 28px;
         }
-    }
-    
-    @media (max-width: 768px) {
-        .footer {
-            padding: 30px 0 !important;
-        }
-        .footer-container {
-            flex-direction: column !important;
-            align-items: center !important;
-            gap: 25px !important;
-        }
-        .footer-col {
-            text-align: center !important;
-            padding: 0 !important;
-            width: 100% !important;
-        }
-        .footer-logo {
-            flex-direction: column !important;
-            order: 1 !important;
-        }
-        .footer-logo img {
-            height: 80px !important;
-        }
-        .footer-logo div[style*="width: 1px"] {
-            display: none !important;
-        }
-        .footer-contact {
-            display: none !important;
-        }
-        .mobile-footer-layout {
-            display: block !important;
-        }
-        .footer-container {
-            display: none !important;
-        }
+        .footer-bottom-inner { padding: 14px 20px; }
     }
 </style>
-<footer class="footer" style="background: #0f172a; padding: 50px 0 40px; margin-top: 60px;">
-    <div style="max-width: 1200px; margin: 0 auto; padding: 0 32px;">
-        
-        <!-- Mobile Footer Layout -->
-        <div class="mobile-footer-layout" style="display: none; padding: 25px 20px; text-align: center;">
-            <!-- Johns Hopkins Logo -->
-            <div style="margin: 0 auto 60px;">
-                <img src="images/Johnslogo.png" alt="Johns Hopkins University" style="height: 180px; filter: brightness(0) invert(1);">
-            </div>
-            <!-- Logo & Brand -->
-            <table style="margin: 0 auto 20px; border-collapse: collapse;">
-                <tr>
-                    <td style="padding: 0 10px 0 0; vertical-align: middle;">
-                        <!-- Hexagon Logo -->
-                        <div style="width: 36px; height: 36px; position: relative;">
-                            <svg viewBox="0 0 44 44" style="width: 100%; height: 100%;">
-                                <path d="M22 2 L40 12 L40 32 L22 42 L4 32 L4 12 Z" fill="url(#hexGradientFooter)" stroke="#4A90E2" stroke-width="1.5"/>
-                                <defs>
-                                    <linearGradient id="hexGradientFooter" x1="0%" y1="0%" x2="100%" y2="100%">
-                                        <stop offset="0%" style="stop-color:#4A90E2"/>
-                                        <stop offset="100%" style="stop-color:#5B7AE6"/>
-                                    </linearGradient>
-                                </defs>
-                            </svg>
-                            <span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #1e3a5f; font-weight: 700; font-size: 0.9rem;">M</span>
-                        </div>
-                    </td>
-                    <td style="width: 1px; background: rgba(255,255,255,0.2); padding: 0;"></td>
-                    <td style="padding: 0 0 0 10px; vertical-align: middle;">
-                        <span style="color: white; font-size: 1.2rem; font-weight: 700; display: block;">Applied<span style="font-weight: 300; opacity: 0.8;">Mathematics</span></span>
-                    </td>
-                </tr>
-            </table>
-            
-            <!-- Contact -->
-            <p style="color: white; margin: 0 0 8px 0; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">Contact</p>
-            <p style="color: white; margin: 4px 0; font-size: 0.9rem;">+1 (410) 516-8000</p>
-            <p style="color: white; margin: 4px 0; font-size: 0.9rem;">maddu.lab@jhu.edu</p>
-            <p style="color: white; margin: 4px 0 20px 0; font-size: 0.9rem;">Baltimore, MD 21218</p>
-            
-            <!-- Follow Us -->
-            <p style="color: white; margin: 0 0 12px 0; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">Follow Us</p>
-            <!-- Social Links -->
-            <table style="margin: 0 auto;">
-                <tr>
-                    <td style="padding: 0 6px;">
-                        <a href="#" style="display: block; width: 36px; height: 36px; background: rgba(255,255,255,0.15); border-radius: 50%; line-height: 36px; color: white; text-decoration: none; font-size: 0.9rem; font-weight: 700; text-align: center;">in</a>
-                    </td>
-                    <td style="padding: 0 6px;">
-                        <a href="#" style="display: block; width: 36px; height: 36px; background: rgba(255,255,255,0.15); border-radius: 50%; line-height: 36px; color: white; text-decoration: none; font-size: 0.9rem; font-weight: 700; text-align: center;">𝕏</a>
-                    </td>
-                </tr>
-            </table>
-            
+
+<footer class="footer-new">
+    <!-- Top accent line -->
+    <div class="footer-accent-bar"></div>
+
+    <!-- Brand bar -->
+    <div class="footer-brand">
+        <img src="images/Johnslogo.png" alt="Johns Hopkins University">
+        <div class="footer-brand-divider"></div>
+        <div>
+            <div class="footer-brand-name">Applied Mathematics &amp;<br>Computational Biology Lab</div>
+            <div class="footer-brand-dept">Johns Hopkins University</div>
         </div>
-        
-        <!-- 3-Column Layout -->
-        <div class="footer-container" style="display: flex; justify-content: space-between; align-items: flex-start; gap: 60px;">
-            
-            <!-- Left: Logo -->
-            <div class="footer-col footer-logo" style="flex: 1; display: flex; align-items: center; gap: 18px; margin-top: 10px;">
-                <img src="images/Johnslogo.png" alt="Johns Hopkins University" style="height: 150px; filter: brightness(0) invert(1);">
-                <div style="width: 1px; height: 60px; background: rgba(255,255,255,0.2);"></div>
-                <div style="color: white; font-size: 2rem; font-weight: 700;">Applied<span style="font-weight: 300; opacity: 0.8;">Mathematics</span></div>
+    </div>
+
+    <!-- Columns -->
+    <div class="footer-cols">
+
+        <!-- About -->
+        <div class="footer-about">
+            <div class="footer-col-title">About</div>
+            <p class="footer-about-text">We develop mathematical and computational methods to understand complex biological systems — from single cells to tissues — combining physics, data science, and machine learning.</p>
+        </div>
+
+        <!-- Contact -->
+        <div>
+            <div class="footer-col-title">Contact</div>
+            <div class="footer-contact-row">
+                <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                <a href="mailto:maddu.lab@jhu.edu">maddu.lab@jhu.edu</a>
             </div>
-            
-            <!-- Center: Contact -->
-            <div class="footer-col footer-contact" style="flex: 1; text-align: center;">
-                <div style="color: white; font-size: 0.9rem; font-weight: 600; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px;">Contact</div>
-                <div style="color: rgba(255,255,255,0.8); font-size: 0.9rem; margin-bottom: 10px;">+1 (410) 516-8000</div>
-                <div style="color: rgba(255,255,255,0.8); font-size: 0.9rem; margin-bottom: 10px;">maddu.lab@jhu.edu</div>
-                <a href="https://www.google.com/maps/search/?api=1&query=Johns+Hopkins+University+Baltimore+MD+21218" target="_blank" style="color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 6px;">
-                    <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-                    Baltimore, MD 21218
+            <div class="footer-contact-row">
+                <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                +1 (410) 516-8000
+            </div>
+            <div class="footer-contact-row">
+                <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                <a href="https://www.google.com/maps/search/?api=1&query=Johns+Hopkins+University+Baltimore+MD+21218" target="_blank">Baltimore, MD 21218</a>
+            </div>
+        </div>
+
+        <!-- Connect -->
+        <div>
+            <div class="footer-col-title">Connect</div>
+            <div class="footer-social-row">
+                <a href="#" class="footer-social-btn" title="LinkedIn">
+                    <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                </a>
+                <a href="#" class="footer-social-btn" title="X / Twitter">
+                    <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
                 </a>
             </div>
-            
-            <!-- Right: Social Icons (Hidden on Desktop - Now in Header) -->
-            <div class="footer-col footer-social" style="flex: 1; text-align: right; padding-right: 40px; min-width: 200px;">
-                <div style="color: white; font-size: 0.9rem; font-weight: 600; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px;">Follow Us</div>
-                <div style="display: flex; gap: 15px; justify-content: flex-end;">
-                    <a href="#" style="width: 50px; height: 50px; background: rgba(255,255,255,0.15); border-radius: 50%; color: white; text-decoration: none; font-size: 1.2rem; font-weight: 700; display: flex; align-items: center; justify-content: center;">in</a>
-                    <a href="#" style="width: 50px; height: 50px; background: rgba(255,255,255,0.15); border-radius: 50%; color: white; text-decoration: none; font-size: 1.2rem; font-weight: 700; display: flex; align-items: center; justify-content: center;">X</a>
-                </div>
-            </div>
         </div>
-        
-        <!-- Divider -->
-        <div style="width: 100%; height: 1px; background: rgba(255,255,255,0.1); margin: 30px 0 20px;"></div>
-        
-        <!-- Bottom -->
-        <div style="text-align: center;">
-            <p style="color: rgba(255,255,255,0.5); font-size: 0.8rem; margin: 0;">
-                Department of Biomedical Engineering | Johns Hopkins University
-            </p>
+
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="footer-bottom-bar">
+        <div class="footer-bottom-inner">
+            <p>© 2026 Applied Mathematics &amp; Computational Biology Lab · Johns Hopkins University</p>
+            <p>Department of Biomedical Engineering</p>
         </div>
     </div>
 </footer>
