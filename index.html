@@ -55,17 +55,103 @@
         }
         .hero-text { width: 100%; text-align: center; }
         .hero-text h1 {
-            font-size: 2.8rem;
-            font-weight: 700;
-            color: #ffffff;
-            line-height: 1.1;
-            margin-bottom: 18px;
-            white-space: nowrap;
+            font-size: 0;
+            margin-bottom: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
         }
-        .hero-arrow {
-            color: rgba(255,255,255,0.38);
+        .hero-word {
+            font-family: 'Space Grotesk', 'Ysabeau', sans-serif;
+            font-size: 1.65rem;
+            font-weight: 600;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: #e8f0ff;
+            border: 1.5px solid rgba(120, 180, 255, 0.45);
+            border-radius: 6px;
+            padding: 14px 32px;
+            background: rgba(255,255,255,0.04);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            box-shadow: 0 0 18px rgba(74, 144, 226, 0.15), inset 0 0 12px rgba(74,144,226,0.06);
+            transition: box-shadow 0.3s, border-color 0.3s, background 0.3s, color 0.3s;
+            cursor: pointer;
+            user-select: none;
+        }
+        .hero-word:hover {
+            border-color: rgba(120,180,255,0.85);
+            box-shadow: 0 0 32px rgba(74,144,226,0.35), inset 0 0 16px rgba(74,144,226,0.12);
+        }
+        .hero-word.active {
+            border-color: rgba(100,190,255,1);
+            color: #fff;
+            background: rgba(74,144,226,0.14);
+            box-shadow: 0 0 48px rgba(74,144,226,0.55), inset 0 0 22px rgba(74,144,226,0.18);
+        }
+
+        /* Drop panel */
+        .hero-panel {
+            width: 100%;
+            max-width: 820px;
+            margin: 0 auto;
+            overflow: hidden;
+            max-height: 0;
+            opacity: 0;
+            transition: max-height 0.5s cubic-bezier(0.4,0,0.2,1), opacity 0.35s ease, margin 0.4s ease;
+        }
+        .hero-panel.open {
+            max-height: 280px;
+            opacity: 1;
+            margin-top: 20px;
+            margin-bottom: 4px;
+        }
+        .hero-panel-inner {
+            border: 1px solid rgba(100,170,255,0.3);
+            border-radius: 10px;
+            background: rgba(8,14,30,0.6);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            padding: 22px 28px 20px;
+        }
+        .panel-label {
+            font-family: 'Space Grotesk', 'Ysabeau', sans-serif;
+            font-size: 0.6rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: rgba(100,180,255,0.7);
+            margin-bottom: 14px;
+        }
+        .panel-items {
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 9px 36px;
+        }
+        .panel-items li {
+            font-size: 0.87rem;
+            color: rgba(215,232,255,0.82);
+            line-height: 1.45;
+            display: flex;
+            align-items: flex-start;
+            gap: 9px;
+        }
+        .panel-items li::before {
+            content: '—';
+            color: rgba(74,144,226,0.65);
             font-weight: 300;
-            margin: 0 6px;
+            flex-shrink: 0;
+        }
+        .hero-hint {
+            font-size: 0.7rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.28);
+            margin-top: 10px;
+            margin-bottom: 0;
         }
         .hero-text p {
             font-size: 1.05rem;
@@ -309,26 +395,24 @@
 
         /* Responsive */
         @media (max-width: 1024px) {
-            .hero-text h1 { font-size: 2.2rem; }
+            .hero-word { font-size: 1.35rem; padding: 12px 24px; }
             .themes-grid { grid-template-columns: 1fr 1fr; }
             .news-inner { grid-template-columns: 1fr; gap: 40px; }
         }
         @media (max-width: 768px) {
             .hero-section { height: 100svh; max-height: none; }
             .hero-content { padding: 0 24px; }
-            .hero-text h1 {
-                font-size: 1.8rem;
-                white-space: normal;
-            }
-            .hero-arrow { display: block; margin: 2px 0; font-size: 0; }
-            .hero-arrow::after { content: '↓'; font-size: 1.1rem; }
+            .hero-text h1 { gap: 10px; }
+            .hero-word { font-size: 1.05rem; padding: 10px 18px; letter-spacing: 0.12em; }
+            .panel-items { grid-template-columns: 1fr; gap: 8px; }
+            .hero-panel.open { max-height: 380px; }
+            .hero-panel-inner { padding: 18px 20px 16px; }
             .themes-grid { grid-template-columns: 1fr; }
             .themes-inner, .news-inner { padding: 0 24px; }
             .join-section { padding: 60px 24px; }
         }
         @media (max-width: 480px) {
             .hero-content { padding: 0 20px; }
-            .hero-text h1 { font-size: 1.6rem; }
             .hero-buttons { flex-direction: column; width: 100%; }
             .btn-primary, .btn-secondary { justify-content: center; }
         }
@@ -347,7 +431,18 @@
         <div class="hero-overlay"></div>
         <div class="hero-content">
             <div class="hero-text">
-                <h1>Observe <span class="hero-arrow">→</span> Model <span class="hero-arrow">→</span> Compute <span class="hero-arrow">→</span> Discover</h1>
+                <h1>
+                    <span class="hero-word" data-key="Model">Model</span>
+                    <span class="hero-word" data-key="Predict">Predict</span>
+                    <span class="hero-word" data-key="Control">Control</span>
+                </h1>
+                <p class="hero-hint">click to explore</p>
+                <div class="hero-panel" id="heroPanel">
+                    <div class="hero-panel-inner">
+                        <div class="panel-label" id="panelLabel"></div>
+                        <ul class="panel-items" id="panelItems"></ul>
+                    </div>
+                </div>
                 <p>Use math and computing to understand living systems.</p>
                 <div class="hero-buttons">
                     <a href="research.html" class="btn-primary">Explore Research →</a>
@@ -446,6 +541,66 @@
     <div id="footer-container"></div>
     <script src="js/main.js"></script>
     <script>
+        // Hero word panel data
+        const heroPanelData = {
+            Model: {
+                label: 'Mechanistic Modeling',
+                items: [
+                    'First-principles biophysical modeling',
+                    'Statistical inference of ODEs & PDEs from data',
+                    'Parameter inference & identifiability',
+                    'Latent-variable recovery'
+                ]
+            },
+            Predict: {
+                label: 'Prediction & Simulation',
+                items: [
+                    'Fast solvers for stiff dynamical systems',
+                    'Data-driven surrogates & neural operators',
+                    'Reduced-order & physics-informed models',
+                    'Uncertainty quantification'
+                ]
+            },
+            Control: {
+                label: 'Control & Intervention',
+                items: [
+                    'Model predictive control (MPC)',
+                    'Optimal & feedback control',
+                    'Intervention design in biological systems',
+                    'Closed-loop experimental design'
+                ]
+            }
+        };
+
+        document.querySelectorAll('.hero-word').forEach(function(word) {
+            word.addEventListener('click', function() {
+                var key = word.dataset.key;
+                var panel = document.getElementById('heroPanel');
+                var labelEl = document.getElementById('panelLabel');
+                var itemsEl = document.getElementById('panelItems');
+                var isActive = word.classList.contains('active');
+
+                document.querySelectorAll('.hero-word').forEach(function(w) { w.classList.remove('active'); });
+
+                if (isActive) {
+                    panel.classList.remove('open');
+                } else {
+                    var d = heroPanelData[key];
+                    labelEl.textContent = d.label;
+                    itemsEl.innerHTML = d.items.map(function(i) { return '<li>' + i + '</li>'; }).join('');
+                    panel.classList.add('open');
+                    word.classList.add('active');
+                }
+            });
+        });
+
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.hero-word')) {
+                document.querySelectorAll('.hero-word').forEach(function(w) { w.classList.remove('active'); });
+                document.getElementById('heroPanel').classList.remove('open');
+            }
+        });
+
         function toggleMobileMenu() {
             const mobileNav = document.getElementById('mobileNav');
             if (mobileNav) {
