@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Logo Ideas — Modern Tech Lab</title>
+<link href="https://fonts.googleapis.com/css2?family=Ysabeau:wght@400;600;700;900&family=Space+Grotesk:wght@500;600;700;800&family=Inter:wght@600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #0b1120; color: #f1f5f9; font-family: 'Inter', sans-serif; padding: 48px 32px; }
+  h1 { font-size: 0.75rem; color: rgba(255,255,255,0.3); font-weight: 600; margin-bottom: 6px; letter-spacing: 0.12em; text-transform: uppercase; }
+  .subtitle { font-size: 0.8rem; color: rgba(255,255,255,0.18); margin-bottom: 48px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 20px; max-width: 1080px; }
+  .card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 14px;
+    padding: 26px 26px 20px;
+    transition: border-color 0.2s, background 0.2s;
+    cursor: pointer;
+  }
+  .card:hover { background: rgba(255,255,255,0.055); border-color: rgba(74,144,226,0.35); }
+  .tag { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.25); margin-bottom: 20px; }
+  .preview {
+    display: flex; align-items: center; gap: 18px;
+    padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.05); margin-bottom: 14px;
+  }
+  .zoom { transform: scale(1.9); transform-origin: left center; margin-right: 50px; flex-shrink: 0; display: inline-block; }
+  .logo-name { font-family: 'Ysabeau', sans-serif; font-size: 0.95rem; font-weight: 700; line-height: 1.35; color: #f1f5f9; }
+  .logo-name span { color: #4A90E2; font-weight: 400; }
+  .desc { font-size: 0.82rem; color: rgba(255,255,255,0.4); line-height: 1.6; }
+  .small-strip { display: flex; align-items: center; gap: 8px; margin-top: 12px; opacity: 0.4; font-size: 0.68rem; color: rgba(255,255,255,0.3); }
+</style>
+</head>
+<body>
+
+<h1>Logo concepts — modern tech lab direction</h1>
+<p class="subtitle">No hexagons. No academic crests. Bold, clean, contemporary.</p>
+
+<div class="grid">
+
+  <!-- A: Signal bars — genomics / data coverage vibe -->
+  <div class="card">
+    <div class="tag">Option A — Signal bars</div>
+    <div class="preview">
+      <div class="zoom">
+        <svg viewBox="0 0 44 36" width="44" height="36">
+          <defs>
+            <linearGradient id="ga" x1="0%" y1="100%" x2="0%" y2="0%">
+              <stop offset="0%" stop-color="#4A90E2"/>
+              <stop offset="100%" stop-color="#7B6CE6"/>
+            </linearGradient>
+          </defs>
+          <rect x="2"  y="20" width="6" height="14" rx="2" fill="url(#ga)" opacity="0.55"/>
+          <rect x="11" y="10" width="6" height="24" rx="2" fill="url(#ga)" opacity="0.7"/>
+          <rect x="20" y="4"  width="6" height="30" rx="2" fill="url(#ga)"/>
+          <rect x="29" y="14" width="6" height="20" rx="2" fill="url(#ga)" opacity="0.75"/>
+          <rect x="38" y="22" width="6" height="12" rx="2" fill="url(#ga)" opacity="0.5"/>
+        </svg>
+      </div>
+      <div class="logo-name">Applied Mathematics &amp;<br><span>Computational Biology Lab</span></div>
+    </div>
+    <div class="desc">Vertical bars at different heights — reads as signal, data, or genomic coverage. Universally understood as "data science." No letters, no explanation needed. Clean at any size.</div>
+    <div class="small-strip">
+      <svg viewBox="0 0 44 36" width="22" height="18">
+        <defs><linearGradient id="ga2" x1="0%" y1="100%" x2="0%" y2="0%"><stop offset="0%" stop-color="#4A90E2"/><stop offset="100%" stop-color="#7B6CE6"/></linearGradient></defs>
+        <rect x="2"  y="20" width="6" height="14" rx="2" fill="url(#ga2)" opacity="0.55"/>
+        <rect x="11" y="10" width="6" height="24" rx="2" fill="url(#ga2)" opacity="0.7"/>
+        <rect x="20" y="4"  width="6" height="30" rx="2" fill="url(#ga2)"/>
+        <rect x="29" y="14" width="6" height="20" rx="2" fill="url(#ga2)" opacity="0.75"/>
+        <rect x="38" y="22" width="6" height="12" rx="2" fill="url(#ga2)" opacity="0.5"/>
+      </svg>
+      actual size
+    </div>
+  </div>
+
+  <!-- B: Minimal node hub — 1 center dot, 4 radiating lines -->
+  <div class="card">
+    <div class="tag">Option B — Node hub</div>
+    <div class="preview">
+      <div class="zoom">
+        <svg viewBox="0 0 44 44" width="44" height="44">
+          <defs>
+            <linearGradient id="gb" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#4A90E2"/>
+              <stop offset="100%" stop-color="#6C8EF5"/>
+            </linearGradient>
+          </defs>
+          <!-- spokes -->
+          <line x1="22" y1="22" x2="22" y2="6"  stroke="#4A90E2" stroke-width="2"   stroke-linecap="round" opacity="0.9"/>
+          <line x1="22" y1="22" x2="38" y2="22" stroke="#4A90E2" stroke-width="2"   stroke-linecap="round" opacity="0.7"/>
+          <line x1="22" y1="22" x2="22" y2="38" stroke="#4A90E2" stroke-width="2"   stroke-linecap="round" opacity="0.5"/>
+          <line x1="22" y1="22" x2="6"  y2="22" stroke="#4A90E2" stroke-width="2"   stroke-linecap="round" opacity="0.35"/>
+          <line x1="22" y1="22" x2="35" y2="9"  stroke="#4A90E2" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+          <line x1="22" y1="22" x2="9"  y2="35" stroke="#4A90E2" stroke-width="1.5" stroke-linecap="round" opacity="0.3"/>
+          <!-- outer dots -->
+          <circle cx="22" cy="6"  r="3" fill="#4A90E2" opacity="0.9"/>
+          <circle cx="38" cy="22" r="2.5" fill="#4A90E2" opacity="0.7"/>
+          <circle cx="35" cy="9"  r="2" fill="#4A90E2" opacity="0.6"/>
+          <!-- center -->
+          <circle cx="22" cy="22" r="5" fill="url(#gb)"/>
+          <circle cx="22" cy="22" r="2.5" fill="white"/>
+        </svg>
+      </div>
+      <div class="logo-name">Applied Mathematics &amp;<br><span>Computational Biology Lab</span></div>
+    </div>
+    <div class="desc">A hub-and-spoke network node — one dominant center, radiating connections at varying opacity. Feels like a startup network diagram. Evokes both graph theory and biological networks without being literal.</div>
+    <div class="small-strip">
+      <svg viewBox="0 0 44 44" width="22" height="22">
+        <defs><linearGradient id="gb2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#4A90E2"/><stop offset="100%" stop-color="#6C8EF5"/></linearGradient></defs>
+        <line x1="22" y1="22" x2="22" y2="6"  stroke="#4A90E2" stroke-width="2" stroke-linecap="round" opacity="0.9"/>
+        <line x1="22" y1="22" x2="38" y2="22" stroke="#4A90E2" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+        <line x1="22" y1="22" x2="22" y2="38" stroke="#4A90E2" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+        <line x1="22" y1="22" x2="6"  y2="22" stroke="#4A90E2" stroke-width="2" stroke-linecap="round" opacity="0.35"/>
+        <line x1="22" y1="22" x2="35" y2="9"  stroke="#4A90E2" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+        <circle cx="22" cy="6"  r="3" fill="#4A90E2" opacity="0.9"/>
+        <circle cx="38" cy="22" r="2.5" fill="#4A90E2" opacity="0.7"/>
+        <circle cx="22" cy="22" r="5" fill="url(#gb2)"/>
+        <circle cx="22" cy="22" r="2.5" fill="white"/>
+      </svg>
+      actual size
+    </div>
+  </div>
+
+  <!-- C: Bold "AM" wordmark, no container, large type -->
+  <div class="card">
+    <div class="tag">Option C — Bold AM wordmark</div>
+    <div class="preview">
+      <div class="zoom">
+        <svg viewBox="0 0 52 36" width="52" height="36">
+          <defs>
+            <linearGradient id="gc" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#4A90E2"/>
+              <stop offset="100%" stop-color="#7B6CE6"/>
+            </linearGradient>
+          </defs>
+          <text x="2" y="30" fill="url(#gc)"
+                font-weight="800" font-size="32" font-family="Inter, sans-serif"
+                letter-spacing="-2">AM</text>
+        </svg>
+      </div>
+      <div class="logo-name">Applied Mathematics &amp;<br><span>Computational Biology Lab</span></div>
+    </div>
+    <div class="desc">Pure typographic mark — no icon, just bold "AM" in gradient. Clean, confident, tech-forward. Works like how Stripe, Linear, or Notion use type alone. Instantly legible at any size.</div>
+    <div class="small-strip">
+      <svg viewBox="0 0 52 36" width="26" height="18">
+        <defs><linearGradient id="gc2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#4A90E2"/><stop offset="100%" stop-color="#7B6CE6"/></linearGradient></defs>
+        <text x="2" y="30" fill="url(#gc2)" font-weight="800" font-size="32" font-family="Inter, sans-serif" letter-spacing="-2">AM</text>
+      </svg>
+      actual size
+    </div>
+  </div>
+
+  <!-- D: Slash / wedge mark — two overlapping planes -->
+  <div class="card">
+    <div class="tag">Option D — Slash mark</div>
+    <div class="preview">
+      <div class="zoom">
+        <svg viewBox="0 0 44 44" width="44" height="44">
+          <defs>
+            <linearGradient id="gd" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#4A90E2"/>
+              <stop offset="100%" stop-color="#7B6CE6"/>
+            </linearGradient>
+          </defs>
+          <!-- Two bold diagonal bars -->
+          <rect x="7" y="4" width="11" height="36" rx="4" fill="url(#gd)"
+                transform="rotate(-15 22 22)"/>
+          <rect x="22" y="4" width="11" height="36" rx="4" fill="url(#gd)" opacity="0.55"
+                transform="rotate(-15 22 22)"/>
+        </svg>
+      </div>
+      <div class="logo-name">Applied Mathematics &amp;<br><span>Computational Biology Lab</span></div>
+    </div>
+    <div class="desc">Two parallel diagonal bars — a modern "slash" mark. Feels like a tech-company logo (similar to Vercel's triangle or Stripe's diagonal). Minimal, bold, says "forward motion" without any domain knowledge needed.</div>
+    <div class="small-strip">
+      <svg viewBox="0 0 44 44" width="22" height="22">
+        <defs><linearGradient id="gd2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#4A90E2"/><stop offset="100%" stop-color="#7B6CE6"/></linearGradient></defs>
+        <rect x="7" y="4" width="11" height="36" rx="4" fill="url(#gd2)" transform="rotate(-15 22 22)"/>
+        <rect x="22" y="4" width="11" height="36" rx="4" fill="url(#gd2)" opacity="0.55" transform="rotate(-15 22 22)"/>
+      </svg>
+      actual size
+    </div>
+  </div>
+
+  <!-- E: Geometric M — constructed from sharp clean geometry, no container -->
+  <div class="card">
+    <div class="tag">Option E — Geometric M</div>
+    <div class="preview">
+      <div class="zoom">
+        <svg viewBox="0 0 44 44" width="44" height="44">
+          <defs>
+            <linearGradient id="ge" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#4A90E2"/>
+              <stop offset="100%" stop-color="#6C8EF5"/>
+            </linearGradient>
+          </defs>
+          <!-- M as geometric path: four strokes, clean angles -->
+          <!-- Left vertical -->
+          <rect x="6" y="10" width="6" height="26" rx="2" fill="url(#ge)"/>
+          <!-- Left diagonal going down-right -->
+          <polygon points="6,10 12,10 22,27 16,27" fill="url(#ge)"/>
+          <!-- Right diagonal going down-left -->
+          <polygon points="32,10 38,10 28,27 22,27" fill="url(#ge)"/>
+          <!-- Right vertical -->
+          <rect x="32" y="10" width="6" height="26" rx="2" fill="url(#ge)"/>
+          <!-- tiny dot accent at top center peak -->
+          <circle cx="22" cy="27" r="3" fill="url(#ge)"/>
+        </svg>
+      </div>
+      <div class="logo-name">Applied Mathematics &amp;<br><span>Computational Biology Lab</span></div>
+    </div>
+    <div class="desc">The letter M reconstructed from clean geometric blocks — no containing shape, just the letterform itself. Bold and architectural. The M references both the PI's name and "Mathematics" without being enclosed in a generic badge.</div>
+    <div class="small-strip">
+      <svg viewBox="0 0 44 44" width="22" height="22">
+        <defs><linearGradient id="ge2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#4A90E2"/><stop offset="100%" stop-color="#6C8EF5"/></linearGradient></defs>
+        <rect x="6" y="10" width="6" height="26" rx="2" fill="url(#ge2)"/>
+        <polygon points="6,10 12,10 22,27 16,27" fill="url(#ge2)"/>
+        <polygon points="32,10 38,10 28,27 22,27" fill="url(#ge2)"/>
+        <rect x="32" y="10" width="6" height="26" rx="2" fill="url(#ge2)"/>
+        <circle cx="22" cy="27" r="3" fill="url(#ge2)"/>
+      </svg>
+      actual size
+    </div>
+  </div>
+
+  <!-- F: Scatter plot / constellation — data points -->
+  <div class="card">
+    <div class="tag">Option F — Scatter / constellation</div>
+    <div class="preview">
+      <div class="zoom">
+        <svg viewBox="0 0 44 44" width="44" height="44">
+          <defs>
+            <linearGradient id="gf" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#4A90E2"/>
+              <stop offset="100%" stop-color="#7B6CE6"/>
+            </linearGradient>
+          </defs>
+          <!-- connecting lines (faint) -->
+          <line x1="10" y1="30" x2="18" y2="14" stroke="#4A90E2" stroke-width="1" opacity="0.3"/>
+          <line x1="18" y1="14" x2="30" y2="10" stroke="#4A90E2" stroke-width="1" opacity="0.3"/>
+          <line x1="30" y1="10" x2="36" y2="24" stroke="#4A90E2" stroke-width="1" opacity="0.3"/>
+          <line x1="36" y1="24" x2="26" y2="36" stroke="#4A90E2" stroke-width="1" opacity="0.3"/>
+          <line x1="26" y1="36" x2="10" y2="30" stroke="#4A90E2" stroke-width="1" opacity="0.3"/>
+          <line x1="18" y1="14" x2="26" y2="36" stroke="#4A90E2" stroke-width="1" opacity="0.2"/>
+          <line x1="30" y1="10" x2="10" y2="30" stroke="#4A90E2" stroke-width="1" opacity="0.2"/>
+          <!-- dots — varying sizes = importance -->
+          <circle cx="30" cy="10" r="4.5" fill="url(#gf)"/>
+          <circle cx="36" cy="24" r="3.5" fill="#4A90E2" opacity="0.85"/>
+          <circle cx="18" cy="14" r="3"   fill="#4A90E2" opacity="0.75"/>
+          <circle cx="10" cy="30" r="3.5" fill="#4A90E2" opacity="0.7"/>
+          <circle cx="26" cy="36" r="2.5" fill="#4A90E2" opacity="0.6"/>
+          <circle cx="22" cy="22" r="2"   fill="#4A90E2" opacity="0.45"/>
+        </svg>
+      </div>
+      <div class="logo-name">Applied Mathematics &amp;<br><span>Computational Biology Lab</span></div>
+    </div>
+    <div class="desc">A scatter plot / constellation — data points of varying size connected by faint lines. Reads as "data science" or "network biology" to anyone. Asymmetric and organic, making it feel alive rather than rigid.</div>
+    <div class="small-strip">
+      <svg viewBox="0 0 44 44" width="22" height="22">
+        <defs><linearGradient id="gf2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#4A90E2"/><stop offset="100%" stop-color="#7B6CE6"/></linearGradient></defs>
+        <line x1="10" y1="30" x2="18" y2="14" stroke="#4A90E2" stroke-width="1" opacity="0.3"/>
+        <line x1="18" y1="14" x2="30" y2="10" stroke="#4A90E2" stroke-width="1" opacity="0.3"/>
+        <line x1="30" y1="10" x2="36" y2="24" stroke="#4A90E2" stroke-width="1" opacity="0.3"/>
+        <line x1="36" y1="24" x2="26" y2="36" stroke="#4A90E2" stroke-width="1" opacity="0.3"/>
+        <line x1="26" y1="36" x2="10" y2="30" stroke="#4A90E2" stroke-width="1" opacity="0.3"/>
+        <circle cx="30" cy="10" r="4.5" fill="url(#gf2)"/>
+        <circle cx="36" cy="24" r="3.5" fill="#4A90E2" opacity="0.85"/>
+        <circle cx="18" cy="14" r="3"   fill="#4A90E2" opacity="0.75"/>
+        <circle cx="10" cy="30" r="3.5" fill="#4A90E2" opacity="0.7"/>
+        <circle cx="26" cy="36" r="2.5" fill="#4A90E2" opacity="0.6"/>
+      </svg>
+      actual size
+    </div>
+  </div>
+
+  <!-- G: Stacked "AM" — A large on top, M smaller below, no box, gradient -->
+  <div class="card">
+    <div class="tag">Option G — AM stacked, tight</div>
+    <div class="preview">
+      <div class="zoom">
+        <svg viewBox="0 0 38 44" width="38" height="44">
+          <defs>
+            <linearGradient id="gg" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="#6C8EF5"/>
+              <stop offset="100%" stop-color="#4A90E2"/>
+            </linearGradient>
+          </defs>
+          <!-- Large A -->
+          <text x="19" y="26" text-anchor="middle" fill="url(#gg)"
+                font-weight="900" font-size="30" font-family="Inter, sans-serif"
+                letter-spacing="-1">A</text>
+          <!-- Small M as a subscript/label -->
+          <text x="19" y="40" text-anchor="middle" fill="rgba(255,255,255,0.45)"
+                font-weight="700" font-size="11" font-family="Inter, sans-serif"
+                letter-spacing="4">M&nbsp;&nbsp;C&nbsp;&nbsp;B</text>
+        </svg>
+      </div>
+      <div class="logo-name">Applied Mathematics &amp;<br><span>Computational Biology Lab</span></div>
+    </div>
+    <div class="desc">Large A as the hero mark, with "M C B" spaced below as a subtitle strip. The A is prominent and simple; the initials beneath anchor it. Works like a sports team logo — the mark is bold, the details are there if you look.</div>
+    <div class="small-strip">
+      <svg viewBox="0 0 38 44" width="19" height="22">
+        <defs><linearGradient id="gg2" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#6C8EF5"/><stop offset="100%" stop-color="#4A90E2"/></linearGradient></defs>
+        <text x="19" y="26" text-anchor="middle" fill="url(#gg2)" font-weight="900" font-size="30" font-family="Inter, sans-serif" letter-spacing="-1">A</text>
+        <text x="19" y="40" text-anchor="middle" fill="rgba(255,255,255,0.45)" font-weight="700" font-size="11" font-family="Inter, sans-serif" letter-spacing="4">MCB</text>
+      </svg>
+      actual size
+    </div>
+  </div>
+
+  <!-- H: Gradient square pill — just a bold colored square with nothing in it — pure color mark -->
+  <div class="card">
+    <div class="tag">Option H — Pure color mark + wordmark</div>
+    <div class="preview">
+      <div class="zoom">
+        <svg viewBox="0 0 44 44" width="44" height="44">
+          <defs>
+            <linearGradient id="gh" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#4A90E2"/>
+              <stop offset="100%" stop-color="#7B3FD4"/>
+            </linearGradient>
+          </defs>
+          <!-- Rounded square — pure gradient, no letterform -->
+          <rect x="4" y="4" width="36" height="36" rx="10" fill="url(#gh)"/>
+          <!-- small white corner accent lines — suggest a grid/coordinate system -->
+          <line x1="12" y1="14" x2="20" y2="14" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="12" y1="14" x2="12" y2="22" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" stroke-linecap="round"/>
+          <!-- dot at origin -->
+          <circle cx="12" cy="14" r="2" fill="white"/>
+          <!-- a small rising line suggesting data/growth -->
+          <polyline points="16,32 22,24 28,26 34,18"
+                    stroke="rgba(255,255,255,0.8)" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="34" cy="18" r="2.5" fill="white"/>
+        </svg>
+      </div>
+      <div class="logo-name">Applied Mathematics &amp;<br><span>Computational Biology Lab</span></div>
+    </div>
+    <div class="desc">A gradient square with a coordinate axis + rising data line inside. The axis corner (L-shape + dot) suggests a mathematical coordinate system; the rising line suggests growth/discovery. Simple visual story any visitor reads immediately.</div>
+    <div class="small-strip">
+      <svg viewBox="0 0 44 44" width="22" height="22">
+        <defs><linearGradient id="gh2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#4A90E2"/><stop offset="100%" stop-color="#7B3FD4"/></linearGradient></defs>
+        <rect x="4" y="4" width="36" height="36" rx="10" fill="url(#gh2)"/>
+        <line x1="12" y1="14" x2="20" y2="14" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="12" y1="14" x2="12" y2="22" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" stroke-linecap="round"/>
+        <circle cx="12" cy="14" r="2" fill="white"/>
+        <polyline points="16,32 22,24 28,26 34,18" stroke="rgba(255,255,255,0.8)" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="34" cy="18" r="2.5" fill="white"/>
+      </svg>
+      actual size
+    </div>
+  </div>
+
+</div>
+
+<!-- Full header mockup strip -->
+<div style="margin-top: 56px; max-width: 920px;">
+  <p style="font-size:0.65rem; letter-spacing:0.12em; text-transform:uppercase; color:rgba(255,255,255,0.2); margin-bottom:14px; font-weight:600;">Header mockup</p>
+
+  <!-- Option A in header -->
+  <p style="font-size:0.65rem; color:rgba(255,255,255,0.15); margin-bottom:8px; margin-top:20px;">Option A — Signal bars</p>
+  <div style="background: rgba(13,20,36,0.98); border: 1px solid rgba(255,255,255,0.06); border-radius: 10px; padding: 0 32px; height: 64px; display:flex; align-items:center; justify-content:space-between; margin-bottom:12px;">
+    <div style="display:flex; align-items:center; gap:14px;">
+      <svg viewBox="0 0 44 36" width="36" height="30">
+        <defs><linearGradient id="h1" x1="0%" y1="100%" x2="0%" y2="0%"><stop offset="0%" stop-color="#4A90E2"/><stop offset="100%" stop-color="#7B6CE6"/></linearGradient></defs>
+        <rect x="2"  y="20" width="6" height="14" rx="2" fill="url(#h1)" opacity="0.55"/>
+        <rect x="11" y="10" width="6" height="24" rx="2" fill="url(#h1)" opacity="0.7"/>
+        <rect x="20" y="4"  width="6" height="30" rx="2" fill="url(#h1)"/>
+        <rect x="29" y="14" width="6" height="20" rx="2" fill="url(#h1)" opacity="0.75"/>
+        <rect x="38" y="22" width="6" height="12" rx="2" fill="url(#h1)" opacity="0.5"/>
+      </svg>
+      <div style="font-family:'Ysabeau',sans-serif; font-size:0.95rem; font-weight:700; line-height:1.35; color:#f1f5f9;">Applied Mathematics &amp;<br><span style="color:#4A90E2; font-weight:400;">Computational Biology Lab</span></div>
+    </div>
+    <div style="display:flex; gap:2px; font-family:'Ysabeau',sans-serif; font-size:0.85rem;">
+      <span style="color:#4A90E2; padding:5px 11px; background:rgba(74,144,226,0.1); border-radius:6px;">Home</span>
+      <span style="color:rgba(255,255,255,0.45); padding:5px 11px;">Research</span>
+      <span style="color:rgba(255,255,255,0.45); padding:5px 11px;">Publications</span>
+      <span style="color:rgba(255,255,255,0.45); padding:5px 11px;">People</span>
+      <span style="color:rgba(255,255,255,0.45); padding:5px 11px;">Software</span>
+    </div>
+  </div>
+
+  <!-- Option H in header -->
+  <p style="font-size:0.65rem; color:rgba(255,255,255,0.15); margin-bottom:8px; margin-top:20px;">Option H — Coordinate + data line</p>
+  <div style="background: rgba(13,20,36,0.98); border: 1px solid rgba(255,255,255,0.06); border-radius: 10px; padding: 0 32px; height: 64px; display:flex; align-items:center; justify-content:space-between; margin-bottom:12px;">
+    <div style="display:flex; align-items:center; gap:14px;">
+      <svg viewBox="0 0 44 44" width="38" height="38">
+        <defs><linearGradient id="h2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#4A90E2"/><stop offset="100%" stop-color="#7B3FD4"/></linearGradient></defs>
+        <rect x="4" y="4" width="36" height="36" rx="10" fill="url(#h2)"/>
+        <line x1="12" y1="14" x2="20" y2="14" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="12" y1="14" x2="12" y2="22" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" stroke-linecap="round"/>
+        <circle cx="12" cy="14" r="2" fill="white"/>
+        <polyline points="16,32 22,24 28,26 34,18" stroke="rgba(255,255,255,0.8)" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="34" cy="18" r="2.5" fill="white"/>
+      </svg>
+      <div style="font-family:'Ysabeau',sans-serif; font-size:0.95rem; font-weight:700; line-height:1.35; color:#f1f5f9;">Applied Mathematics &amp;<br><span style="color:#4A90E2; font-weight:400;">Computational Biology Lab</span></div>
+    </div>
+    <div style="display:flex; gap:2px; font-family:'Ysabeau',sans-serif; font-size:0.85rem;">
+      <span style="color:#4A90E2; padding:5px 11px; background:rgba(74,144,226,0.1); border-radius:6px;">Home</span>
+      <span style="color:rgba(255,255,255,0.45); padding:5px 11px;">Research</span>
+      <span style="color:rgba(255,255,255,0.45); padding:5px 11px;">Publications</span>
+      <span style="color:rgba(255,255,255,0.45); padding:5px 11px;">People</span>
+      <span style="color:rgba(255,255,255,0.45); padding:5px 11px;">Software</span>
+    </div>
+  </div>
+
+  <!-- Option F in header -->
+  <p style="font-size:0.65rem; color:rgba(255,255,255,0.15); margin-bottom:8px; margin-top:20px;">Option F — Scatter / constellation</p>
+  <div style="background: rgba(13,20,36,0.98); border: 1px solid rgba(255,255,255,0.06); border-radius: 10px; padding: 0 32px; height: 64px; display:flex; align-items:center; justify-content:space-between;">
+    <div style="display:flex; align-items:center; gap:14px;">
+      <svg viewBox="0 0 44 44" width="38" height="38">
+        <defs><linearGradient id="h3" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#4A90E2"/><stop offset="100%" stop-color="#7B6CE6"/></linearGradient></defs>
+        <line x1="10" y1="30" x2="18" y2="14" stroke="#4A90E2" stroke-width="1" opacity="0.3"/>
+        <line x1="18" y1="14" x2="30" y2="10" stroke="#4A90E2" stroke-width="1" opacity="0.3"/>
+        <line x1="30" y1="10" x2="36" y2="24" stroke="#4A90E2" stroke-width="1" opacity="0.3"/>
+        <line x1="36" y1="24" x2="26" y2="36" stroke="#4A90E2" stroke-width="1" opacity="0.3"/>
+        <line x1="26" y1="36" x2="10" y2="30" stroke="#4A90E2" stroke-width="1" opacity="0.3"/>
+        <circle cx="30" cy="10" r="4.5" fill="url(#h3)"/>
+        <circle cx="36" cy="24" r="3.5" fill="#4A90E2" opacity="0.85"/>
+        <circle cx="18" cy="14" r="3"   fill="#4A90E2" opacity="0.75"/>
+        <circle cx="10" cy="30" r="3.5" fill="#4A90E2" opacity="0.7"/>
+        <circle cx="26" cy="36" r="2.5" fill="#4A90E2" opacity="0.6"/>
+      </svg>
+      <div style="font-family:'Ysabeau',sans-serif; font-size:0.95rem; font-weight:700; line-height:1.35; color:#f1f5f9;">Applied Mathematics &amp;<br><span style="color:#4A90E2; font-weight:400;">Computational Biology Lab</span></div>
+    </div>
+    <div style="display:flex; gap:2px; font-family:'Ysabeau',sans-serif; font-size:0.85rem;">
+      <span style="color:#4A90E2; padding:5px 11px; background:rgba(74,144,226,0.1); border-radius:6px;">Home</span>
+      <span style="color:rgba(255,255,255,0.45); padding:5px 11px;">Research</span>
+      <span style="color:rgba(255,255,255,0.45); padding:5px 11px;">Publications</span>
+      <span style="color:rgba(255,255,255,0.45); padding:5px 11px;">People</span>
+      <span style="color:rgba(255,255,255,0.45); padding:5px 11px;">Software</span>
+    </div>
+  </div>
+</div>
+
+<p style="margin-top:40px; font-size:0.75rem; color:rgba(255,255,255,0.15);">Tell me which direction feels right — or describe something you have in mind — and I'll implement it directly into the header.</p>
+</body>
+</html>

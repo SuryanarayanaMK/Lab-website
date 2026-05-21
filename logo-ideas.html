@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Logo Ideas</title>
+<link href="https://fonts.googleapis.com/css2?family=Ysabeau:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #0d1424;
+    color: #f1f5f9;
+    font-family: 'Ysabeau', sans-serif;
+    padding: 48px 32px;
+  }
+  h1 { font-size: 1.1rem; color: rgba(255,255,255,0.4); font-weight: 400; margin-bottom: 48px; letter-spacing: 0.05em; text-transform: uppercase; }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 24px;
+    max-width: 1100px;
+  }
+  .card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px;
+    padding: 28px 28px 24px;
+    transition: border-color 0.2s, background 0.2s;
+    cursor: pointer;
+  }
+  .card:hover {
+    background: rgba(255,255,255,0.07);
+    border-color: rgba(74,144,226,0.4);
+  }
+  .card.current {
+    border-color: rgba(255,255,255,0.12);
+    opacity: 0.55;
+  }
+  .tag {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.3);
+    margin-bottom: 20px;
+  }
+  .tag.current-tag { color: rgba(255,100,100,0.5); }
+  .preview {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    margin-bottom: 16px;
+  }
+  .logo-name {
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.35;
+    color: #f1f5f9;
+  }
+  .logo-name span { color: #4A90E2; font-weight: 400; }
+  .desc {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.45);
+    line-height: 1.5;
+  }
+  /* show at 2× for clarity */
+  .preview svg { transform: scale(1.8); transform-origin: left center; margin-right: 36px; flex-shrink: 0; }
+
+  /* Also show small (actual size) strip at bottom */
+  .small-strip {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 12px;
+    opacity: 0.5;
+    font-size: 0.7rem;
+    color: rgba(255,255,255,0.3);
+  }
+  .small-strip svg { flex-shrink: 0; }
+</style>
+</head>
+<body>
+
+<h1>Logo concepts — Applied Mathematics &amp; Computational Biology Lab</h1>
+
+<div class="grid">
+
+  <!-- CURRENT -->
+  <div class="card current">
+    <div class="tag current-tag">Current (to replace)</div>
+    <div class="preview">
+      <svg viewBox="0 0 44 44" width="44" height="44">
+        <defs>
+          <linearGradient id="hg0" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#4A90E2"/>
+            <stop offset="100%" stop-color="#5B7AE6"/>
+          </linearGradient>
+        </defs>
+        <path d="M22 3 L39 12.5 L39 31.5 L22 41 L5 31.5 L5 12.5 Z" fill="url(#hg0)"/>
+        <text x="22" y="27" text-anchor="middle" fill="white" font-weight="700" font-size="14" font-family="Ysabeau, sans-serif">M</text>
+      </svg>
+      <div class="logo-name">Applied Mathematics &amp;<br><span>Computational Biology Lab</span></div>
+    </div>
+    <div class="desc">Hexagon with letter "M". Generic — could belong to any M-named org.</div>
+  </div>
+
+  <!-- OPTION A: Sine Wave in Circle -->
+  <div class="card">
+    <div class="tag">Option A — Wave</div>
+    <div class="preview">
+      <svg viewBox="0 0 44 44" width="44" height="44">
+        <defs>
+          <linearGradient id="ga" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#4A90E2"/>
+            <stop offset="100%" stop-color="#7B6CE6"/>
+          </linearGradient>
+          <clipPath id="ca">
+            <circle cx="22" cy="22" r="18.5"/>
+          </clipPath>
+        </defs>
+        <circle cx="22" cy="22" r="20" fill="url(#ga)"/>
+        <!-- Sine wave: ~1.5 periods across the circle -->
+        <path d="M3,22 C6,12 11,12 15,22 C19,32 24,32 28,22 C32,12 37,12 41,22"
+              stroke="white" stroke-width="2.8" fill="none"
+              clip-path="url(#ca)" stroke-linecap="round" stroke-linejoin="round"/>
+        <!-- small horizontal axis line -->
+        <line x1="3.5" y1="22" x2="40.5" y2="22" stroke="rgba(255,255,255,0.25)" stroke-width="0.8" clip-path="url(#ca)"/>
+      </svg>
+      <div class="logo-name">Applied Mathematics &amp;<br><span>Computational Biology Lab</span></div>
+    </div>
+    <div class="desc">A sine/wave form inside a circle. Direct reference to wave equations, oscillatory systems, and signal analysis — core applied math territory.</div>
+    <div class="small-strip">
+      <svg viewBox="0 0 44 44" width="22" height="22">
+        <defs><linearGradient id="ga2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#4A90E2"/><stop offset="100%" stop-color="#7B6CE6"/></linearGradient><clipPath id="ca2"><circle cx="22" cy="22" r="18.5"/></clipPath></defs>
+        <circle cx="22" cy="22" r="20" fill="url(#ga2)"/>
+        <path d="M3,22 C6,12 11,12 15,22 C19,32 24,32 28,22 C32,12 37,12 41,22" stroke="white" stroke-width="2.8" fill="none" clip-path="url(#ca2)" stroke-linecap="round"/>
+        <line x1="3.5" y1="22" x2="40.5" y2="22" stroke="rgba(255,255,255,0.25)" stroke-width="0.8" clip-path="url(#ca2)"/>
+      </svg>
+      actual size (22px)
+    </div>
+  </div>
+
+  <!-- OPTION B: Network Graph -->
+  <div class="card">
+    <div class="tag">Option B — Network Graph</div>
+    <div class="preview">
+      <svg viewBox="0 0 44 44" width="44" height="44">
+        <defs>
+          <linearGradient id="gb" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#4A90E2"/>
+            <stop offset="100%" stop-color="#5B7AE6"/>
+          </linearGradient>
+        </defs>
+        <!-- Background rounded square -->
+        <rect x="2" y="2" width="40" height="40" rx="10" fill="url(#gb)"/>
+        <!-- Edges -->
+        <line x1="22" y1="9" x2="9" y2="31" stroke="rgba(255,255,255,0.55)" stroke-width="1.4"/>
+        <line x1="22" y1="9" x2="35" y2="31" stroke="rgba(255,255,255,0.55)" stroke-width="1.4"/>
+        <line x1="9" y1="31" x2="35" y2="31" stroke="rgba(255,255,255,0.55)" stroke-width="1.4"/>
+        <line x1="22" y1="9" x2="22" y2="31" stroke="rgba(255,255,255,0.3)" stroke-width="1.2"/>
+        <line x1="9" y1="31" x2="35" y2="19" stroke="rgba(255,255,255,0.25)" stroke-width="1.2"/>
+        <!-- Nodes -->
+        <circle cx="22" cy="9" r="3.5" fill="white"/>
+        <circle cx="9" cy="31" r="3.5" fill="white"/>
+        <circle cx="35" cy="31" r="3.5" fill="white"/>
+        <circle cx="22" cy="23" r="2.5" fill="rgba(255,255,255,0.85)"/>
+      </svg>
+      <div class="logo-name">Applied Mathematics &amp;<br><span>Computational Biology Lab</span></div>
+    </div>
+    <div class="desc">A network graph with nodes and edges inside a rounded square. Speaks to computational biology (gene networks, protein interaction) and graph theory / linear algebra.</div>
+    <div class="small-strip">
+      <svg viewBox="0 0 44 44" width="22" height="22">
+        <defs><linearGradient id="gb2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#4A90E2"/><stop offset="100%" stop-color="#5B7AE6"/></linearGradient></defs>
+        <rect x="2" y="2" width="40" height="40" rx="10" fill="url(#gb2)"/>
+        <line x1="22" y1="9" x2="9" y2="31" stroke="rgba(255,255,255,0.55)" stroke-width="1.4"/>
+        <line x1="22" y1="9" x2="35" y2="31" stroke="rgba(255,255,255,0.55)" stroke-width="1.4"/>
+        <line x1="9" y1="31" x2="35" y2="31" stroke="rgba(255,255,255,0.55)" stroke-width="1.4"/>
+        <line x1="22" y1="9" x2="22" y2="31" stroke="rgba(255,255,255,0.3)" stroke-width="1.2"/>
+        <line x1="9" y1="31" x2="35" y2="19" stroke="rgba(255,255,255,0.25)" stroke-width="1.2"/>
+        <circle cx="22" cy="9" r="3.5" fill="white"/>
+        <circle cx="9" cy="31" r="3.5" fill="white"/>
+        <circle cx="35" cy="31" r="3.5" fill="white"/>
+        <circle cx="22" cy="23" r="2.5" fill="rgba(255,255,255,0.85)"/>
+      </svg>
+      actual size (22px)
+    </div>
+  </div>
+
+  <!-- OPTION C: Bifurcation / Branch -->
+  <div class="card">
+    <div class="tag">Option C — Bifurcation</div>
+    <div class="preview">
+      <svg viewBox="0 0 44 44" width="44" height="44">
+        <defs>
+          <linearGradient id="gc" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#3D8BDB"/>
+            <stop offset="100%" stop-color="#6C63E0"/>
+          </linearGradient>
+        </defs>
+        <!-- Circle background -->
+        <circle cx="22" cy="22" r="20" fill="url(#gc)"/>
+        <!-- Root -->
+        <line x1="22" y1="38" x2="22" y2="26" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+        <!-- First branch -->
+        <line x1="22" y1="26" x2="13" y2="17" stroke="white" stroke-width="2.2" stroke-linecap="round"/>
+        <line x1="22" y1="26" x2="31" y2="17" stroke="white" stroke-width="2.2" stroke-linecap="round"/>
+        <!-- Second level branches -->
+        <line x1="13" y1="17" x2="9" y2="10" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+        <line x1="13" y1="17" x2="17" y2="10" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+        <line x1="31" y1="17" x2="27" y2="10" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+        <line x1="31" y1="17" x2="35" y2="10" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+        <!-- Tips -->
+        <circle cx="9" cy="10" r="2" fill="white"/>
+        <circle cx="17" cy="10" r="2" fill="white"/>
+        <circle cx="27" cy="10" r="2" fill="white"/>
+        <circle cx="35" cy="10" r="2" fill="white"/>
+      </svg>
+      <div class="logo-name">Applied Mathematics &amp;<br><span>Computational Biology Lab</span></div>
+    </div>
+    <div class="desc">A bifurcation tree — references dynamical systems and bifurcation theory (applied math) while also reading as a phylogenetic tree or cell lineage (computational biology).</div>
+    <div class="small-strip">
+      <svg viewBox="0 0 44 44" width="22" height="22">
+        <defs><linearGradient id="gc2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#3D8BDB"/><stop offset="100%" stop-color="#6C63E0"/></linearGradient></defs>
+        <circle cx="22" cy="22" r="20" fill="url(#gc2)"/>
+        <line x1="22" y1="38" x2="22" y2="26" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="22" y1="26" x2="13" y2="17" stroke="white" stroke-width="2.2" stroke-linecap="round"/>
+        <line x1="22" y1="26" x2="31" y2="17" stroke="white" stroke-width="2.2" stroke-linecap="round"/>
+        <line x1="13" y1="17" x2="9" y2="10" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+        <line x1="13" y1="17" x2="17" y2="10" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+        <line x1="31" y1="17" x2="27" y2="10" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+        <line x1="31" y1="17" x2="35" y2="10" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+        <circle cx="9" cy="10" r="2" fill="white"/>
+        <circle cx="17" cy="10" r="2" fill="white"/>
+        <circle cx="27" cy="10" r="2" fill="white"/>
+        <circle cx="35" cy="10" r="2" fill="white"/>
+      </svg>
+      actual size (22px)
+    </div>
+  </div>
+
+  <!-- OPTION D: Integral Symbol -->
+  <div class="card">
+    <div class="tag">Option D — Integral</div>
+    <div class="preview">
+      <svg viewBox="0 0 44 44" width="44" height="44">
+        <defs>
+          <linearGradient id="gd" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#4A90E2"/>
+            <stop offset="100%" stop-color="#5B7AE6"/>
+          </linearGradient>
+        </defs>
+        <!-- Rounded square background -->
+        <rect x="2" y="2" width="40" height="40" rx="10" fill="url(#gd)"/>
+        <!-- Integral sign: S-curve, slightly stylized -->
+        <path d="M25,8 C28,8 29,10 27,13 L18,30 C16,33 17,36 20,36"
+              stroke="white" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <!-- top serif-like curve -->
+        <path d="M21,8 C23,6 26,6 27,8"
+              stroke="white" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <!-- bottom serif-like curve -->
+        <path d="M20,36 C19,38 22,39 24,37"
+              stroke="white" stroke-width="2" fill="none" stroke-linecap="round"/>
+      </svg>
+      <div class="logo-name">Applied Mathematics &amp;<br><span>Computational Biology Lab</span></div>
+    </div>
+    <div class="desc">A stylized integral sign (∫). Literally the symbol of calculus and applied mathematics — unmistakable. Clean, letterform-based, works at any size.</div>
+    <div class="small-strip">
+      <svg viewBox="0 0 44 44" width="22" height="22">
+        <defs><linearGradient id="gd2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#4A90E2"/><stop offset="100%" stop-color="#5B7AE6"/></linearGradient></defs>
+        <rect x="2" y="2" width="40" height="40" rx="10" fill="url(#gd2)"/>
+        <path d="M25,8 C28,8 29,10 27,13 L18,30 C16,33 17,36 20,36" stroke="white" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <path d="M21,8 C23,6 26,6 27,8" stroke="white" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <path d="M20,36 C19,38 22,39 24,37" stroke="white" stroke-width="2" fill="none" stroke-linecap="round"/>
+      </svg>
+      actual size (22px)
+    </div>
+  </div>
+
+  <!-- OPTION E: Double Helix abstracted -->
+  <div class="card">
+    <div class="tag">Option E — Helix</div>
+    <div class="preview">
+      <svg viewBox="0 0 44 44" width="44" height="44">
+        <defs>
+          <linearGradient id="ge" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#2E86C1"/>
+            <stop offset="100%" stop-color="#8E44E8"/>
+          </linearGradient>
+          <clipPath id="ce">
+            <circle cx="22" cy="22" r="19.5"/>
+          </clipPath>
+        </defs>
+        <circle cx="22" cy="22" r="21" fill="url(#ge)"/>
+        <!-- Strand 1: top-left curve going down-right -->
+        <path d="M10,6 C14,14 30,14 34,22 C38,30 24,30 20,38"
+              stroke="white" stroke-width="2.8" fill="none"
+              clip-path="url(#ce)" stroke-linecap="round" opacity="1"/>
+        <!-- Strand 2: mirror -->
+        <path d="M34,6 C30,14 14,14 10,22 C6,30 20,30 24,38"
+              stroke="rgba(255,255,255,0.55)" stroke-width="2.8" fill="none"
+              clip-path="url(#ce)" stroke-linecap="round"/>
+        <!-- Rungs (horizontal connectors) -->
+        <line x1="14" y1="14" x2="30" y2="14" stroke="rgba(255,255,255,0.35)" stroke-width="1.2"/>
+        <line x1="10" y1="22" x2="34" y2="22" stroke="rgba(255,255,255,0.35)" stroke-width="1.2"/>
+        <line x1="14" y1="30" x2="30" y2="30" stroke="rgba(255,255,255,0.35)" stroke-width="1.2"/>
+      </svg>
+      <div class="logo-name">Applied Mathematics &amp;<br><span>Computational Biology Lab</span></div>
+    </div>
+    <div class="desc">An abstracted double helix. Leans into the "Computational Biology" side — DNA, RNA, sequence analysis. The two strands represent the math + biology duality of the lab.</div>
+    <div class="small-strip">
+      <svg viewBox="0 0 44 44" width="22" height="22">
+        <defs><linearGradient id="ge2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#2E86C1"/><stop offset="100%" stop-color="#8E44E8"/></linearGradient><clipPath id="ce2"><circle cx="22" cy="22" r="19.5"/></clipPath></defs>
+        <circle cx="22" cy="22" r="21" fill="url(#ge2)"/>
+        <path d="M10,6 C14,14 30,14 34,22 C38,30 24,30 20,38" stroke="white" stroke-width="2.8" fill="none" clip-path="url(#ce2)" stroke-linecap="round"/>
+        <path d="M34,6 C30,14 14,14 10,22 C6,30 20,30 24,38" stroke="rgba(255,255,255,0.55)" stroke-width="2.8" fill="none" clip-path="url(#ce2)" stroke-linecap="round"/>
+        <line x1="14" y1="14" x2="30" y2="14" stroke="rgba(255,255,255,0.35)" stroke-width="1.2"/>
+        <line x1="10" y1="22" x2="34" y2="22" stroke="rgba(255,255,255,0.35)" stroke-width="1.2"/>
+        <line x1="14" y1="30" x2="30" y2="30" stroke="rgba(255,255,255,0.35)" stroke-width="1.2"/>
+      </svg>
+      actual size (22px)
+    </div>
+  </div>
+
+  <!-- OPTION F: Phase Portrait / Orbits -->
+  <div class="card">
+    <div class="tag">Option F — Phase Portrait</div>
+    <div class="preview">
+      <svg viewBox="0 0 44 44" width="44" height="44">
+        <defs>
+          <linearGradient id="gf" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#1B6CA8"/>
+            <stop offset="100%" stop-color="#4A90E2"/>
+          </linearGradient>
+        </defs>
+        <!-- Dark circle background -->
+        <circle cx="22" cy="22" r="21" fill="#0e1828"/>
+        <!-- Outer orbit ellipse -->
+        <ellipse cx="22" cy="22" rx="17" ry="10" fill="none" stroke="#4A90E2" stroke-width="1.5" opacity="0.5"/>
+        <!-- Middle orbit -->
+        <ellipse cx="22" cy="22" rx="11" ry="6.5" fill="none" stroke="#4A90E2" stroke-width="1.5" opacity="0.75"/>
+        <!-- Inner orbit -->
+        <ellipse cx="22" cy="22" rx="5.5" ry="3.5" fill="none" stroke="#4A90E2" stroke-width="1.5"/>
+        <!-- Arrows on outer orbit (to suggest directionality) -->
+        <path d="M39,22 L36,19 M39,22 L36,25" stroke="#4A90E2" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+        <!-- Center dot (fixed point) -->
+        <circle cx="22" cy="22" r="2.5" fill="#4A90E2"/>
+        <!-- Glow -->
+        <circle cx="22" cy="22" r="4" fill="#4A90E2" opacity="0.2"/>
+      </svg>
+      <div class="logo-name">Applied Mathematics &amp;<br><span>Computational Biology Lab</span></div>
+    </div>
+    <div class="desc">Concentric orbits around a fixed point — a phase portrait from dynamical systems theory. Core applied math (ODEs, stability analysis) with a distinctive, scientific look.</div>
+    <div class="small-strip">
+      <svg viewBox="0 0 44 44" width="22" height="22">
+        <circle cx="22" cy="22" r="21" fill="#0e1828"/>
+        <ellipse cx="22" cy="22" rx="17" ry="10" fill="none" stroke="#4A90E2" stroke-width="1.5" opacity="0.5"/>
+        <ellipse cx="22" cy="22" rx="11" ry="6.5" fill="none" stroke="#4A90E2" stroke-width="1.5" opacity="0.75"/>
+        <ellipse cx="22" cy="22" rx="5.5" ry="3.5" fill="none" stroke="#4A90E2" stroke-width="1.5"/>
+        <circle cx="22" cy="22" r="2.5" fill="#4A90E2"/>
+        <circle cx="22" cy="22" r="4" fill="#4A90E2" opacity="0.2"/>
+      </svg>
+      actual size (22px)
+    </div>
+  </div>
+
+</div>
+
+<p style="margin-top:48px; font-size:0.8rem; color:rgba(255,255,255,0.2);">Open this file in your browser — all logos are pure SVG, no images.</p>
+
+</body>
+</html>

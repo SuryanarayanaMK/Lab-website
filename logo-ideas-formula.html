@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Logo — ∂B / ∂M∂C</title>
+<link href="https://fonts.googleapis.com/css2?family=Ysabeau:wght@400;600;700;900&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #0d1424;
+    color: #f1f5f9;
+    font-family: 'Ysabeau', sans-serif;
+    padding: 48px 32px;
+  }
+  h1 { font-size: 1.1rem; color: rgba(255,255,255,0.4); font-weight: 400; margin-bottom: 6px; letter-spacing: 0.05em; text-transform: uppercase; }
+  .subtitle { font-size: 0.9rem; color: rgba(255,255,255,0.25); margin-bottom: 48px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 24px; max-width: 1100px; }
+  .card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px;
+    padding: 28px 28px 22px;
+    cursor: pointer;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .card:hover { background: rgba(255,255,255,0.07); border-color: rgba(74,144,226,0.4); }
+  .tag { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-bottom: 20px; }
+  .preview {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    margin-bottom: 16px;
+  }
+  .logo-name { font-size: 1rem; font-weight: 700; line-height: 1.35; color: #f1f5f9; }
+  .logo-name span { color: #4A90E2; font-weight: 400; }
+  .desc { font-size: 0.85rem; color: rgba(255,255,255,0.45); line-height: 1.55; }
+  .small-strip { display: flex; align-items: center; gap: 8px; margin-top: 14px; opacity: 0.45; font-size: 0.7rem; color: rgba(255,255,255,0.3); }
+
+  /* Zoom container */
+  .zoom { transform: scale(2); transform-origin: left center; margin-right: 52px; flex-shrink: 0; display: inline-block; }
+</style>
+</head>
+<body>
+
+<h1>∂B / ∂M∂C — formula logo</h1>
+<p class="subtitle">
+  ∂B/∂M∂C &nbsp;·&nbsp; "the partial derivative of Biology w.r.t. Mathematics and Computation" &nbsp;·&nbsp; B=Biology · M=Mathematics · C=Computational
+</p>
+
+<div class="grid">
+
+  <!-- A: Fraction in a rounded square, math-textbook style -->
+  <div class="card">
+    <div class="tag">Option A — fraction badge (rounded square)</div>
+    <div class="preview">
+      <div class="zoom">
+        <svg viewBox="0 0 52 44" width="52" height="44">
+          <defs>
+            <linearGradient id="ga" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#4A90E2"/>
+              <stop offset="100%" stop-color="#5B7AE6"/>
+            </linearGradient>
+          </defs>
+          <rect x="1" y="1" width="50" height="42" rx="10" fill="url(#ga)"/>
+          <!-- ∂B on top -->
+          <text x="26" y="16" text-anchor="middle" fill="white"
+                font-size="12" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-weight="bold">&#x2202;B</text>
+          <!-- fraction bar -->
+          <line x1="8" y1="22" x2="44" y2="22" stroke="rgba(255,255,255,0.9)" stroke-width="1.2"/>
+          <!-- ∂M∂C on bottom -->
+          <text x="26" y="35" text-anchor="middle" fill="rgba(255,255,255,0.9)"
+                font-size="11" font-family="Georgia, 'Times New Roman', serif" font-style="italic">&#x2202;M&#x2202;C</text>
+        </svg>
+      </div>
+      <div class="logo-name">Applied Mathematics &amp;<br><span>Computational Biology Lab</span></div>
+    </div>
+    <div class="desc">The expression rendered as a classic math fraction inside a rounded square badge. Looks like it came straight out of a PDE textbook — instantly signals "applied mathematics."</div>
+    <div class="small-strip">
+      <svg viewBox="0 0 52 44" width="26" height="22">
+        <defs><linearGradient id="ga2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#4A90E2"/><stop offset="100%" stop-color="#5B7AE6"/></linearGradient></defs>
+        <rect x="1" y="1" width="50" height="42" rx="10" fill="url(#ga2)"/>
+        <text x="26" y="16" text-anchor="middle" fill="white" font-size="12" font-family="Georgia, serif" font-style="italic" font-weight="bold">&#x2202;B</text>
+        <line x1="8" y1="22" x2="44" y2="22" stroke="rgba(255,255,255,0.9)" stroke-width="1.2"/>
+        <text x="26" y="35" text-anchor="middle" fill="rgba(255,255,255,0.9)" font-size="11" font-family="Georgia, serif" font-style="italic">&#x2202;M&#x2202;C</text>
+      </svg>
+      actual size
+    </div>
+  </div>
+
+  <!-- B: Transparent / dark badge — formula glows -->
+  <div class="card">
+    <div class="tag">Option B — dark badge, glowing formula</div>
+    <div class="preview">
+      <div class="zoom">
+        <svg viewBox="0 0 52 44" width="52" height="44">
+          <defs>
+            <linearGradient id="gb" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#1a2540"/>
+              <stop offset="100%" stop-color="#1e2a50"/>
+            </linearGradient>
+          </defs>
+          <rect x="1" y="1" width="50" height="42" rx="10" fill="url(#gb)"/>
+          <rect x="1" y="1" width="50" height="42" rx="10" fill="none" stroke="#4A90E2" stroke-width="1.5" opacity="0.6"/>
+          <!-- ∂B glowing blue -->
+          <text x="26" y="16" text-anchor="middle" fill="#4A90E2"
+                font-size="13" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-weight="bold">&#x2202;B</text>
+          <!-- fraction bar -->
+          <line x1="8" y1="22" x2="44" y2="22" stroke="#4A90E2" stroke-width="1.2" opacity="0.8"/>
+          <!-- ∂M∂C lighter -->
+          <text x="26" y="35" text-anchor="middle" fill="rgba(74,144,226,0.7)"
+                font-size="11" font-family="Georgia, 'Times New Roman', serif" font-style="italic">&#x2202;M&#x2202;C</text>
+        </svg>
+      </div>
+      <div class="logo-name">Applied Mathematics &amp;<br><span>Computational Biology Lab</span></div>
+    </div>
+    <div class="desc">Dark background with the formula rendered in the lab's blue — matches the header's dark theme perfectly. The formula feels like it's glowing on a chalkboard or terminal screen.</div>
+    <div class="small-strip">
+      <svg viewBox="0 0 52 44" width="26" height="22">
+        <rect x="1" y="1" width="50" height="42" rx="10" fill="#1a2540"/>
+        <rect x="1" y="1" width="50" height="42" rx="10" fill="none" stroke="#4A90E2" stroke-width="1.5" opacity="0.6"/>
+        <text x="26" y="16" text-anchor="middle" fill="#4A90E2" font-size="13" font-family="Georgia, serif" font-style="italic" font-weight="bold">&#x2202;B</text>
+        <line x1="8" y1="22" x2="44" y2="22" stroke="#4A90E2" stroke-width="1.2" opacity="0.8"/>
+        <text x="26" y="35" text-anchor="middle" fill="rgba(74,144,226,0.7)" font-size="11" font-family="Georgia, serif" font-style="italic">&#x2202;M&#x2202;C</text>
+      </svg>
+      actual size
+    </div>
+  </div>
+
+  <!-- C: No container — just the formula floating, used as the full header logo -->
+  <div class="card">
+    <div class="tag">Option C — free-floating formula (no box)</div>
+    <div class="preview">
+      <div class="zoom">
+        <svg viewBox="0 0 52 44" width="52" height="44">
+          <defs>
+            <linearGradient id="gc" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#4A90E2"/>
+              <stop offset="100%" stop-color="#7B6CE6"/>
+            </linearGradient>
+          </defs>
+          <!-- ∂B on top, gradient -->
+          <text x="26" y="17" text-anchor="middle" fill="url(#gc)"
+                font-size="14" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-weight="bold">&#x2202;B</text>
+          <!-- fraction bar -->
+          <line x1="6" y1="22.5" x2="46" y2="22.5" stroke="url(#gc)" stroke-width="1.3"/>
+          <!-- ∂M∂C on bottom, white -->
+          <text x="26" y="37" text-anchor="middle" fill="rgba(255,255,255,0.85)"
+                font-size="12" font-family="Georgia, 'Times New Roman', serif" font-style="italic">&#x2202;M&#x2202;C</text>
+        </svg>
+      </div>
+      <div class="logo-name">Applied Mathematics &amp;<br><span>Computational Biology Lab</span></div>
+    </div>
+    <div class="desc">No background shape at all — the formula floats freely against the dark header. The gradient numerator and white denominator create a natural hierarchy. Very clean, zero visual clutter.</div>
+    <div class="small-strip">
+      <svg viewBox="0 0 52 44" width="26" height="22">
+        <defs><linearGradient id="gc2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#4A90E2"/><stop offset="100%" stop-color="#7B6CE6"/></linearGradient></defs>
+        <text x="26" y="17" text-anchor="middle" fill="url(#gc2)" font-size="14" font-family="Georgia, serif" font-style="italic" font-weight="bold">&#x2202;B</text>
+        <line x1="6" y1="22.5" x2="46" y2="22.5" stroke="url(#gc2)" stroke-width="1.3"/>
+        <text x="26" y="37" text-anchor="middle" fill="rgba(255,255,255,0.85)" font-size="12" font-family="Georgia, serif" font-style="italic">&#x2202;M&#x2202;C</text>
+      </svg>
+      actual size
+    </div>
+  </div>
+
+  <!-- D: Circle container, formula inside -->
+  <div class="card">
+    <div class="tag">Option D — formula in circle</div>
+    <div class="preview">
+      <div class="zoom">
+        <svg viewBox="0 0 52 44" width="52" height="44">
+          <defs>
+            <linearGradient id="gd" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#4A90E2"/>
+              <stop offset="100%" stop-color="#5B7AE6"/>
+            </linearGradient>
+          </defs>
+          <ellipse cx="26" cy="22" rx="24" ry="21" fill="url(#gd)"/>
+          <!-- ∂B on top -->
+          <text x="26" y="16" text-anchor="middle" fill="white"
+                font-size="12" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-weight="bold">&#x2202;B</text>
+          <!-- fraction bar -->
+          <line x1="9" y1="21.5" x2="43" y2="21.5" stroke="rgba(255,255,255,0.9)" stroke-width="1.2"/>
+          <!-- ∂M∂C on bottom -->
+          <text x="26" y="34" text-anchor="middle" fill="rgba(255,255,255,0.9)"
+                font-size="11" font-family="Georgia, 'Times New Roman', serif" font-style="italic">&#x2202;M&#x2202;C</text>
+        </svg>
+      </div>
+      <div class="logo-name">Applied Mathematics &amp;<br><span>Computational Biology Lab</span></div>
+    </div>
+    <div class="desc">Formula in a circle — feels like a department seal or stamp. The oval shape gives it a slightly wider canvas so the formula breathes more than in a square.</div>
+    <div class="small-strip">
+      <svg viewBox="0 0 52 44" width="26" height="22">
+        <defs><linearGradient id="gd2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#4A90E2"/><stop offset="100%" stop-color="#5B7AE6"/></linearGradient></defs>
+        <ellipse cx="26" cy="22" rx="24" ry="21" fill="url(#gd2)"/>
+        <text x="26" y="16" text-anchor="middle" fill="white" font-size="12" font-family="Georgia, serif" font-style="italic" font-weight="bold">&#x2202;B</text>
+        <line x1="9" y1="21.5" x2="43" y2="21.5" stroke="rgba(255,255,255,0.9)" stroke-width="1.2"/>
+        <text x="26" y="34" text-anchor="middle" fill="rgba(255,255,255,0.9)" font-size="11" font-family="Georgia, serif" font-style="italic">&#x2202;M&#x2202;C</text>
+      </svg>
+      actual size
+    </div>
+  </div>
+
+  <!-- E: Inline (non-fraction) version: ∂B/∂M∂C -->
+  <div class="card">
+    <div class="tag">Option E — inline (single-line) formula</div>
+    <div class="preview">
+      <div class="zoom">
+        <svg viewBox="0 0 72 30" width="72" height="30">
+          <defs>
+            <linearGradient id="ge" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#4A90E2"/>
+              <stop offset="100%" stop-color="#7B6CE6"/>
+            </linearGradient>
+          </defs>
+          <!-- ∂B/∂M∂C all on one line, like inline math -->
+          <text x="36" y="22" text-anchor="middle" fill="url(#ge)"
+                font-size="15" font-family="Georgia, 'Times New Roman', serif" font-style="italic">&#x2202;B/&#x2202;M&#x2202;C</text>
+        </svg>
+      </div>
+      <div class="logo-name">Applied Mathematics &amp;<br><span>Computational Biology Lab</span></div>
+    </div>
+    <div class="desc">The formula written inline — ∂B/∂M∂C — used directly as the logo text rather than a separate icon. The formula itself becomes the wordmark. No icon needed; the header text IS the formula.</desc>
+    <div class="small-strip">
+      <svg viewBox="0 0 72 30" width="48" height="20">
+        <defs><linearGradient id="ge2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#4A90E2"/><stop offset="100%" stop-color="#7B6CE6"/></linearGradient></defs>
+        <text x="36" y="22" text-anchor="middle" fill="url(#ge2)" font-size="15" font-family="Georgia, serif" font-style="italic">&#x2202;B/&#x2202;M&#x2202;C</text>
+      </svg>
+      actual size
+    </div>
+  </div>
+
+  <!-- F: Compact square — large ∂B, smaller denominator, max impact -->
+  <div class="card">
+    <div class="tag">Option F — high-contrast, big numerator</div>
+    <div class="preview">
+      <div class="zoom">
+        <svg viewBox="0 0 52 48" width="52" height="48">
+          <defs>
+            <linearGradient id="gf" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#3A7BD5"/>
+              <stop offset="100%" stop-color="#6C63E0"/>
+            </linearGradient>
+          </defs>
+          <rect x="1" y="1" width="50" height="46" rx="10" fill="url(#gf)"/>
+          <!-- big ∂B -->
+          <text x="26" y="22" text-anchor="middle" fill="white"
+                font-size="17" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-weight="bold">&#x2202;B</text>
+          <!-- thicker bar -->
+          <line x1="7" y1="27" x2="45" y2="27" stroke="rgba(255,255,255,0.85)" stroke-width="1.5"/>
+          <!-- smaller denominator -->
+          <text x="26" y="40" text-anchor="middle" fill="rgba(255,255,255,0.75)"
+                font-size="10.5" font-family="Georgia, 'Times New Roman', serif" font-style="italic">&#x2202;M&#x2202;C</text>
+        </svg>
+      </div>
+      <div class="logo-name">Applied Mathematics &amp;<br><span>Computational Biology Lab</span></div>
+    </div>
+    <div class="desc">Maximum impact — large ∂B dominates, denominator is secondary. The B (Biology) is the subject; M and C are the tools. Clear visual hierarchy that mirrors the intellectual hierarchy of the lab's work.</div>
+    <div class="small-strip">
+      <svg viewBox="0 0 52 48" width="26" height="24">
+        <defs><linearGradient id="gf2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#3A7BD5"/><stop offset="100%" stop-color="#6C63E0"/></linearGradient></defs>
+        <rect x="1" y="1" width="50" height="46" rx="10" fill="url(#gf2)"/>
+        <text x="26" y="22" text-anchor="middle" fill="white" font-size="17" font-family="Georgia, serif" font-style="italic" font-weight="bold">&#x2202;B</text>
+        <line x1="7" y1="27" x2="45" y2="27" stroke="rgba(255,255,255,0.85)" stroke-width="1.5"/>
+        <text x="26" y="40" text-anchor="middle" fill="rgba(255,255,255,0.75)" font-size="10.5" font-family="Georgia, serif" font-style="italic">&#x2202;M&#x2202;C</text>
+      </svg>
+      actual size
+    </div>
+  </div>
+
+</div>
+
+<!-- BONUS: Full header mockup -->
+<div style="margin-top: 56px; max-width: 900px;">
+  <p style="font-size:0.7rem; letter-spacing:0.1em; text-transform:uppercase; color:rgba(255,255,255,0.25); margin-bottom:16px;">Header mockup — how Option A looks in context</p>
+  <div style="background: rgba(13,20,36,0.98); border: 1px solid rgba(255,255,255,0.07); border-radius: 12px; padding: 0 32px; height: 68px; display:flex; align-items:center; justify-content:space-between;">
+    <!-- logo -->
+    <div style="display:flex; align-items:center; gap:14px;">
+      <svg viewBox="0 0 52 44" width="52" height="44">
+        <defs><linearGradient id="hdr" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#4A90E2"/><stop offset="100%" stop-color="#5B7AE6"/></linearGradient></defs>
+        <rect x="1" y="1" width="50" height="42" rx="10" fill="url(#hdr)"/>
+        <text x="26" y="16" text-anchor="middle" fill="white" font-size="12" font-family="Georgia, serif" font-style="italic" font-weight="bold">&#x2202;B</text>
+        <line x1="8" y1="22" x2="44" y2="22" stroke="rgba(255,255,255,0.9)" stroke-width="1.2"/>
+        <text x="26" y="35" text-anchor="middle" fill="rgba(255,255,255,0.9)" font-size="11" font-family="Georgia, serif" font-style="italic">&#x2202;M&#x2202;C</text>
+      </svg>
+      <div style="font-family:'Ysabeau',sans-serif; font-size:1rem; font-weight:700; line-height:1.35; color:#f1f5f9;">
+        Applied Mathematics &amp;<br>
+        <span style="color:#4A90E2; font-weight:400;">Computational Biology Lab</span>
+      </div>
+    </div>
+    <!-- nav -->
+    <div style="display:flex; gap:4px; font-family:'Ysabeau',sans-serif; font-size:0.9rem;">
+      <span style="color:#4A90E2; padding:6px 12px; background:rgba(74,144,226,0.12); border-radius:6px;">Home</span>
+      <span style="color:rgba(255,255,255,0.55); padding:6px 12px;">Research</span>
+      <span style="color:rgba(255,255,255,0.55); padding:6px 12px;">Publications</span>
+      <span style="color:rgba(255,255,255,0.55); padding:6px 12px;">People</span>
+      <span style="color:rgba(255,255,255,0.55); padding:6px 12px;">Teaching</span>
+    </div>
+  </div>
+</div>
+
+<p style="margin-top:48px; font-size:0.8rem; color:rgba(255,255,255,0.2);">∂B / ∂M∂C — "the partial derivative of Biology with respect to Mathematics and Computation"</p>
+
+</body>
+</html>

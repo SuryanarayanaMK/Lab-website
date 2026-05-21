@@ -28,10 +28,25 @@
             z-index: 0;
         }
         .hero-video-bg video {
+            position: absolute;
+            inset: 0;
             width: 100%;
             height: 100%;
             object-fit: cover;
             display: block;
+            transition: opacity 1.8s ease-in-out;
+        }
+        #heroVideo { opacity: 1; z-index: 1; }
+        #heroVideo2 {
+            opacity: 0;
+            z-index: 2;
+            /* Oversized + centered: equivalent to scale(2) without CSS transform compositing issues */
+            top: -50%;
+            left: -50%;
+            right: auto;
+            bottom: auto;
+            width: 200%;
+            height: 200%;
         }
         .hero-overlay {
             position: absolute;
@@ -424,8 +439,11 @@
     <!-- Hero Section -->
     <section class="hero-section">
         <div class="hero-video-bg">
-            <video id="heroVideo" autoplay muted playsinline loop>
+            <video id="heroVideo" autoplay muted playsinline>
                 <source src="images/home/spindle_movie.mp4" type="video/mp4">
+            </video>
+            <video id="heroVideo2" muted playsinline>
+                <source src="images/home/turb-sim.mp4" type="video/mp4">
             </video>
         </div>
         <div class="hero-overlay"></div>
@@ -608,6 +626,43 @@
                 mobileNav.classList.toggle('open', !isOpen);
             }
         }
+
+        // Hero video crossfade: spindle <-> turb-sim
+        (function() {
+            var v1 = document.getElementById('heroVideo');
+            var v2 = document.getElementById('heroVideo2');
+            var active = 1;
+            var turbPlays = 0;
+            var TURB_LOOPS = 2;
+
+            function crossfadeTo(next) {
+                var incoming = next === 2 ? v2 : v1;
+                incoming.currentTime = 0;
+                incoming.play();
+                v2.style.opacity = next === 2 ? '1' : '0';
+                active = next;
+            }
+
+            // Spindle ends → cross to turb-sim
+            v1.addEventListener('ended', function() {
+                turbPlays = 0;
+                crossfadeTo(2);
+            });
+
+            // Turb-sim ends → loop or cross back to spindle
+            v2.addEventListener('ended', function() {
+                turbPlays++;
+                if (turbPlays < TURB_LOOPS) {
+                    v2.currentTime = 0;
+                    v2.play();
+                } else {
+                    crossfadeTo(1);
+                }
+            });
+
+            // Preload turb-sim so first crossfade is instant
+            v2.load();
+        })();
 
     </script>
 </body>
