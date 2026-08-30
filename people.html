@@ -126,6 +126,31 @@
             color: #fff;
             border-color: #4A90E2;
         }
+        .pi-email-copy {
+            position: relative;
+            background: none;
+            font-family: inherit;
+            cursor: pointer;
+            padding: 8px 12px;
+        }
+        .pi-email-copy::after {
+            content: 'Copied!';
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-6px);
+            background: #1e3a5f;
+            color: #fff;
+            font-size: 0.72rem;
+            font-weight: 600;
+            padding: 4px 9px;
+            border-radius: 6px;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.2s;
+        }
+        .pi-email-copy.copied::after { opacity: 1; }
 
         /* Divider */
         .people-divider {
@@ -267,10 +292,12 @@
                 <div class="pi-info">
                     <h2>Suryanarayana Maddu, Ph.D.</h2>
                     <div class="pi-title">Assistant Professor · Department of Applied Mathematics &amp; Statistics · Data Science &amp; AI Institute</div>
-                    <p>My research sits at the intersection of applied mathematics, machine learning, and computational biology — developing methods to understand complex biological systems from single cells to tissues.</p>
-                    <p>Before joining JHU, I was a postdoctoral fellow at Harvard University. I received my Ph.D. from the Max Planck Institute of Molecular Cell Biology and Genetics in Dresden, Germany.</p>
+                    <p>My research lies at the interface of biophysical modeling, statistical inference, and scientific machine learning, with the broader goal of building predictive and mechanistic models of biological processes.</p>
+                    <p>Before joining JHU, I was a Research Fellow at Center for Computational Biology, Flatiron Institute and Harvard University. I received my Ph.D. from the Max Planck Institute of Molecular Cell Biology and Genetics in Dresden, Germany.</p>
                     <div class="pi-links">
-                        <a href="mailto:smadduk1@jhu.edu" class="pi-link">✉ smadduk1@jhu.edu</a>
+                        <button type="button" class="pi-link pi-email-copy" data-email="smadduk1@jhu.edu" title="Copy email address" aria-label="Copy email address" onclick="copyEmailToClipboard(this)">
+                            <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                        </button>
                         <a href="research.html" class="pi-link">Research →</a>
                         <a href="publications.html" class="pi-link">Publications →</a>
                     </div>

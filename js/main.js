@@ -100,6 +100,20 @@ function initHeader() {
     });
 }
 
+// ================= EMAIL COPY =================
+window.copyEmailToClipboard = function (btn) {
+    const email = btn.getAttribute('data-email');
+    if (!email || !navigator.clipboard) return;
+
+    navigator.clipboard.writeText(email).then(function () {
+        btn.classList.add('copied');
+        clearTimeout(btn._copyTimeout);
+        btn._copyTimeout = setTimeout(function () {
+            btn.classList.remove('copied');
+        }, 1600);
+    });
+};
+
 // ================= GLOBAL EVENTS =================
 document.addEventListener('DOMContentLoaded', function () {
     // Load reusable components
