@@ -46,7 +46,7 @@ function loadFooter() {
 
     if (!footerContainer) return;
 
-    fetch('footer.html')
+    fetch('footer.html?t=' + Date.now())
         .then(res => res.text())
         .then(data => {
             footerContainer.innerHTML = data;
