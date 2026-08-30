@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Applied Mathematics and Computational Biology Lab</title>
+    <title>Maddu Lab @ Hopkins</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ysabeau:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -36,7 +36,7 @@
             display: block;
             transition: opacity 1.8s ease-in-out;
         }
-        #heroVideo { opacity: 1; z-index: 1; }
+        #heroVideo  { opacity: 1; z-index: 2; }
         #heroVideo2 {
             opacity: 0;
             z-index: 2;
@@ -48,6 +48,7 @@
             width: 200%;
             height: 200%;
         }
+        #heroVideo3 { opacity: 0; z-index: 2; }
         .hero-overlay {
             position: absolute;
             inset: 0;
@@ -445,6 +446,9 @@
             <video id="heroVideo2" muted playsinline>
                 <source src="images/home/turb-sim.mp4" type="video/mp4">
             </video>
+            <video id="heroVideo3" muted playsinline>
+                <source src="images/home/toggle-switch.mp4" type="video/mp4">
+            </video>
         </div>
         <div class="hero-overlay"></div>
         <div class="hero-content">
@@ -461,7 +465,7 @@
                         <ul class="panel-items" id="panelItems"></ul>
                     </div>
                 </div>
-                <p>Use math and computing to understand living systems.</p>
+                <p>We develop theory- and physics-guided statistical inference and scientific machine learning techniques for modeling and analyzing noisy, high-dimensional biological datasets.</p>
                 <div class="hero-buttons">
                     <a href="research.html" class="btn-primary">Explore Research →</a>
                     <a href="publications.html" class="btn-secondary">Publications</a>
@@ -551,7 +555,7 @@
     <section class="join-section">
         <div class="join-inner">
             <h2>Interested in Joining the Lab?</h2>
-            <p>We are always looking for curious and motivated PhD students, postdocs, and undergraduates with backgrounds in mathematics, physics, computer science, or biology.</p>
+            <p>We are always looking for curious and motivated PhD students, postdocs, and undergraduates with backgrounds in mathematics, physics, computer science, or biophysics.</p>
             <a href="people.html" class="join-btn">View Open Positions →</a>
         </div>
     </section>
@@ -627,41 +631,62 @@
             }
         }
 
-        // Hero video crossfade: spindle <-> turb-sim
+        // Hero video crossfade: spindle → turb-sim → toggle-switch → spindle …
         (function() {
-            var v1 = document.getElementById('heroVideo');
-            var v2 = document.getElementById('heroVideo2');
-            var active = 1;
-            var turbPlays = 0;
-            var TURB_LOOPS = 2;
+            var FADE_MS = 1800;   // must match CSS transition duration
+            var videos  = [
+                document.getElementById('heroVideo'),
+                document.getElementById('heroVideo2'),
+                document.getElementById('heroVideo3')
+            ];
+            var current = 0;
+            var locked  = false;
 
-            function crossfadeTo(next) {
-                var incoming = next === 2 ? v2 : v1;
+            function crossfadeTo(nextIdx) {
+                if (locked) return;
+                locked = true;
+                var incoming = videos[nextIdx];
+                // Raise incoming above everything so it fades in on top
+                incoming.style.zIndex = '10';
+                incoming.style.opacity = '0';
                 incoming.currentTime = 0;
                 incoming.play();
-                v2.style.opacity = next === 2 ? '1' : '0';
-                active = next;
+
+                // Small tick so browser registers the opacity:0 before we animate to 1
+                requestAnimationFrame(function() {
+                    requestAnimationFrame(function() {
+                        incoming.style.opacity = '1';
+                        // Once fully faded in, hide all others and reset z-index
+                        setTimeout(function() {
+                            videos.forEach(function(v, i) {
+                                if (i !== nextIdx) {
+                                    v.style.opacity = '0';
+                                    v.style.zIndex  = '';
+                                }
+                            });
+                            incoming.style.zIndex = '';
+                            current = nextIdx;
+                            locked  = false;
+                        }, FADE_MS + 50);
+                    });
+                });
             }
 
-            // Spindle ends → cross to turb-sim
-            v1.addEventListener('ended', function() {
-                turbPlays = 0;
-                crossfadeTo(2);
+            // Each video ends → advance to next
+            videos.forEach(function(v, i) {
+                v.addEventListener('ended', function() {
+                    crossfadeTo((i + 1) % videos.length);
+                });
             });
 
-            // Turb-sim ends → loop or cross back to spindle
-            v2.addEventListener('ended', function() {
-                turbPlays++;
-                if (turbPlays < TURB_LOOPS) {
-                    v2.currentTime = 0;
-                    v2.play();
-                } else {
-                    crossfadeTo(1);
-                }
-            });
+            // Start with spindle (already autoplaying)
+            videos[0].style.opacity = '1';
+            videos[1].style.opacity = '0';
+            videos[2].style.opacity = '0';
 
-            // Preload turb-sim so first crossfade is instant
-            v2.load();
+            // Preload the other two
+            videos[1].load();
+            videos[2].load();
         })();
 
     </script>

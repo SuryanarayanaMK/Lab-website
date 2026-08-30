@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teaching | Applied Mathematics and Computational Biology Lab</title>
+    <title>Teaching | Maddu Lab @ Hopkins</title>
     <link href="https://fonts.googleapis.com/css2?family=Ysabeau:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <style>
@@ -11,13 +11,9 @@
         body { background: #fff; font-family: 'Ysabeau', sans-serif; color: #1a1a2e; }
 
         .teaching-page {
-            max-width: 1200px;
+            max-width: 800px;
             margin: 0 auto;
             padding: 72px 48px 100px;
-            display: grid;
-            grid-template-columns: 1fr 340px;
-            gap: 80px;
-            align-items: start;
         }
 
         /* Main content */
@@ -41,10 +37,6 @@
             color: #475569;
             line-height: 1.85;
             margin-bottom: 18px;
-        }
-
-        .teaching-main p .course-label {
-            color: #1e3a5f;
         }
 
         /* Coming soon banner */
@@ -73,86 +65,53 @@
             margin: 0;
         }
 
-        /* Sidebar */
-        .teaching-sidebar {
-            position: sticky;
-            top: 96px;
-        }
-        .sidebar-card {
-            background: #fafbfc;
-            border: 1px solid #e2e8f0;
-            border-radius: 16px;
-            padding: 28px;
-            text-align: center;
-        }
-        .sidebar-photo {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid #fff;
-            box-shadow: 0 4px 20px rgba(74,144,226,0.2);
-            margin-bottom: 16px;
-        }
-        .sidebar-card h4 {
-            font-size: 1.15rem;
-            font-weight: 700;
-            color: #1e3a5f;
-            margin-bottom: 4px;
-        }
-        .sidebar-card .sidebar-title {
-            font-size: 0.88rem;
-            color: #4A90E2;
-            font-weight: 600;
-            margin-bottom: 20px;
-        }
-        .sidebar-info {
-            background: #f1f5f9;
-            border-radius: 10px;
-            padding: 14px 16px;
-            text-align: left;
-            margin-bottom: 16px;
-        }
-        .sidebar-info p {
-            font-size: 0.85rem;
-            color: #475569;
-            line-height: 1.7;
-            margin: 0;
-        }
-        .sidebar-info strong {
-            color: #1e3a5f;
-        }
-        .sidebar-link {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            padding: 10px 16px;
-            background: linear-gradient(135deg, #4A90E2 0%, #357abd 100%);
-            color: white;
-            text-decoration: none;
-            border-radius: 25px;
-            font-size: 0.88rem;
-            font-weight: 500;
-            transition: all 0.2s;
-            margin-bottom: 8px;
-        }
-        .sidebar-link:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 15px rgba(74,144,226,0.4);
-        }
-
         @media (max-width: 900px) {
-            .teaching-page {
-                grid-template-columns: 1fr;
-                gap: 48px;
-                padding: 48px 32px 80px;
-            }
-            .teaching-sidebar { position: static; }
+            .teaching-page { padding: 48px 32px 80px; }
         }
         @media (max-width: 600px) {
             .teaching-page { padding: 32px 20px 60px; }
             .teaching-main h1 { font-size: 2.2rem; }
+        }
+
+        /* Lecture materials */
+        .lecture-materials { margin-top: 40px; }
+        .lecture-materials h2 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #1e3a5f;
+            margin-bottom: 16px;
+        }
+        .lecture-list { list-style: none; }
+        .lecture-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            padding: 16px 20px;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            margin-bottom: 10px;
+            transition: border-color 0.2s, background 0.2s;
+        }
+        .lecture-item:hover { border-color: #bfdbfe; background: #f8fbff; }
+        .lecture-info { display: flex; flex-direction: column; gap: 2px; }
+        .lecture-number { font-weight: 700; color: #1e3a5f; font-size: 0.97rem; }
+        .lecture-date { font-size: 0.82rem; color: #64748b; }
+        .lecture-download {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #4A90E2;
+            text-decoration: none;
+            padding: 8px 16px;
+            border: 1.5px solid #4A90E2;
+            border-radius: 8px;
+            transition: all 0.2s;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+        .lecture-download:hover { background: #4A90E2; color: #fff; }
+        @media (max-width: 600px) {
+            .lecture-item { flex-wrap: wrap; }
         }
     </style>
 </head>
@@ -165,38 +124,25 @@
             <div class="teaching-label">Education</div>
             <h1>Teaching</h1>
 
-            <p>Over the past decade, I have had the privilege of teaching a variety of courses at Johns Hopkins University, MIT, Stanford, and ETH Zurich — an opportunity to learn new subjects, often just a little before teaching them.</p>
+            <p><strong>Fall 2026: EN.553.413/613 — Applied Statistics &amp; Data Analysis I.</strong> An introductory course on the concepts of probability and statistics, covering sampling distributions, statistical inference, univariate and multivariate regression, hypothesis testing, design of experiments, and nonparametric methods, with real-world data sets explored throughout using R and Python.</p>
 
-            <p>Undergraduate and graduate courses I have taught span engineering, computer science, and biology, and include topics such as Computational Biology, Machine Learning for Biomedical Data, Biophysical Modeling, Numerical Methods for PDEs, Systems Biology, and Physics-Informed Neural Networks.</p>
-
-            <p>I have also introduced several new courses to the curricula — including undergraduate and graduate courses on Computational Biology, Deep Learning for Science, Soft Matter Physics, and Quantitative Cell Biology. At Johns Hopkins, I have created Freshman Seminars on the Science of Everyday Life, Introduction to Biological Modeling, and Data Science for the Physical Sciences.</p>
-
-            <p>Away from my academic home, I have been a regular summer and winter school lecturer. At the Marine Biological Laboratory in Woods Hole, I was the Founding Co-director of their newest Summer School on Computational Biology. At the Santa Fe Institute, I was a lead instructor for the Complex Systems Summer School. I have also taught at the London Mathematical Society Summer School, the Les Houches school on Soft Matter, the Boulder school on condensed matter physics, and the KITP program on Active Matter.</p>
-
-            <p><strong class="course-label">Fall 2026: EN.553.413/613 — Applied Statistics &amp; Data Analysis I.</strong> An introductory course on the concepts of probability and statistics, covering sampling distributions, statistical inference, univariate and multivariate regression, hypothesis testing, design of experiments, and nonparametric methods, with real-world data sets explored throughout using R and Python.</p>
+            <div class="lecture-materials">
+                <h2>Lecture Materials</h2>
+                <ul class="lecture-list">
+                    <li class="lecture-item">
+                        <div class="lecture-info">
+                            <span class="lecture-number">Lecture 1</span>
+                            <span class="lecture-date">August 31, 2026</span>
+                        </div>
+                        <a href="lectures-ASDA/lecture1.pdf" class="lecture-download" target="_blank" rel="noopener">Download PDF</a>
+                    </li>
+                </ul>
+            </div>
 
             <div class="coming-soon-banner">
                 <div class="icon">📋</div>
                 <h3>Full course details coming soon</h3>
                 <p>This page will be updated with current course listings, syllabi, and teaching materials. In the meantime, feel free to reach out directly.</p>
-            </div>
-        </div>
-
-        <!-- Sidebar -->
-        <div class="teaching-sidebar">
-            <div class="sidebar-card">
-                <img src="images/people/surya.jpg" alt="Dr. Maddu" class="sidebar-photo">
-                <h4>Dr. Maddu</h4>
-                <div class="sidebar-title">Principal Investigator</div>
-                <div class="sidebar-info">
-                    <p>
-                        <strong>Clark Hall 318</strong><br>
-                        Johns Hopkins University<br>
-                        3400 N. Charles Street<br>
-                        Baltimore, MD 21218
-                    </p>
-                </div>
-                <a href="mailto:maddu@jhu.edu" class="sidebar-link">✉ maddu@jhu.edu</a>
             </div>
         </div>
 
