@@ -44,23 +44,11 @@
 
         /* Projects */
         .project {
-            display: grid;
-            grid-template-columns: 72px 1fr;
-            gap: 40px;
             padding: 64px 0;
             border-top: 1px solid #e2e8f0;
         }
         .project:last-of-type {
             border-bottom: 1px solid #e2e8f0;
-        }
-
-        .project-num {
-            font-size: 2rem;
-            font-weight: 700;
-            color: #dde3ec;
-            line-height: 1.2;
-            padding-top: 4px;
-            letter-spacing: -1px;
         }
 
         .project-inner {
@@ -144,8 +132,7 @@
         @media (max-width: 700px) {
             .research-page { padding: 40px 20px 60px; }
             .research-header h1 { font-size: 2.2rem; }
-            .project { grid-template-columns: 1fr; gap: 12px; padding: 44px 0; }
-            .project-num { font-size: 1.4rem; padding-top: 0; }
+            .project { padding: 44px 0; }
         }
     </style>
 </head>
@@ -163,7 +150,6 @@
 
         <!-- Project 01 -->
         <div class="project">
-            <div class="project-num">01</div>
             <div class="project-inner">
                 <div class="project-text">
                     <div class="project-tags">
@@ -184,7 +170,6 @@
 
         <!-- Project 02 -->
         <div class="project" id="physics-informed-ml">
-            <div class="project-num">02</div>
             <div class="project-inner">
                 <div class="project-text">
                     <div class="project-tags">
@@ -203,7 +188,6 @@
 
         <!-- Project 03 -->
         <div class="project" id="tissue-mechanics">
-            <div class="project-num">03</div>
             <div class="project-inner">
                 <div class="project-text">
                     <div class="project-tags">
@@ -225,7 +209,6 @@
 
         <!-- Project 04 -->
         <div class="project" id="cell-dynamics">
-            <div class="project-num">04</div>
             <div class="project-inner">
                 <div class="project-text">
                     <div class="project-tags">
@@ -246,7 +229,6 @@
 
         <!-- Project 05 -->
         <div class="project">
-            <div class="project-num">05</div>
             <div class="project-inner">
                 <div class="project-text">
                     <div class="project-tags">
