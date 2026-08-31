@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publications | Maddu Lab @ Hopkins</title>
+    <link href="https://fonts.googleapis.com/css2?family=Ysabeau:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: #fff; font-family: 'Ysabeau', sans-serif; color: #1a1a2e; }
+
+        .publications-page {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 72px 48px 100px;
+        }
+
+        /* Page Header */
+        .publications-header {
+            margin-bottom: 80px;
+        }
+        .publications-header .label {
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #4A90E2;
+            margin-bottom: 14px;
+        }
+        .publications-header h1 {
+            font-size: 3.2rem;
+            font-weight: 700;
+            color: #1e3a5f;
+            line-height: 1.1;
+            margin-bottom: 18px;
+        }
+        .publications-header p {
+            font-size: 1.05rem;
+            color: #64748b;
+            line-height: 1.7;
+            max-width: 560px;
+        }
+
+        /* Shared section styling */
+        .list-section {
+            margin-top: 0;
+        }
+        .list-section + .list-section {
+            margin-top: 100px;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 64px;
+        }
+        .list-section h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1e3a5f;
+            margin-bottom: 40px;
+        }
+
+        .list-row {
+            display: grid;
+            grid-template-columns: 40px 1fr auto;
+            gap: 20px;
+            align-items: baseline;
+            padding: 20px 0;
+            border-bottom: 1px solid #f1f5f9;
+        }
+        .list-row:first-of-type {
+            border-top: 1px solid #f1f5f9;
+        }
+        .list-index {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #cbd5e1;
+        }
+        .list-title {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #1e3a5f;
+            line-height: 1.5;
+            margin-bottom: 4px;
+        }
+        .list-meta {
+            font-size: 0.85rem;
+            color: #94a3b8;
+        }
+        .list-meta strong {
+            color: #64748b;
+        }
+        .list-pdf {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #4A90E2;
+            text-decoration: none;
+            white-space: nowrap;
+            padding: 6px 12px;
+            border: 1.5px solid #bfdbfe;
+            border-radius: 6px;
+            transition: all 0.2s;
+        }
+        .list-pdf:hover {
+            background: #4A90E2;
+            color: white;
+            border-color: #4A90E2;
+        }
+        .list-date {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #94a3b8;
+            white-space: nowrap;
+        }
+
+        /* Responsive */
+        @media (max-width: 960px) {
+            .publications-page { padding: 48px 32px 80px; }
+        }
+        @media (max-width: 700px) {
+            .publications-page { padding: 40px 20px 60px; }
+            .publications-header h1 { font-size: 2.2rem; }
+            .list-row { grid-template-columns: 32px 1fr; }
+            .list-pdf, .list-date { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <div id="header-container"></div>
+
+    <div class="publications-page">
+
+        <div class="publications-header">
+            <div class="label">Research Output</div>
+            <h1>Publications</h1>
+            <p>Peer-reviewed papers and invited talks on biophysical modeling, statistical inference, and scientific machine learning.</p>
+        </div>
+
+        <!-- Papers -->
+        <div class="list-section">
+            <h2>Papers</h2>
+
+            <div class="list-row">
+                <span class="list-index">01</span>
+                <div>
+                    <div class="list-title">"Human Mitotic Spindles as Active Liquid Crystals: From Collective Behaviors to Discrete Filaments"</div>
+                    <div class="list-meta"><strong>Maddu, S., Kelleher, C.</strong> · Proceedings of the National Academy of Sciences (PNAS) · 2026</div>
+                </div>
+                <a href="#" class="list-pdf">PDF ↗</a>
+            </div>
+
+            <div class="list-row">
+                <span class="list-index">02</span>
+                <div>
+                    <div class="list-title">"Inferring biological processes with intrinsic noise from cross-sectional data"</div>
+                    <div class="list-meta"><strong>Maddu, S., Chardes, V.</strong> · Proceedings of the National Academy of Sciences (PNAS) · 2025</div>
+                </div>
+                <a href="#" class="list-pdf">PDF ↗</a>
+            </div>
+
+            <div class="list-row">
+                <span class="list-index">03</span>
+                <div>
+                    <div class="list-title">"Learning fast, accurate, and stable closures of a kinetic theory of an active fluid"</div>
+                    <div class="list-meta"><strong>Maddu, S.</strong> · Journal of Computational Physics · 2024</div>
+                </div>
+                <a href="#" class="list-pdf">PDF ↗</a>
+            </div>
+
+            <div class="list-row">
+                <span class="list-index">04</span>
+                <div>
+                    <div class="list-title">"Stability selection enables robust learning of differential equations from limited noisy data"</div>
+                    <div class="list-meta"><strong>Maddu, S.</strong> · Proceedings of the Royal Society A · vol. 478, no. 2262, 2022</div>
+                </div>
+                <a href="#" class="list-pdf">PDF ↗</a>
+            </div>
+
+            <div class="list-row">
+                <span class="list-index">05</span>
+                <div>
+                    <div class="list-title">"Inverse Dirichlet weighting enables reliable training of physics informed neural networks"</div>
+                    <div class="list-meta"><strong>Maddu, S.</strong> · Machine Learning: Science and Technology · vol. 3, no. 1, 2022</div>
+                </div>
+                <a href="#" class="list-pdf">PDF ↗</a>
+            </div>
+
+            <div class="list-row">
+                <span class="list-index">06</span>
+                <div>
+                    <div class="list-title">"STENCIL-NET for equation-free forecasting from data"</div>
+                    <div class="list-meta"><strong>Maddu, S.</strong> · Nature Scientific Reports · vol. 13, no. 1, 2023</div>
+                </div>
+                <a href="#" class="list-pdf">PDF ↗</a>
+            </div>
+
+            <div class="list-row">
+                <span class="list-index">07</span>
+                <div>
+                    <div class="list-title">"Learning physically consistent differential equation models from data using group sparsity"</div>
+                    <div class="list-meta"><strong>Maddu, S.</strong> · Physical Review E · vol. 103, no. 4, 2021</div>
+                </div>
+                <a href="#" class="list-pdf">PDF ↗</a>
+            </div>
+
+            <div class="list-row">
+                <span class="list-index">08</span>
+                <div>
+                    <div class="list-title">"Stochastic force inference via density estimation"</div>
+                    <div class="list-meta"><strong>Chardes, V., Maddu, S.</strong> · NeurIPS 2023 AI for Science Workshop</div>
+                </div>
+                <a href="#" class="list-pdf">PDF ↗</a>
+            </div>
+        </div>
+
+        <!-- Talks -->
+        <div class="list-section">
+            <h2>Talks</h2>
+
+            <div class="list-row">
+                <span class="list-index">01</span>
+                <div>
+                    <div class="list-title">"Scalable inference of biophysical models from single-cell data"</div>
+                    <div class="list-meta">University of California, San Francisco (UCSF)</div>
+                </div>
+                <div class="list-date">Aug. 2026</div>
+            </div>
+
+            <div class="list-row">
+                <span class="list-index">02</span>
+                <div>
+                    <div class="list-title">"Scalable inference of biophysical models from single-cell data"</div>
+                    <div class="list-meta">Stanford University</div>
+                </div>
+                <div class="list-date">Aug. 2026</div>
+            </div>
+
+            <div class="list-row">
+                <span class="list-index">03</span>
+                <div>
+                    <div class="list-title">"Inference of Multiscale Dynamical Systems from Biological Data"</div>
+                    <div class="list-meta">AMS Special Seminar Series, Department of Applied Mathematics and Statistics, Johns Hopkins University</div>
+                </div>
+                <div class="list-date">2026</div>
+            </div>
+
+            <div class="list-row">
+                <span class="list-index">04</span>
+                <div>
+                    <div class="list-title">"Learning Stochastic Processes With Intrinsic Noise From Cross-Sectional Biological Data"</div>
+                    <div class="list-meta">Soft Matter Seminar, Department of Physics, Syracuse University</div>
+                </div>
+                <div class="list-date">2026</div>
+            </div>
+
+            <div class="list-row">
+                <span class="list-index">05</span>
+                <div>
+                    <div class="list-title">"Scalable inference of biological processes from cross-sectional datasets"</div>
+                    <div class="list-meta">AI in Molecular Biology, Keystone Symposia</div>
+                </div>
+                <div class="list-date">2025</div>
+            </div>
+
+            <div class="list-row">
+                <span class="list-index">06</span>
+                <div>
+                    <div class="list-title">"Active Liquid Crystal theory explains microtubule organization in Human metaphase spindles"</div>
+                    <div class="list-meta">Physics of Living Systems, Chan Zuckerberg Initiative / UCSF, San Francisco</div>
+                </div>
+                <div class="list-date">2025</div>
+            </div>
+
+            <div class="list-row">
+                <span class="list-index">07</span>
+                <div>
+                    <div class="list-title">"Scalable inference of biological processes from cross-sectional datasets"</div>
+                    <div class="list-meta">Frontiers in Applied & Computational Mathematics, NJIT</div>
+                </div>
+                <div class="list-date">2025</div>
+            </div>
+
+            <div class="list-row">
+                <span class="list-index">08</span>
+                <div>
+                    <div class="list-title">"Inferring biophysical models from multi-omics data"</div>
+                    <div class="list-meta">Department of Physics, Lehigh University</div>
+                </div>
+                <div class="list-date">2025</div>
+            </div>
+
+            <div class="list-row">
+                <span class="list-index">09</span>
+                <div>
+                    <div class="list-title">"Pattern formation and developmental biophysics" (Lecturer)</div>
+                    <div class="list-meta">Biophysics Summer School, Xenia, Greece</div>
+                </div>
+                <div class="list-date">2025</div>
+            </div>
+
+            <div class="list-row">
+                <span class="list-index">10</span>
+                <div>
+                    <div class="list-title">"Scalable inference of biological processes from cross-sectional datasets"</div>
+                    <div class="list-meta">APS March Meeting, Anaheim, California</div>
+                </div>
+                <div class="list-date">2025</div>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="footer-container"></div>
+    <script src="js/main.js"></script>
+</body>
+</html>
