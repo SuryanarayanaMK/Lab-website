@@ -134,6 +134,26 @@
             height: 14px;
             flex-shrink: 0;
         }
+        .icon-amber { background: #fff7ed; }
+
+        .datasets-section {
+            margin-top: 88px;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 56px;
+        }
+        .datasets-section h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #1e3a5f;
+            margin-bottom: 14px;
+        }
+        .datasets-section > p {
+            font-size: 1rem;
+            color: #64748b;
+            line-height: 1.7;
+            max-width: 560px;
+            margin-bottom: 32px;
+        }
 
         @media (max-width: 768px) {
             .software-page { padding: 48px 32px 80px; }
@@ -283,6 +303,51 @@
                 </div>
             </div>
 
+        </div>
+
+        <!-- Open Datasets -->
+        <div class="datasets-section">
+            <div class="page-label">Data</div>
+            <h2>Open Datasets</h2>
+            <p>Simulation datasets contributed by the lab for training and benchmarking machine learning models on physical systems.</p>
+
+            <div class="software-grid">
+
+                <!-- Active Matter (The Well) -->
+                <div class="software-card">
+                    <div class="card-header">
+                        <div class="card-icon icon-amber">
+                            <!-- Self-propelled particles with direction vectors -->
+                            <svg width="24" height="24" fill="none" stroke="#f97316" stroke-width="1.8" viewBox="0 0 24 24" stroke-linecap="round">
+                                <circle cx="6" cy="7" r="1.6" fill="#f97316" stroke="none"/>
+                                <circle cx="14" cy="5" r="1.6" fill="#f97316" stroke="none"/>
+                                <circle cx="19" cy="11" r="1.6" fill="#f97316" stroke="none"/>
+                                <circle cx="9" cy="14" r="1.6" fill="#f97316" stroke="none"/>
+                                <circle cx="16" cy="18" r="1.6" fill="#f97316" stroke="none"/>
+                                <circle cx="4" cy="18" r="1.6" fill="#f97316" stroke="none"/>
+                                <path d="M6 7 L9 5"/>
+                                <path d="M14 5 L17 7"/>
+                                <path d="M19 11 L17 14"/>
+                                <path d="M9 14 L11 17"/>
+                                <path d="M16 18 L14 20"/>
+                                <path d="M4 18 L2 16"/>
+                            </svg>
+                        </div>
+                        <h3>Active Matter</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>Simulation dataset of active nematic dynamics, contributed to The Well — a large-scale collection of physics simulation datasets for training and benchmarking machine learning models.</p>
+                    </div>
+                    <div class="card-footer">
+                        <span class="software-tag">The Well</span>
+                        <a href="https://polymathic-ai.org/the_well/datasets/active_matter/" target="_blank" class="software-link">
+                            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                            Dataset ↗
+                        </a>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </div>
 
