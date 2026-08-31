@@ -447,13 +447,13 @@
     <!-- Hero Section -->
     <section class="hero-section">
         <div class="hero-video-bg">
-            <video id="heroVideo" autoplay muted playsinline>
+            <video id="heroVideo" autoplay muted playsinline preload="auto" poster="images/home/spindle_poster.jpg">
                 <source src="images/home/spindle_movie.mp4" type="video/mp4">
             </video>
-            <video id="heroVideo2" muted playsinline>
+            <video id="heroVideo2" muted playsinline preload="auto" poster="images/home/turb-sim_poster.jpg">
                 <source src="images/home/turb-sim.mp4" type="video/mp4">
             </video>
-            <video id="heroVideo3" muted playsinline>
+            <video id="heroVideo3" muted playsinline preload="auto" poster="images/home/toggle-switch_poster.jpg">
                 <source src="images/home/toggle-switch.mp4" type="video/mp4">
             </video>
         </div>
@@ -641,7 +641,8 @@
                 incoming.style.zIndex = '10';
                 incoming.style.opacity = '0';
                 incoming.currentTime = 0;
-                incoming.play();
+                var playAttempt = incoming.play();
+                if (playAttempt && playAttempt.catch) { playAttempt.catch(function() {}); }
 
                 // Small tick so browser registers the opacity:0 before we animate to 1
                 requestAnimationFrame(function() {
@@ -678,6 +679,19 @@
             // Preload the other two
             videos[1].load();
             videos[2].load();
+
+            // Some mobile browsers block autoplay even when muted+playsinline.
+            // Retry playback on the first touch/click if the hero video hasn't started.
+            var firstPlayAttempt = videos[0].play();
+            if (firstPlayAttempt && firstPlayAttempt.catch) { firstPlayAttempt.catch(function() {}); }
+
+            function unlockPlayback() {
+                if (!videos[current].paused) return;
+                var attempt = videos[current].play();
+                if (attempt && attempt.catch) { attempt.catch(function() {}); }
+            }
+            document.addEventListener('touchstart', unlockPlayback, { once: true, passive: true });
+            document.addEventListener('click', unlockPlayback, { once: true });
         })();
 
     </script>
