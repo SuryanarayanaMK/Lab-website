@@ -63,23 +63,21 @@
             margin-bottom: 40px;
         }
         .pi-card {
-            display: grid;
-            grid-template-columns: 160px 1fr;
-            gap: 32px;
-            align-items: start;
             padding: 40px;
             border: 1px solid #e2e8f0;
             border-radius: 16px;
             background: #fafbfc;
+            overflow: hidden;
         }
         .pi-photo {
-            width: 160px;
-            height: 160px;
+            float: left;
+            width: 140px;
+            height: 140px;
+            margin: 0 24px 16px 0;
             border-radius: 50%;
             object-fit: cover;
             border: 4px solid #fff;
             box-shadow: 0 8px 32px rgba(74,144,226,0.2);
-            display: block;
         }
         .pi-info h2 {
             font-size: 1.7rem;
@@ -103,6 +101,7 @@
             display: flex;
             gap: 12px;
             flex-wrap: wrap;
+            clear: both;
         }
         .pi-link {
             display: inline-flex;
@@ -250,8 +249,8 @@
         /* Responsive */
         @media (max-width: 900px) {
             .people-page { padding: 48px 32px 80px; }
-            .pi-card { grid-template-columns: 1fr; gap: 28px; text-align: center; }
-            .pi-photo { margin: 0 auto; }
+            .pi-photo { float: none; display: block; margin: 0 auto 20px; }
+            .pi-info { text-align: center; }
             .pi-links { justify-content: center; }
             .people-top-grid { grid-template-columns: 1fr; gap: 32px; }
             .open-roles { grid-template-columns: 1fr; }
