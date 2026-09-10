@@ -84,8 +84,10 @@
         }
         .lecture-download:hover { background: #4A90E2; color: #fff; }
         .lecture-desc { font-size: 0.85rem; color: #475569; line-height: 1.5; margin-top: 2px; }
+        .lecture-links { display: flex; flex-wrap: wrap; gap: 8px; justify-content: flex-end; flex-shrink: 0; }
         @media (max-width: 600px) {
             .lecture-item { flex-wrap: wrap; }
+            .lecture-links { justify-content: flex-start; }
         }
     </style>
 </head>
@@ -115,7 +117,12 @@
                             <span class="lecture-number">Lecture 2</span>
                             <span class="lecture-desc">Develops set-theoretic operations on events and the basic probability rules that follow from them, then introduces conditional probability, the multiplication rule, independence versus disjointness, and Bayes' rule. Turns next to random variables, covering expectation and variance identities, moment generating functions, and a worked case study of the binomial distribution.</span>
                         </div>
-                        <a href="lectures-ASDA/LECTURE-2.pdf" class="lecture-download" target="_blank" rel="noopener">Download PDF</a>
+                        <div class="lecture-links">
+                            <a href="lectures-ASDA/LECTURE-2.pdf" class="lecture-download" target="_blank" rel="noopener">Download PDF</a>
+                            <a href="lectures-ASDA/Binomial_Coin_Toss_PMF_CDF.ipynb" class="lecture-download" download>Binomial Notebook</a>
+                            <a href="lectures-ASDA/NHANES_CDC_Official_Discrete_Continuous_RVs.ipynb" class="lecture-download" download>NHANES Notebook</a>
+                            <a href="lectures-ASDA/nhanes_2017_2018_teaching.csv" class="lecture-download" download>NHANES Data (CSV)</a>
+                        </div>
                     </li>
                 </ul>
             </div>
