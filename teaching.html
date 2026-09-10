@@ -58,9 +58,8 @@
         .lecture-list { list-style: none; }
         .lecture-item {
             display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 16px;
+            flex-direction: column;
+            gap: 12px;
             padding: 16px 20px;
             border: 1px solid #e2e8f0;
             border-radius: 12px;
@@ -84,10 +83,9 @@
         }
         .lecture-download:hover { background: #4A90E2; color: #fff; }
         .lecture-desc { font-size: 0.85rem; color: #475569; line-height: 1.5; margin-top: 2px; }
-        .lecture-links { display: flex; flex-wrap: wrap; gap: 8px; justify-content: flex-end; flex-shrink: 0; }
+        .lecture-links { display: flex; flex-wrap: wrap; gap: 8px; }
         @media (max-width: 600px) {
-            .lecture-item { flex-wrap: wrap; }
-            .lecture-links { justify-content: flex-start; }
+            .lecture-download { flex-grow: 1; text-align: center; }
         }
     </style>
 </head>
