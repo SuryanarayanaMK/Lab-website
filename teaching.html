@@ -233,6 +233,31 @@
                             <a href="lectures-ASDA/bayesian_coin_flip_inference.ipynb" class="lecture-download" download>Bayesian Coin-Flip Notebook</a>
                         </div>
                     </li>
+                    <li class="lecture-item">
+                        <div class="lecture-info">
+                            <span class="lecture-number">Lecture 12</span>
+                            <span class="lecture-desc">Moves from estimating a mean to estimating a conditional mean: after a primer on multivariate random variables and the multivariate Gaussian, shows that under squared-error loss the best predictor of Y given X = x is the regression function E[Y | X = x]; introduces simple linear regression and derives the ordinary least-squares estimates from the normal equations; shows that least squares is maximum likelihood under Gaussian noise; rewrites the model in matrix form, y = X&beta; + &epsilon;, giving the least-squares solution &beta;&#770; = (X<sup>T</sup>X)<sup>&minus;1</sup>X<sup>T</sup>y and its extension to multiple linear regression; and shows that the least-squares estimator is unbiased with covariance &sigma;<sup>2</sup>(X<sup>T</sup>X)<sup>&minus;1</sup>.</span>
+                        </div>
+                        <a href="lectures-ASDA/LECTURE-12.pdf" class="lecture-download" target="_blank" rel="noopener">Download PDF</a>
+                    </li>
+                    <li class="lecture-item">
+                        <div class="lecture-info">
+                            <span class="lecture-number">Code: Lecture 12 Companion Notebooks</span>
+                            <span class="lecture-desc"><strong>Multivariate Distributions to Regression:</strong> uses the Iris data to move from one variable to a random vector, with joint distributions, mean vectors, covariance matrices, and pairwise plots; then uses the Palmer Penguins data to show how switching from describing the joint distribution to predicting one variable from another leads to conditional expectation and the simplest linear conditional model.</span>
+                            <span class="lecture-desc"><strong>Linear Regression on Palmer Penguins:</strong> predicts body mass from flipper length, starting from a single prediction for every penguin and moving to an empirical view of E[Y | X = x]; fits the least-squares line, examines the residuals, shows that the Gaussian MLE gives least squares, and colors the data by species to show that some apparent noise is variation from omitted variables.</span>
+                            <span class="lecture-desc"><strong>Linear Regression on Diabetes Data:</strong> uses the scikit-learn diabetes dataset to predict one-year disease progression from baseline BMI, comparing the fitted line with ignoring BMI, examining what remains after using X, and bootstrapping the slope.</span>
+                            <span class="lecture-desc"><strong>Multiple Linear Regression on Diabetes Data:</strong> extends from BMI alone to BMI, blood pressure, and age, and then to all baseline predictors, in matrix form; compares simple and multiple regression coefficients, computes standard errors and confidence intervals, visualizes coefficient uncertainty, discusses multicollinearity, and compares prediction error.</span>
+                        </div>
+                        <div class="lecture-links">
+                            <a href="lectures-ASDA/multivariate_distributions_to_regression.ipynb" class="lecture-download" download>Multivariate-to-Regression Notebook</a>
+                            <a href="lectures-ASDA/linear_regression_penguins_v2.ipynb" class="lecture-download" download>Penguins Regression Notebook</a>
+                            <a href="lectures-ASDA/linear_regression_diabetes.ipynb" class="lecture-download" download>Diabetes Regression Notebook</a>
+                            <a href="lectures-ASDA/multiple_linear_regression_medical_diabetes.ipynb" class="lecture-download" download>Multiple Regression Notebook</a>
+                            <a href="lectures-ASDA/iris.csv" class="lecture-download" download>Iris Data (CSV)</a>
+                            <a href="lectures-ASDA/palmer_penguins.csv" class="lecture-download" download>Palmer Penguins Data (CSV)</a>
+                            <a href="lectures-ASDA/diabetes_regression_data.csv" class="lecture-download" download>Diabetes Data (CSV)</a>
+                        </div>
+                    </li>
                 </ul>
             </div>
         </div>
