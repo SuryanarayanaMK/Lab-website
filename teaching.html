@@ -260,6 +260,26 @@
                             <a href="lectures-ASDA/diabetes_regression_data.csv" class="lecture-download" download>Diabetes Data (CSV)</a>
                         </div>
                     </li>
+                    <li class="lecture-item">
+                        <div class="lecture-info">
+                            <span class="lecture-number">Lecture 13</span>
+                            <span class="lecture-desc">Assesses and diagnoses fitted linear regression models: defines the coefficient of determination R<sup>2</sup> = 1 &minus; RSS/TSS as the fraction of the mean-only squared error removed by the model, and cautions that training R<sup>2</sup> can only grow as predictors are added; reviews the regression assumptions and residual diagnostics, including homoscedastic versus heteroscedastic errors; distinguishes outliers, high-leverage points (through the hat matrix), and influential observations, and explains why points far from x&#772; can strongly affect the slope; studies collinearity through the conditioning of X<sup>T</sup>X and its effect on coefficient variances; uses normal Q&ndash;Q plots to assess Gaussian errors; and closes with coefficient uncertainty.</span>
+                        </div>
+                        <a href="lectures-ASDA/LECTURE-13.pdf" class="lecture-download" target="_blank" rel="noopener">Download PDF</a>
+                    </li>
+                    <li class="lecture-item">
+                        <div class="lecture-info">
+                            <span class="lecture-number">Code: Lecture 13 Companion Notebooks</span>
+                            <span class="lecture-desc"><strong>Residuals, Homoscedasticity, and R<sup>2</sup>:</strong> uses the scikit-learn diabetes dataset to predict disease progression from BMI, then works through residuals and residual plots, homoscedasticity versus heteroscedasticity, TSS as the mean-only baseline, RSS as the error left after regression, and R<sup>2</sup>; compares R<sup>2</sup> as predictors are added and uses controlled examples to show R<sup>2</sup> ranging from near 0 to 1.</span>
+                            <span class="lecture-desc"><strong>Homoscedasticity vs. Heteroscedasticity:</strong> simulates data with the same linear mean but constant versus predictor-dependent noise variance, comparing the two side by side and through their residual plots.</span>
+                            <span class="lecture-desc"><strong>Outliers, Leverage, and Influence:</strong> compares a baseline fit with a vertical outlier, a high-leverage point that lies on the trend, and a high-leverage off-trend point that is influential; compares the coefficient estimates, computes leverage explicitly, plots residuals against leverage, and uses a leave-one-out view of influence.</span>
+                        </div>
+                        <div class="lecture-links">
+                            <a href="lectures-ASDA/linear_regression_residuals_homoscedasticity_r2.ipynb" class="lecture-download" download>Residuals &amp; R<sup>2</sup> Notebook</a>
+                            <a href="lectures-ASDA/homoscedasticity_vs_heteroscedasticity.ipynb" class="lecture-download" download>Homoscedasticity Notebook</a>
+                            <a href="lectures-ASDA/outlier_leverage_influence_regression.ipynb" class="lecture-download" download>Outliers &amp; Leverage Notebook</a>
+                        </div>
+                    </li>
                 </ul>
             </div>
         </div>
