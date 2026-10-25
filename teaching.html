@@ -280,6 +280,28 @@
                             <a href="lectures-ASDA/outlier_leverage_influence_regression.ipynb" class="lecture-download" download>Outliers &amp; Leverage Notebook</a>
                         </div>
                     </li>
+                    <li class="lecture-item">
+                        <div class="lecture-info">
+                            <span class="lecture-number">Lecture 14</span>
+                            <span class="lecture-desc">Addresses how complex a regression model should be: builds nonlinear models from linear regression through polynomial basis expansions, which remain linear in &beta; so ordinary least squares still applies; shows that training RSS can only decrease as the polynomial degree grows, so it cannot by itself select model complexity; defines the bias and variance of a fitted model across repeated training datasets and derives the decomposition of expected prediction error into &sigma;<sup>2</sup> + Bias<sup>2</sup> + Variance; motivates ridge regression in its penalized, constrained (L<sub>2</sub> ball), and geometric forms, derives the ridge normal equations (X<sup>T</sup>X + &lambda;I)&beta; = X<sup>T</sup>y, and shows that ridge improves conditioning by shifting every eigenvalue of X<sup>T</sup>X by &lambda;; discusses regularization paths; and closes with tuning &lambda; and polynomial degree through validation error and K-fold cross-validation, keeping the roles of training, validation, and test data distinct.</span>
+                        </div>
+                        <a href="lectures-ASDA/LECTURE-14.pdf" class="lecture-download" target="_blank" rel="noopener">Download PDF</a>
+                    </li>
+                    <li class="lecture-item">
+                        <div class="lecture-info">
+                            <span class="lecture-number">Code: Lecture 14 Companion Notebooks</span>
+                            <span class="lecture-desc"><strong>Collinearity, Conditioning, and Ridge Regularization:</strong> uses two nearly collinear predictors to show why X<sup>T</sup>X becomes ill-conditioned, the long flat valley of the OLS cost, and coefficients that are unstable under tiny perturbations while predictions stay comparatively stable; then shows how ridge reshapes the cost contours, reduces the condition number as &lambda; grows, and handles perfect collinearity.</span>
+                            <span class="lecture-desc"><strong>Bias&ndash;Variance Trade-off in Regression:</strong> repeatedly draws training datasets from f(x) = sin(x) + 0.25x, fits polynomials of increasing degree, visualizes how the fitted curves vary across datasets, verifies the bias&ndash;variance decomposition numerically at a single input, adds the irreducible noise term, and plots Bias<sup>2</sup> and Variance against polynomial degree.</span>
+                            <span class="lecture-desc"><strong>Ridge Regression with a Degree-14 Polynomial:</strong> fits the same degree-14 polynomial with small, medium, and large &lambda; (leaving the intercept unpenalized), tracks coefficient shrinkage, training RSS, and conditioning as &lambda; varies, and selects &lambda; on a validation set.</span>
+                            <span class="lecture-desc"><strong>Single Split vs. K-Fold Cross-Validation:</strong> shows how the polynomial degree chosen from a single train/validation split varies from split to split, compares this with the more stable 5-fold CV estimate, and finishes by refitting the selected model and evaluating it once on an untouched test set.</span>
+                        </div>
+                        <div class="lecture-links">
+                            <a href="lectures-ASDA/collinearity_conditioning_ridge_regularization.ipynb" class="lecture-download" download>Collinearity &amp; Ridge Notebook</a>
+                            <a href="lectures-ASDA/bias_variance_regression_demo_v2.ipynb" class="lecture-download" download>Bias&ndash;Variance Notebook</a>
+                            <a href="lectures-ASDA/ridge_polynomial_degree14.ipynb" class="lecture-download" download>Ridge Polynomial Notebook</a>
+                            <a href="lectures-ASDA/single_split_vs_kfold_cross_validation.ipynb" class="lecture-download" download>K-Fold CV Notebook</a>
+                        </div>
+                    </li>
                 </ul>
             </div>
         </div>
