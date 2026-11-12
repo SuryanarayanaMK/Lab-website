@@ -319,6 +319,25 @@
                             <a href="lectures-ASDA/L15_AIC_BIC_polynomial_model_selection.ipynb" class="lecture-download" download>AIC &amp; BIC Notebook</a>
                         </div>
                     </li>
+                    <li class="lecture-item">
+                        <div class="lecture-info">
+                            <span class="lecture-number">Lecture 16</span>
+                            <span class="lecture-desc">Treats regularization as a family of models that share the same data-fitting term but impose different structural assumptions on &beta;: gives a Bayesian interpretation of the penalties, showing that MAP estimation under a Gaussian coefficient prior yields ridge regression and under a Laplace prior yields the Lasso; explains geometrically why the corners of the L<sub>1</sub> constraint set coefficients exactly to zero while the smooth L<sub>2</sub> ball only shrinks them, and how each behaves with correlated predictors; stresses that predictors must be standardized before penalization; works through a case study predicting television-episode ratings from high-dimensional engineered features, where the Lasso keeps 10 of 87 coefficients; discusses choosing &lambda; and reading regularization paths; and cautions that a nonzero Lasso coefficient indicates a predictive association, not a causal effect, especially for socially sensitive features.</span>
+                        </div>
+                        <a href="lectures-ASDA/LECTURE-16.pdf" class="lecture-download" target="_blank" rel="noopener">Download PDF</a>
+                    </li>
+                    <li class="lecture-item">
+                        <div class="lecture-info">
+                            <span class="lecture-number">Code: Lecture 16 Companion Notebooks</span>
+                            <span class="lecture-desc"><strong>The Office: OLS, Ridge, and Lasso:</strong> joins <em>The Office</em> transcripts (via <code>schrutepy</code>) with TidyTuesday IMDb ratings, engineers character-dialogue, writer/director, and season features into a sparse episode-by-feature design matrix, standardizes inside each cross-validation fold, tunes ridge and Lasso by CV, compares all three models on a held-out test set, and contrasts ridge shrinkage with Lasso sparsity through coefficient plots and the Lasso path.</span>
+                            <span class="lecture-desc"><strong>Lasso on US Communities and Crime:</strong> predicts violent crime in 1,993 US communities from ~100 strongly collinear socio-economic predictors (UCI Communities and Crime); shows unstable OLS coefficients, traces the Lasso path, selects &lambda; with AIC, BIC, and 5-fold CV, compares test-set accuracy, assesses selection stability with bootstrap resamples, and closes with a discussion of prediction versus explanation and the proxy problem when sensitive variables are removed.</span>
+                        </div>
+                        <div class="lecture-links">
+                            <a href="lectures-ASDA/office_lasso_clean_v2.ipynb" class="lecture-download" download>The Office Lasso Notebook</a>
+                            <a href="lectures-ASDA/lasso_communities_crime.ipynb" class="lecture-download" download>Communities &amp; Crime Lasso Notebook</a>
+                            <a href="lectures-ASDA/communities_crime_teaching.csv" class="lecture-download" download>Communities &amp; Crime Dataset (CSV)</a>
+                        </div>
+                    </li>
                 </ul>
             </div>
         </div>
