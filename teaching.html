@@ -91,6 +91,92 @@
         @media (max-width: 600px) {
             .lecture-download { flex-grow: 1; text-align: center; }
         }
+
+        /* Course projects */
+        .project-panel { margin-top: 40px; }
+        .project-panel h2 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #1e3a5f;
+            margin-bottom: 16px;
+        }
+        .project-rules {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+        .project-box {
+            background: #f8fbff;
+            border: 1px solid #dbeafe;
+            border-radius: 12px;
+            padding: 16px 20px;
+            font-size: 0.88rem;
+            color: #475569;
+            line-height: 1.6;
+        }
+        .project-box h3 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #1e3a5f;
+            margin-bottom: 6px;
+        }
+        .project-box ol, .project-box ul { padding-left: 18px; }
+        .project-box code { font-size: 0.82rem; }
+        .project-grid {
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+        .project-card {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding: 16px 20px;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            transition: border-color 0.2s, background 0.2s;
+        }
+        .project-card {
+            --tint: #f8fbff; --edge: #dbeafe; --accent: #4A90E2;
+            background: var(--tint);
+            border-color: var(--edge);
+            border-top: 4px solid var(--accent);
+        }
+        .project-card:hover { border-color: var(--accent); border-top-color: var(--accent); background: var(--tint); box-shadow: 0 4px 14px rgba(30, 58, 95, 0.08); }
+        /* 12 light palettes, cycled by position so new cards get a color automatically */
+        .project-card:nth-child(12n+1)  { --tint: #f0f7ff; --edge: #d6e8fb; --accent: #4A90E2; } /* blue */
+        .project-card:nth-child(12n+2)  { --tint: #f1fbf5; --edge: #cfeedd; --accent: #2f9e66; } /* green */
+        .project-card:nth-child(12n+3)  { --tint: #fff7ed; --edge: #fde3c4; --accent: #e08a2c; } /* orange */
+        .project-card:nth-child(12n+4)  { --tint: #f6f3ff; --edge: #e2d9fb; --accent: #7c5cd6; } /* violet */
+        .project-card:nth-child(12n+5)  { --tint: #fdf2f6; --edge: #f7d4e2; --accent: #d14d82; } /* rose */
+        .project-card:nth-child(12n+6)  { --tint: #effbfb; --edge: #ccecee; --accent: #1f9aa5; } /* teal */
+        .project-card:nth-child(12n+7)  { --tint: #fefbea; --edge: #f6ebb2; --accent: #c49a12; } /* amber */
+        .project-card:nth-child(12n+8)  { --tint: #f1f4ff; --edge: #d7defa; --accent: #4f63d2; } /* indigo */
+        .project-card:nth-child(12n+9)  { --tint: #f5fbee; --edge: #dcefc6; --accent: #6b9e2a; } /* lime */
+        .project-card:nth-child(12n+10) { --tint: #fdf3f1; --edge: #f6d8d2; --accent: #cc5a45; } /* coral */
+        .project-card:nth-child(12n+11) { --tint: #f0f9fe; --edge: #cfe9f7; --accent: #2b8fc4; } /* sky */
+        .project-card:nth-child(12n+12) { --tint: #faf4fc; --edge: #ebd8f2; --accent: #a052b8; } /* plum */
+        .project-card .lecture-download { color: var(--accent); border-color: var(--accent); background: #fff; }
+        .project-card .lecture-download:hover { background: var(--accent); color: #fff; }
+        .project-head { display: flex; align-items: baseline; gap: 10px; }
+        .project-num {
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: #fff;
+            background: var(--accent);
+            padding: 2px 8px;
+            border-radius: 6px;
+            letter-spacing: 1px;
+        }
+        .project-title { font-weight: 700; color: #1e3a5f; font-size: 0.97rem; }
+        .project-meta { font-size: 0.78rem; color: #64748b; }
+        .project-meta a { color: #64748b; }
+        .project-card .lecture-desc { flex-grow: 1; }
+        @media (max-width: 800px) {
+            .project-rules, .project-grid { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
@@ -103,6 +189,75 @@
             <h1>Teaching</h1>
 
             <p><strong>Fall 2026: EN.553.413/613: Applied Statistics and Data Science.</strong> An applied introduction to probability and statistical learning as a coherent framework for learning from finite, noisy data. The course opens with probability foundations: sample spaces, counting, conditioning, independence, Bayes' rule, and random variables. It then develops sampling theory through the Law of Large Numbers and Central Limit Theorem toward confidence intervals, bootstrap methods, hypothesis testing, and randomized experiments. It continues with parameter estimation via maximum likelihood and Bayesian inference, then builds toward statistical modeling: linear regression, diagnostics, generalization and cross-validation, model selection, and regularization. The course closes with logistic regression, flexible and nonlinear regression, and generalized linear models. Concepts are developed throughout using real datasets, with two mid-term exams, project presentations, and a final exam.</p>
+
+            <div class="project-panel" id="projects">
+                <h2>Course Projects</h2>
+                <div class="project-rules">
+                    <div class="project-box">
+                        <h3>How it works</h3>
+                        <ol>
+                            <li>Browse the datasets below. <strong>Preview</strong> shows each starter notebook with its plots, so you don't need to run anything.</li>
+                            <li>Pick <strong>one dataset for your presentation</strong> and a <strong>different dataset for your written report</strong>.</li>
+                            <li>Download the starter notebook. It loads the data and makes a few first plots. The analysis is up to you.</li>
+                        </ol>
+                    </div>
+                    <div class="project-box">
+                        <h3>Running a starter notebook</h3>
+                        <ul>
+                            <li><strong>Google Colab (no install):</strong> open <a href="https://colab.research.google.com" target="_blank" rel="noopener">colab.research.google.com</a>, choose <em>File &rarr; Upload notebook</em>, then <em>Runtime &rarr; Run all</em>.</li>
+                            <li><strong>On your own computer:</strong> open it in Jupyter or VS Code. You need <code>pandas</code>, <code>matplotlib</code>, <code>requests</code>, <code>openpyxl</code>, and <code>xlrd</code>.</li>
+                            <li>You don't need to download any data files. On its first run, each notebook downloads its own data from the original public source (internet required).</li>
+                        </ul>
+                    </div>
+                </div>
+                <ul class="project-grid">
+                    <li class="project-card">
+                        <div class="project-head"><span class="project-num">P01</span><span class="project-title">Concrete Compressive Strength</span></div>
+                        <span class="project-meta">1,030 rows &times; 9 columns &middot; <a href="https://archive.ics.uci.edu/dataset/165/concrete-compressive-strength" target="_blank" rel="noopener">UCI ML Repository</a></span>
+                        <span class="lecture-desc">Lab-tested concrete mixtures: amounts of seven ingredients and the sample's age at testing, with the measured compressive strength (MPa).</span>
+                        <div class="lecture-links">
+                            <a href="student_project_data/previews/01_Concrete_Compressive_Strength_starter.html" class="lecture-download" target="_blank" rel="noopener">Preview</a>
+                            <a href="student_project_data/01_Concrete_Compressive_Strength_starter.ipynb" class="lecture-download" download>Download Notebook</a>
+                        </div>
+                    </li>
+                    <li class="project-card">
+                        <div class="project-head"><span class="project-num">P03</span><span class="project-title">NASA Airfoil Self-Noise</span></div>
+                        <span class="project-meta">1,503 rows &times; 6 columns &middot; <a href="https://archive.ics.uci.edu/dataset/291/airfoil+self+noise" target="_blank" rel="noopener">UCI ML Repository</a></span>
+                        <span class="lecture-desc">NASA wind-tunnel tests of airfoil sections: frequency, angle of attack, chord length, flow velocity, and boundary-layer thickness, with the sound pressure level (dB) recorded for each test.</span>
+                        <div class="lecture-links">
+                            <a href="student_project_data/previews/03_NASA_Airfoil_Self_Noise_starter.html" class="lecture-download" target="_blank" rel="noopener">Preview</a>
+                            <a href="student_project_data/03_NASA_Airfoil_Self_Noise_starter.ipynb" class="lecture-download" download>Download Notebook</a>
+                        </div>
+                    </li>
+                    <li class="project-card">
+                        <div class="project-head"><span class="project-num">P04</span><span class="project-title">Air Quality Sensors</span></div>
+                        <span class="project-meta">9,357 hourly rows &times; 13 columns &middot; <a href="https://archive.ics.uci.edu/dataset/360/air+quality" target="_blank" rel="noopener">UCI ML Repository</a></span>
+                        <span class="lecture-desc">A year of hourly readings from a roadside station in an Italian city, with a certified reference analyzer and five low-cost chemical sensors side by side, plus temperature and humidity. Includes missing values.</span>
+                        <div class="lecture-links">
+                            <a href="student_project_data/previews/04_Air_Quality_Sensors_starter.html" class="lecture-download" target="_blank" rel="noopener">Preview</a>
+                            <a href="student_project_data/04_Air_Quality_Sensors_starter.ipynb" class="lecture-download" download>Download Notebook</a>
+                        </div>
+                    </li>
+                    <li class="project-card">
+                        <div class="project-head"><span class="project-num">P05</span><span class="project-title">Hillstrom Email Marketing Experiment</span></div>
+                        <span class="project-meta">64,000 rows &times; 12 columns &middot; <a href="https://blog.minethatdata.com/2008/03/" target="_blank" rel="noopener">MineThatData (2008)</a></span>
+                        <span class="lecture-desc">A randomized experiment: customers were assigned a Men's email, a Women's email, or no email, and their site visits, purchases, and spending over the next two weeks were tracked.</span>
+                        <div class="lecture-links">
+                            <a href="student_project_data/previews/05_Hillstrom_Email_Experiment_starter.html" class="lecture-download" target="_blank" rel="noopener">Preview</a>
+                            <a href="student_project_data/05_Hillstrom_Email_Experiment_starter.ipynb" class="lecture-download" download>Download Notebook</a>
+                        </div>
+                    </li>
+                    <li class="project-card">
+                        <div class="project-head"><span class="project-num">P06</span><span class="project-title">Online Retail Transactions</span></div>
+                        <span class="project-meta">541,909 rows &times; 8 columns &middot; <a href="https://archive.ics.uci.edu/dataset/352/online-retail" target="_blank" rel="noopener">UCI ML Repository</a></span>
+                        <span class="lecture-desc">A year of line-item transactions (Dec 2010 to Dec 2011) from a UK online gift retailer, many of whose customers are wholesalers: products, quantities, prices, customers, countries, and cancellations. Large file: about a 23 MB download.</span>
+                        <div class="lecture-links">
+                            <a href="student_project_data/previews/06_Online_Retail_Transactions_starter.html" class="lecture-download" target="_blank" rel="noopener">Preview</a>
+                            <a href="student_project_data/06_Online_Retail_Transactions_starter.ipynb" class="lecture-download" download>Download Notebook</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
 
             <div class="lecture-materials">
                 <h2>Lecture Materials</h2>
